@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+================================================== -->
+  <meta charset="utf-8">
+  <title>Bothive</title>
+
+  <!-- Mobile Specific Metas
+================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="description" content="Bothive.co.ke creates intelligent WhatsApp, Instagram, and Messenger bots, plus custom web design solutions to automate and grow your business.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+  <!-- Favicon
+================================================== -->
+  <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/32/000000/bot.png">
+
+  <!-- CSS
+================================================== -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css">
+  <!-- Animation -->
+  <link rel="stylesheet" href="plugins/animate-css/animate.css">
+  <!-- slick Carousel -->
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+  <!-- Colorbox -->
+  <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
+  <!-- Template styles-->
+  <link rel="stylesheet" href="css/style.css">
+
+
+<style>
+  /* Modal background */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    animation: fadeIn 0.4s;
+  }
+
+  /* Modal content */
+  .modal-content {
+    background: #fff;
+    margin: 8% auto;
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    animation: slideIn 0.5s ease-out;
+    position: relative;
+  }
+
+  .modal-content h2 {
+    margin-bottom: 15px;
+    color: #333;
+  }
+  .modal-content p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .modal-content input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 15px;
+  }
+
+  /* Close button */
+  .close {
+    position: absolute;
+    right: 20px; top: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #777;
+  }
+  .close:hover { color: #333; }
+
+  /* Animations */
+  @keyframes slideIn {
+    from { transform: translateY(-60px); opacity: 0; }
+    to   { transform: translateY(0); opacity: 1; }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+  <div class="body-inner">
+
+    <div id="top-bar" class="top-bar">
+        <div class="container">
+          <div class="row">
+              <div class="col-lg-8 col-md-8">
+                <ul class="top-info text-center text-md-left">
+                  <center><li> <p class="info-text">BotHive</p></li></center>
+                    
+                </ul>
+              </div>
+              <!--/ Top info end -->
+  
+              <div class="col-lg-4 col-md-4 top-social text-center text-md-right">
+                <ul class="list-unstyled">
+                    <li>
+                      <a title="Facebook" href="https://www.facebook.com/profile.php?id=61579377060731">
+                          <span class="social-icon"><i class="fab fa-facebook-f"></i></span>
+                      </a>
+                      <a title="LinkedIn" href="https://www.linkedin.com/in/munene-kelvin-40632b290">
+                        <span class="social-icon"><i class="fab fa-linkedin"></i></span>
+                      </a>
+
+                      <a title="Instagram" href="https://www.instagram.com/_bothive/">
+                          <span class="social-icon"><i class="fab fa-instagram"></i></span>
+                      </a>
+                      
+                      <a title="TikTok" href="https://www.tiktok.com/@yourusername" target="_blank">
+                        <span class="social-icon"><i class="fab fa-tiktok"></i></span>
+                      </a>
+
+
+                    </li>
+                </ul>
+              </div>
+              <!--/ Top social end -->
+          </div>
+          <!--/ Content row end -->
+        </div>
+        <!--/ Container end -->
+    </div>
+    <!--/ Topbar end -->
+
+
+<!-- Header start -->
+<header id="header" class="header-one">
+  <div class="site-navigation">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <nav class="navbar navbar-expand-lg navbar-dark p-0">
+
+            <!-- Menu Icon -->
+            <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbar-collapse"
+              aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Mobile: Our Products dropdown beside menu icon -->
+            <div class="d-lg-none d-flex align-items-center">
+              <div class="btn-group">
+                <button type="button" class="btn btn-primary btn-sm dropdown-toggle" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Our Products
+                </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="ai-agents.html">AI Agents</a>
+                  <a class="dropdown-item text-success" href="request-website.html">Websites</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Navbar Links -->
+            <div id="navbar-collapse" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav mr-auto">
+             
+
+                <!-- Our Products Dropdown (Desktop) -->
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Our Products <i class="fa fa-angle-down"></i></a>
+                  <ul class="dropdown-menu">
+                    <a class="dropdown-item" href="ai-agents.html">AI Agents</a>
+                    <a class="dropdown-item text-success" href="request-website.html">Websites</a>
+                  </ul>
+                </li>
+
+                <li class="nav-item"><a href="services.html" class="nav-link">Pricing</a></li>
+
+                <!-- Company Dropdown -->
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="team.html">About Us</a></li>
+                    <li><a href="team.html">Our People</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="faq.html">Faq</a></li>
+                  </ul>
+                </li>
+
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!--/ Header end -->
+
+
+
+
+<div class="banner-carousel banner-carousel-1 mb-0">
+
+  <!-- Slide 1 -->
+  <div class="banner-carousel-item" style="background-image:url(images/slider-main/bg1.jpg)">
+    <div class="slider-content">
+      <div class="container h-100">
+        <div class="row align-items-center h-100">
+          <div class="col-md-12 text-center">
+            <h2 class="slide-title" data-animation-in="slideInLeft">3 Years of Excellence in</h2>
+            <h3 class="slide-sub-title" data-animation-in="slideInRight">AI Automation & Web Design</h3>
+            <p data-animation-in="slideInLeft" data-duration-in="1.2">
+              <p data-animation-in="slideInRight">
+                <a href="#" class="slider btn btn-primary border open-otp">Get Started</a>
+                <a href="contact.html" class="slider btn btn-primary border">Talk to Us</a>
+              </p>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 2 -->
+  <div class="banner-carousel-item" style="background-image:url(images/slider-main/bg1.jpg)">
+    <div class="slider-content text-left">
+      <div class="container h-100">
+        <div class="row align-items-center h-100">
+          <div class="col-md-12">
+            <h2 class="slide-title-box" data-animation-in="slideInDown">Seamless Digital Setup</h2>
+            <h3 class="slide-title" data-animation-in="fadeIn">Maximize ROI with Ease</h3>
+            <h3 class="slide-sub-title" data-animation-in="slideInLeft">We Handle Tech, You Enjoy Growth</h3>
+            <p data-animation-in="slideInRight">
+              <a href="#" class="slider btn btn-primary border open-otp">Get Started</a>
+              <a href="contact.html" class="slider btn btn-primary border">Talk to Us</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 3 -->
+  <div class="banner-carousel-item" style="background-image:url(images/slider-main/bg1.jpg)">
+    <div class="slider-content text-right">
+      <div class="container h-100">
+        <div class="row align-items-center h-100">
+          <div class="col-md-12">
+
+            <!-- Main Title -->
+            <h2 class="slide-title" data-animation-in="slideInDown" style="color: #ffffff;">
+              <i class="fas fa-comments"></i> Engage • Converse • Convert <i class="fas fa-comments"></i>
+            </h2>
+
+            <!-- Subtitle -->
+            <h3 class="slide-sub-title" data-animation-in="fadeIn">
+              Your Visitors, Our AI Chatbot Agent
+            </h3>
+
+            <!-- Description -->
+            <p class="slider-description lead" data-animation-in="slideInRight">
+              Live Chat for <strong>Website</strong>, <strong>WhatsApp</strong>, 
+              <strong>Facebook</strong>, <strong>Instagram</strong> & <strong>Telegram</strong>.
+            </p>
+
+            <!-- Call-to-Action Buttons -->
+            <div data-animation-in="slideInLeft">
+              <p data-animation-in="slideInRight">
+                <a href="#" class="slider btn btn-primary border open-otp">Get Started</a>
+                <a href="contact.html" class="slider btn btn-primary border">Talk to Us</a>
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+<section class="call-to-action-box no-padding">
+  <div class="container">
+    <div class="action-style-box">
+      <div class="row align-items-center">
+        
+        <div class="col-md-8 text-center text-md-left">
+          <div class="call-to-action-text">
+            <p>Let us call you and show how automation can increase your sales and save time.</p>
+            
+          </div>
+        </div>
+        
+        <div class="col-md-4 text-center text-md-right mt-3 mt-md-0">
+          <div class="call-to-action-btn">
+            <a class="btn btn-dark" href="request-callback.html">Request Callback</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section id="project-area" class="project-area solid-bg">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-lg-12">
+        <h3 class="section-sub-title">Our Products</h3>
+        <h2 class="section-title">
+         — select a chatbot to see its functions.
+        </h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <!-- Buttons -->
+        <div class="shuffle-btn-group mb-4 text-center">
+          <button class="shuffle-btn active" data-target="websites">Websites</button>
+          <button class="shuffle-btn" data-target="salesbot">Sales AI </button>
+          <button class="shuffle-btn" data-target="customercare">CustomerCare AI </button>
+          <button class="shuffle-btn" data-target="donationsbot">Donations AI </button>
+          <button class="shuffle-btn" data-target="ticketingbot">Ticketing AI </button>
+          <button class="shuffle-btn" data-target="eventsbot">Events AI </button>
+          <button class="shuffle-btn" data-target="surveybot">Survey/Research Bot</button>
+          <button class="shuffle-btn" data-target="surveybot">View all </button>
+        </div>
+
+        <!-- Display Container -->
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-md-8">
+            <div id="project-display" class="project-text-container text-center p-4 border rounded shadow">
+              <h3 class="project-item-title" id="display-title">Websites</h3>
+              <p class="project-cat" id="display-cat">Your online presence, redefined.</p>
+              <p id="display-desc">
+                Engage visitors with sleek, responsive websites designed to convert. From landing pages to e-commerce stores, we build for growth.
+              </p>
+              <a id="display-btn" href="contact.html" class="btn btn-primary mt-3">Get Started</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const projects = {
+    websites: { 
+      title: "Websites", 
+      cat: "Your online presence, redefined", 
+      desc: "Engage visitors with sleek, responsive websites designed to convert. From landing pages to e-commerce stores, we build for growth.",
+      button: "Get Started"
+    },
+    salesbot: { 
+      title: "Sales Bot", 
+      cat: "Boost sales 24/7", 
+      desc: "Automate lead generation, qualify prospects, and close deals even when you're offline. Let AI sell smarter for you.",
+      button: "7 Days Free Trial"
+    },
+    customercare: { 
+      title: "CustomerCare Bot", 
+      cat: "Support that never sleeps", 
+      desc: "Deliver instant customer service, reduce response times, and keep clients happy with AI-driven support.",
+      button: "7 Days Free Trial"
+    },
+    donationsbot: { 
+      title: "Donations Bot", 
+      cat: "Fundraising made simple", 
+      desc: "Accept and manage donations seamlessly through chat, making it easier for supporters to contribute anytime.",
+      button: "7 Days Free Trial"
+    },
+    ticketingbot: { 
+      title: "Ticketing Bot", 
+      cat: "Smart event management", 
+      desc: "Sell tickets, manage bookings, and answer attendee queries automatically through multiple channels.",
+      button: "7 Days Free Trial"
+    },
+    eventsbot: { 
+      title: "Events Bot", 
+      cat: "Engage audiences at scale", 
+      desc: "From RSVPs to live event interactions, this bot keeps your attendees connected and engaged.",
+      button: "7 Days Free Trial"
+    },
+    surveybot: { 
+      title: "Survey/Research Bot", 
+      cat: "Data-driven insights", 
+      desc: "Collect feedback, run surveys, and analyze results in real-time to make smarter business decisions.",
+      button: "7 Days Free Trial"
+    }
+  };
+
+  const buttons = document.querySelectorAll(".shuffle-btn");
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const target = btn.getAttribute("data-target");
+      document.getElementById("display-title").textContent = projects[target].title;
+      document.getElementById("display-cat").textContent = projects[target].cat;
+      document.getElementById("display-desc").textContent = projects[target].desc;
+      document.getElementById("display-btn").textContent = projects[target].button;
+
+      // Update active button
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+    });
+  });
+</script>
+
+
+
+
+<section id="ts-features" class="ts-features">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+          <div class="ts-intro">
+              <h2 class="into-title">About Us</h2>
+              <h3 class="into-sub-title">AI-Powered Solutions for the Modern Business</h3>
+              <p>We specialize in delivering AI-driven chatbot systems and cutting-edge web solutions that help businesses engage customers faster, smarter, and more effectively.  
+                 By combining intelligent automation, conversational design, and sleek web experiences, we transform the way brands connect with their audience.</p>
+          </div><!-- Intro box end -->
+
+          <div class="gap-20"></div>
+
+          <div class="row">
+              <div class="col-md-6">
+                <div class="ts-service-box">
+                    <span class="ts-service-icon">
+                      <i class="fas fa-trophy"></i>
+                    </span>
+                    <div class="ts-service-box-content">
+                      <h3 class="service-box-title">AI Excellence You Can Trust</h3>
+                    </div>
+                </div><!-- Service 1 end -->
+              </div><!-- col end -->
+
+              <div class="col-md-6">
+                <div class="ts-service-box">
+                    <span class="ts-service-icon">
+                      <i class="fas fa-sliders-h"></i>
+                    </span>
+                    <div class="ts-service-box-content">
+                      <h3 class="service-box-title">Custom AI Integrations</h3>
+                    </div>
+                </div><!-- Service 2 end -->
+              </div><!-- col end -->
+          </div><!-- Content row 1 end -->
+
+          <div class="row">
+              <div class="col-md-6">
+                <div class="ts-service-box">
+                    <span class="ts-service-icon">
+                      <i class="fas fa-thumbs-up"></i>
+                    </span>
+                    <div class="ts-service-box-content">
+                      <h3 class="service-box-title">Results-Driven Automation</h3>
+                    </div>
+                </div><!-- Service 1 end -->
+              </div><!-- col end -->
+
+              <div class="col-md-6">
+                <div class="ts-service-box">
+                    <span class="ts-service-icon">
+                      <i class="fas fa-users"></i>
+                    </span>
+                    <div class="ts-service-box-content">
+                      <h3 class="service-box-title">Expert AI Specialists</h3>
+                    </div>
+                </div><!-- Service 2 end -->
+              </div><!-- col end -->
+          </div><!-- Content row 2 end -->
+        </div><!-- Col end -->
+
+        <div class="col-lg-6 mt-4 mt-lg-0">
+          <h3 class="into-sub-title">Our Core Values</h3>
+          <p>We believe that the future of customer engagement lies in the perfect blend of AI innovation, human creativity, and ethical responsibility.</p>
+
+          <div class="accordion accordion-group" id="our-values-accordion">
+              <div class="card">
+                <div class="card-header p-0 bg-transparent" id="headingOne">
+                    <h2 class="mb-0">
+                      <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Innovation
+                      </button>
+                    </h2>
+                </div>
+              
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#our-values-accordion">
+                    <div class="card-body">
+                      We harness the latest in AI and automation technology to deliver solutions that learn, adapt, and improve over time.
+                    </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header p-0 bg-transparent" id="headingTwo">
+                    <h2 class="mb-0">
+                      <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Customer-Centric Design
+                      </button>
+                    </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#our-values-accordion">
+                    <div class="card-body">
+                      Every AI solution we deliver is tailored to enhance customer experience, boost engagement, and drive conversions.
+                    </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header p-0 bg-transparent" id="headingThree">
+                    <h2 class="mb-0">
+                      <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          Integrity
+                      </button>
+                    </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#our-values-accordion">
+                    <div class="card-body">
+                      We deploy AI responsibly, ensuring transparency, data security, and trust in every interaction.
+                    </div>
+                </div>
+              </div>
+          </div>
+          <!--/ Accordion end -->
+
+        </div><!-- Col end -->
+    </div><!-- Row end -->
+  </div><!-- Container end -->
+</section><!-- Feature are end -->
+
+
+<section id="facts" class="facts-area dark-bg">
+  <div class="container">
+    <div class="facts-wrapper">
+        <div class="row">
+          
+          <div class="col-md-4 col-sm-6 ts-facts">
+              <div class="ts-facts-img">
+                <img loading="lazy" src="images/icon-image/fact1.png" alt="AI Chatbots Icon">
+              </div>
+              <div class="ts-facts-content">
+                <h2 class="ts-facts-num"><span class="counterUp" data-count="100">0</span>+</h2>
+                <h3 class="ts-facts-title">AI Chatbots Delivered</h3>
+              </div>
+          </div><!-- Col end -->
+
+          <div class="col-md-4 col-sm-6 ts-facts mt-5 mt-sm-0">
+              <div class="ts-facts-img">
+                <img loading="lazy" src="images/icon-image/fact2.png" alt="Happy Clients Icon">
+              </div>
+              <div class="ts-facts-content">
+                <h2 class="ts-facts-num"><span class="counterUp" data-count="250">0</span>+</h2>
+                <h3 class="ts-facts-title">Happy Clients</h3>
+              </div>
+          </div><!-- Col end -->
+
+          <div class="col-md-4 col-sm-6 ts-facts mt-5 mt-md-0">
+              <div class="ts-facts-img">
+                <img loading="lazy" src="images/icon-image/fact3.png" alt="Websites Delivered Icon">
+              </div>
+              <div class="ts-facts-content">
+                <h2 class="ts-facts-num"><span class="counterUp" data-count="120">0</span>+</h2>
+                <h3 class="ts-facts-title">Websites Delivered</h3>
+              </div>
+          </div><!-- Col end -->
+
+        </div> <!-- Facts end -->
+    </div>
+    <!--/ Content row end -->
+  </div>
+  <!--/ Container end -->
+</section><!-- Facts end -->
+
+<section id="ts-service-area" class="ts-service-area pb-0">
+  <div class="container">
+    <div class="row text-center">
+        <div class="col-12">
+          <h2 class="section-title">We Are Specialists In</h2>
+          <h3 class="section-sub-title">AI & Web Solutions That Drive Results</h3>
+        </div>
+    </div>
+    <!--/ Title row end -->
+
+    <div class="row">
+        <div class="col-lg-4">
+          <div class="ts-service-box d-flex">
+              <div class="ts-service-box-img">
+                <img loading="lazy" src="images/icon-image/service-icon1.png" alt="AI Chatbot Development">
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title"><a href="#">AI Chatbot Development</a></h3>
+                <p>Custom AI-powered chatbots for WhatsApp, Telegram, Instagram, and web to boost engagement and sales.</p>
+              </div>
+          </div><!-- Service 1 end -->
+
+          <div class="ts-service-box d-flex">
+              <div class="ts-service-box-img">
+                <img loading="lazy" src="images/icon-image/service-icon2.png" alt="Web Design">
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title"><a href="#">Modern Web Design</a></h3>
+                <p>Responsive, SEO-friendly websites designed to impress and convert visitors into loyal customers.</p>
+              </div>
+          </div><!-- Service 2 end -->
+
+          <div class="ts-service-box d-flex">
+              <div class="ts-service-box-img">
+                <img loading="lazy" src="images/icon-image/service-icon3.png"  alt="Automation Solutions">
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title"><a href="#">Automation Solutions</a></h3>
+                <p>Streamline workflows with intelligent automation that saves time, reduces costs, and improves efficiency.</p>
+              </div>
+          </div><!-- Service 3 end -->
+
+        </div><!-- Col end -->
+
+        <div class="col-lg-4 text-center">
+          <img loading="lazy" class="img-fluid" src="images/services/service-center.jpg" alt="AI and Web Services">
+        </div><!-- Col end -->
+
+        <div class="col-lg-4 mt-5 mt-lg-0 mb-4 mb-lg-0">
+          <div class="ts-service-box d-flex">
+              <div class="ts-service-box-img">
+                <img loading="lazy" src="images/icon-image/service-icon4.png" alt="E-commerce Development">
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title"><a href="#">E-commerce Development</a></h3>
+                <p>High-performance online stores with integrated payment systems and AI-driven customer support.</p>
+              </div>
+          </div><!-- Service 4 end -->
+
+          <div class="ts-service-box d-flex">
+              <div class="ts-service-box-img">
+                <img loading="lazy" src="images/icon-image/service-icon5.png" alt="Social Media Bots">
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title"><a href="#">Social Media Bots</a></h3>
+                <p>Automated lead generation and customer engagement through smart bots on popular social platforms.</p>
+              </div>
+          </div><!-- Service 5 end -->
+
+          <div class="ts-service-box d-flex">
+              <div class="ts-service-box-img">
+                <img loading="lazy" src="images/icon-image/service-icon6.png" alt="AI Integration">
+              </div>
+              <div class="ts-service-box-info">
+                <h3 class="service-box-title"><a href="#">AI Integration</a></h3>
+                <p>Enhance your existing systems with AI capabilities for smarter decision-making and better customer experiences.</p>
+              </div>
+          </div><!-- Service 6 end -->
+        </div><!-- Col end -->
+    </div><!-- Content row end -->
+
+  </div>
+  <!--/ Container end -->
+</section><!-- Service end -->
+
+
+
+
+
+
+
+
+<<section class="content">
+  <div class="container d-flex justify-content-center">
+    <div class="row justify-content-center w-100">
+        <div class="col-lg-8 text-center">
+          <h3 class="column-title">Our Partners</h3>
+
+          <div id="testimonial-slide" class="testimonial-slide">
+
+              <div class="item">
+                <div class="quote-item text-center">
+                    <div class="quote-item-footer mb-3">
+                      <img loading="lazy" class="testimonial-thumb" src="images/clients/testimonial1.png" alt="Twilio">
+                      <div class="quote-item-info">
+                          <h3 class="quote-author">Twilio</h3>
+                      </div>
+                    </div>
+                    <span class="quote-text">
+                      Twilio powers seamless messaging, allowing our chatbots to reach customers via SMS, WhatsApp, and other channels to boost engagement and sales.
+                    </span>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="quote-item text-center">
+                    <div class="quote-item-footer mb-3">
+                      <img loading="lazy" class="testimonial-thumb" src="images/clients/whatsapp.jpeg" alt="WhatsApp Business API">
+                      <div class="quote-item-info">
+                          <h3 class="quote-author">WhatsApp Business API</h3>
+                      </div>
+                    </div>
+                    <span class="quote-text">
+                      WhatsApp Business API enables direct client communication through chatbots, streamlining customer support, lead generation, and transactions.
+                    </span>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="quote-item text-center">
+                    <div class="quote-item-footer mb-3">
+                      <img loading="lazy" class="testimonial-thumb" src="images/clients/MetaGraph.jpeg" alt="MetaGraph API">
+                      <div class="quote-item-info">
+                          <h3 class="quote-author">MetaGraph API</h3>
+                      </div>
+                    </div>
+                    <span class="quote-text">
+                      MetaGraph API allows integration with Facebook Messenger, connecting our chatbots with a large social audience for marketing and sales automation.
+                    </span>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="quote-item text-center">
+                    <div class="quote-item-footer mb-3">
+                      <img loading="lazy" class="testimonial-thumb" src="images/clients/telegram.jpeg" alt="Telegram API">
+                      <div class="quote-item-info">
+                          <h3 class="quote-author">Telegram API</h3>
+                      </div>
+                    </div>
+                    <span class="quote-text">
+                      Telegram API lets our chatbots engage users with fast, secure messaging and automated services, enhancing customer support and interaction.
+                    </span>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="quote-item text-center">
+                    <div class="quote-item-footer mb-3">
+                      <img loading="lazy" class="testimonial-thumb" src="images/clients/Mpesa.png" alt="M-Pesa Daraja API">
+                      <div class="quote-item-info">
+                          <h3 class="quote-author">M-Pesa Daraja API</h3>
+                      </div>
+                    </div>
+                    <span class="quote-text">
+                      M-Pesa Daraja API integrates payment processing directly into chatbots, enabling seamless transactions, invoicing, and financial automation for businesses.
+                    </span>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="quote-item text-center">
+                    <div class="quote-item-footer mb-3">
+                      <img loading="lazy" class="testimonial-thumb" src="images/clients/stripe.png" alt="Stripe API">
+                      <div class="quote-item-info">
+                          <h3 class="quote-author">Stripe API</h3>
+                      </div>
+                    </div>
+                    <span class="quote-text">
+                      Stripe API provides secure, integrated payment solutions for our chatbots, allowing businesses to accept card payments and subscriptions globally.
+                    </span>
+                </div>
+              </div>
+
+              <div class="item">
+                <div class="quote-item text-center">
+                    <div class="quote-item-footer mb-3">
+                      <img loading="lazy" class="testimonial-thumb" src="images/clients/Paypal.png" alt="PayPal API">
+                      <div class="quote-item-info">
+                          <h3 class="quote-author">PayPal API</h3>
+                      </div>
+                    </div>
+                    <span class="quote-text">
+                      PayPal API enables fast, secure online payments through our chatbots, making it easier for customers to purchase services and products instantly.
+                    </span>
+                </div>
+              </div>
+
+          </div><!--/ Testimonial carousel end-->
+        </div><!-- Col end -->
+    </div><!-- Row end -->
+  </div><!--/ Container end -->
+</section><!-- Content end -->
+
+<!--/ subscribe end -->
+
+
+
+  <footer id="footer" class="footer bg-overlay">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-lg-4 col-md-6 footer-widget footer-about">
+            <h3 class="widget-title">About Us</h3>
+            <img loading="lazy" class="footer-logo" src="images/bothive.png" alt="Constra">
+            <p> we build powerful automation AI chatbots and modern web design solutions that help businesses engage customers, streamline operations, and grow online with confidence.</p>
+
+            <div class="footer-social">
+              <ul>
+                <li><a href="https://facebook.com/themefisher" aria-label="Facebook"><i
+                      class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://twitter.com/themefisher" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li><a href="https://instagram.com/themefisher" aria-label="Instagram"><i
+                      class="fab fa-instagram"></i></a></li>
+                <li><a href="https://github.com/themefisher" aria-label="Github"><i class="fab fa-github"></i></a></li>
+              </ul>
+            </div><!-- Footer social end -->
+          </div><!-- Col end -->
+
+          <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
+  <h3 class="widget-title">Working Hours</h3>
+  <div class="working-hours">
+    We are available <strong>24/7</strong> to assist you.  
+    <br><br> Our team is always ready to support you anytime, any day – including weekends and holidays.  
+    <br> For urgent inquiries, reach us via our Hotline or Contact Form.
+  </div>
+</div><!-- Col end -->
+
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
+  <h3 class="widget-title">Our Chatbots</h3>
+  <ul class="list-arrow">
+    <li><a href="chatbot-sales.html">💬 Sales Bot</a></li>
+    <li><a href="chatbot-booking.html">📅 Booking Bot</a></li>
+    <li><a href="chatbot-support.html">🤝 Customer Support Bot</a></li>
+    <li><a href="chatbot-faq.html">❓ FAQ Bot</a></li>
+    <li><a href="chatbot-feedback.html">⭐ Feedback Bot</a></li>
+  </ul>
+</div><!-- Col end -->
+
+        </div><!-- Row end -->
+      </div><!-- Container end -->
+    </div><!-- Footer main end -->
+
+
+        <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
+          <button class="btn btn-primary" title="Back to Top">
+            <i class="fa fa-angle-double-up"></i>
+          </button>
+        </div>
+
+      </div><!-- Container end -->
+    </div><!-- Copyright end -->
+  </footer><!-- Footer end -->
+
+  <div id="otpModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Sign Up / Login</h2>
+    <p>Enter your phone number to receive an OTP</p>
+    
+    <form id="otpForm">
+      <input type="tel" placeholder="Enter phone number" required>
+      <button type="submit" class="btn">Send OTP</button>
+    </form>
+
+    <div class="otp-section hidden">
+      <p>Enter OTP sent to your number</p>
+      <input type="text" placeholder="Enter OTP" maxlength="6" required>
+      <button class="btn">Verify</button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  const modal = document.getElementById("otpModal");
+  const openBtns = document.querySelectorAll(".open-otp");
+  const closeBtn = document.querySelector(".close");
+  const form = document.getElementById("otpForm");
+  const otpSection = document.querySelector(".otp-section");
+
+  // Attach click to all Get Started buttons
+  openBtns.forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+      modal.style.display = "block";
+    });
+  });
+
+  // Close modal
+  closeBtn.onclick = () => modal.style.display = "none";
+  window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; }
+
+  // Switch to OTP input after sending phone
+  form.onsubmit = (e) => {
+    e.preventDefault();
+    form.style.display = "none";
+    otpSection.classList.remove("hidden");
+  };
+</script>
+
+
+  <!-- Javascript Files
+  ================================================== -->
+
+  <!-- initialize jQuery Library -->
+  <script src="plugins/jQuery/jquery.min.js"></script>
+  <!-- Bootstrap jQuery -->
+  <script src="plugins/bootstrap/bootstrap.min.js" defer></script>
+  <!-- Slick Carousel -->
+  <script src="plugins/slick/slick.min.js"></script>
+  <script src="plugins/slick/slick-animation.min.js"></script>
+  <!-- Color box -->
+  <script src="plugins/colorbox/jquery.colorbox.js"></script>
+  <!-- shuffle -->
+  <script src="plugins/shuffle/shuffle.min.js" defer></script>
+
+
+  <!-- Google Map API Key-->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
+  <!-- Google Map Plugin-->
+  <script src="plugins/google-map/map.js" defer></script>
+
+  <!-- Template custom -->
+  <script src="js/script.js"></script>
+
+  </div><!-- Body inner end -->
+  <!--whatsapp floating icon-->
+ <a href="https://wa.me/254713077490" class="whatsapp-float" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Chat">
+</a>
+
+  </body>
+
+  </html>
