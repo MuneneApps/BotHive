@@ -90,43 +90,52 @@
           <nav class="navbar navbar-expand-lg navbar-dark p-0">
 
             <!-- Menu Icon -->
-            <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbar-collapse"
+            <button class="navbar-toggler mr-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-collapse"
               aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
 
-            
-            
-
             <!-- Navbar Links -->
             <div id="navbar-collapse" class="collapse navbar-collapse">
-              <ul class="nav navbar-nav mr-auto">
-             
+              <ul class="navbar-nav me-auto">
 
-                <!-- Our Products Dropdown (Desktop) -->
-                <li><a href="index.html">Home</a></li>
+                <!-- Home -->
+                <li class="nav-item">
+                  <a href="index.html" class="nav-link">Home</a>
+                </li>
+
+                <!-- Our Products Dropdown -->
                 <li class="nav-item dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Our Products <i class="fa fa-angle-down"></i></a>
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Our Products
+                  </a>
                   <ul class="dropdown-menu">
-                    <a class="dropdown-item" href="projects.html">AI Agents</a>
-                    <a class="dropdown-item text-success" href="websites.html">Websites</a>
+                    <li><a class="dropdown-item" href="projects.html">AI Agents</a></li>
+                    <li><a class="dropdown-item text-success" href="websites.html">Websites</a></li>
                   </ul>
                 </li>
 
-                <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+                <!-- Pricing -->
+                <li class="nav-item">
+                  <a href="pricing.html" class="nav-link">Pricing</a>
+                </li>
 
                 <!-- Company Dropdown -->
                 <li class="nav-item dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="about.html">About Us</a></li>
-                    <!-- <li><a href="team.html">Our People</a></li>-->
-                    <li><a href="testimonials.html">Testimonials</a></li>
-                    
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    Company
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                    <li><a class="dropdown-item" href="testimonials.html">Testimonials</a></li>
                   </ul>
                 </li>
 
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <!-- Contact -->
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+
               </ul>
             </div>
 
@@ -136,6 +145,8 @@
     </div>
   </div>
 </header>
+<!-- Header end -->
+
 <!--/ Header end -->
 <!--
 <div id="banner-area" class="banner-area" style="background-image:url(images/banner/banner1.jpg)">
