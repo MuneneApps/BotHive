@@ -89,44 +89,48 @@
         <div class="col-lg-12">
           <nav class="navbar navbar-expand-lg navbar-dark p-0">
 
-            <!-- Menu Icon -->
+            <!-- Menu Icon (Hamburger) -->
             <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbar-collapse"
               aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
 
-            
-            
-
             <!-- Navbar Links -->
             <div id="navbar-collapse" class="collapse navbar-collapse">
               <ul class="nav navbar-nav mr-auto">
-             
 
-                <!-- Our Products Dropdown (Desktop) -->
-                 <li><a href="index.html">Home</a></li>
+                <!-- Home -->
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+
+                <!-- Our Products Dropdown -->
                 <li class="nav-item dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Our Products <i class="fa fa-angle-down"></i></a>
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                    Our Products <i class="fa fa-angle-down"></i>
+                  </a>
                   <ul class="dropdown-menu">
-                    <a class="dropdown-item" href="projects.html">AI Agents</a>
-                    <a class="dropdown-item text-success" href="websites.html">Websites</a>
+                    <li><a class="dropdown-item" href="projects.html">AI Agents</a></li>
+                    <li><a class="dropdown-item text-success" href="websites.html">Websites</a></li>
                   </ul>
                 </li>
 
+                <!-- Pricing -->
                 <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
 
                 <!-- Company Dropdown -->
                 <li class="nav-item dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                    Company <i class="fa fa-angle-down"></i>
+                  </a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="about.html">About Us</a></li>
-                   <!-- <li><a href="team.html">Our People</a></li>-->
-                    <li><a href="testimonials.html">Testimonials</a></li>
-                    
+                    <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                    <!-- <li><a class="dropdown-item" href="team.html">Our People</a></li>-->
+                    <li><a class="dropdown-item" href="testimonials.html">Testimonials</a></li>
                   </ul>
                 </li>
 
+                <!-- Contact -->
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
               </ul>
             </div>
 
@@ -137,7 +141,11 @@
   </div>
 </header>
 <!--/ Header end -->
-<!--
+
+<!-- 
+
+
+
 <div id="banner-area" class="banner-area" style="background-image:url(images/banner/banner1.jpg)">
   <div class="banner-text">
     <div class="container">
@@ -175,31 +183,83 @@
             <button class="shuffle-btn active" data-target="lawyer">Law Firms</button>
             <button class="shuffle-btn" data-target="restaurant">Restaurants</button>
             <button class="shuffle-btn" data-target="ecommerce">E-commerce</button>
-            <button class="shuffle-btn" data-target="portfolio">Portfolio</button>
-            <button class="shuffle-btn" data-target="smallbusiness">Small Businesses</button>
             <button class="shuffle-btn" data-target="events">Event/Booking</button>
             <button class="shuffle-btn" data-target="corporate">Corporate</button>
-            <button class="shuffle-btn" data-target="education">Education</button>
-            <button class="shuffle-btn" data-target="health">Health & Fitness</button>
-            <button class="shuffle-btn" data-target="blogs">Blogs & Personal Branding</button>
           </div>
   
           <!-- Display Container -->
           <div class="row justify-content-center">
             <div class="col-lg-10">
               <div id="project-display" class="project-text-container text-center p-4 border rounded shadow">
-                <h3 class="project-item-title" id="display-title">Law Firms</h3>
-                <p class="project-cat" id="display-cat">Professional websites for law firms</p>
-                <p id="display-desc">
-                  Sleek, responsive, and professional websites designed specifically for law firms to attract clients online.
-                </p>
-                
-                <!-- Website links -->
-                <div id="project-links" class="d-flex justify-content-center flex-wrap gap-3 mt-3">
-                  <a href="https://lawfirm1.com" target="_blank" class="btn btn-outline-primary">Law Firm 1</a>
-                  <a href="https://lawfirm2.com" target="_blank" class="btn btn-outline-primary">Law Firm 2</a>
-                  <a href="https://lawfirm3.com" target="_blank" class="btn btn-outline-primary">Law Firm 3</a>
+  
+                <!-- Law Firms -->
+                <div class="project-item" data-category="lawyer">
+                  <h3 class="project-item-title">Law Firms</h3>
+                  <p class="project-cat">Professional websites for law firms</p>
+                  <p>
+                    Sleek, responsive, and professional websites designed specifically for law firms to attract clients online.
+                  </p>
+                  <div class="d-flex justify-content-center flex-wrap gap-3 mt-3">
+                    <a href="https://www.wka.co.ke" target="_blank" class="btn btn-outline-primary">WKA Advocates</a>
+                    <a href="https://pmkattorneys.com/" target="_blank" class="btn btn-outline-primary">PM Kithuka & Co. Advocates</a>
+                    <a href="https://njagaadvocates.com/" target="_blank" class="btn btn-outline-primary">Njaga & Co. Advocates LLP</a>
+                  </div>
                 </div>
+  
+                <!-- Restaurants -->
+                <div class="project-item" data-category="restaurant" style="display:none;">
+                  <h3 class="project-item-title">Restaurants</h3>
+                  <p class="project-cat">Websites for restaurants and food businesses</p>
+                  <p>
+                    Attractive, responsive websites designed for restaurants to showcase menus, reservations, and services.
+                  </p>
+                  <div class="d-flex justify-content-center flex-wrap gap-3 mt-3">
+                    <a href="https://5senses.co.ke/" target="_blank" class="btn btn-outline-primary">Five Senses Restaurant</a>
+                    <a href="https://cultivakenya.com/" target="_blank" class="btn btn-outline-primary">Cultiva Farm Kenya</a>
+                    <a href="https://www.thefoodlibrary.co.ke/inti-a-nikkei-experience/" target="_blank" class="btn btn-outline-primary">NIKKEI</a>
+                  </div>
+                </div>
+  
+                <!-- E-commerce -->
+                <div class="project-item" data-category="ecommerce" style="display:none;">
+                  <h3 class="project-item-title">E-commerce</h3>
+                  <p class="project-cat">Online stores and e-commerce websites</p>
+                  <p>
+                    User-friendly e-commerce platforms to sell products efficiently online with responsive design.
+                  </p>
+                  <div class="d-flex justify-content-center flex-wrap gap-3 mt-3">
+                    <a href="https://mybigorder.com/" target="_blank" class="btn btn-outline-primary">MyBigOrder</a>
+                    <a href="https://shopease.co.ke/" target="_blank" class="btn btn-outline-primary">Shopease</a>
+                    <a href="https://shopit.co.ke/" target="_blank" class="btn btn-outline-primary">Shopit</a>
+                  </div>
+                </div>
+  
+                <!-- Event/Booking -->
+                <div class="project-item" data-category="events" style="display:none;">
+                  <h3 class="project-item-title">Event & Booking</h3>
+                  <p class="project-cat">Websites for events and bookings</p>
+                  <p>
+                    Seamless websites for events, booking management, and showcasing services professionally.
+                  </p>
+                  <div class="d-flex justify-content-center flex-wrap gap-3 mt-3">
+                    <a href="https://big-outreach.com/" target="_blank" class="btn btn-outline-primary">Big Outreach Co</a>
+                    <a href="https://www.waridievents.com/" target="_blank" class="btn btn-outline-primary">Waridi Events</a>
+                    <a href="https://thesunflowerevents.com/" target="_blank" class="btn btn-outline-primary">Sunflower Events</a>
+                  </div>
+                </div>
+  
+                <!-- Corporate -->
+                <div class="project-item" data-category="corporate" style="display:none;">
+                  <h3 class="project-item-title">Corporate</h3>
+                  <p class="project-cat">Professional corporate websites</p>
+                  <p>
+                    Sleek, functional websites designed for corporate businesses to establish a strong online presence.
+                  </p>
+                  <div class="d-flex justify-content-center flex-wrap gap-3 mt-3">
+                    <a href="https://lifelong.co.ke/" target="_blank" class="btn btn-outline-primary">Lifelong Co</a>
+                  </div>
+                </div>
+  
               </div>
             </div>
           </div>
@@ -209,138 +269,26 @@
     </div>
   </section>
   
+  <!-- JS for category switching -->
   <script>
-    const projects = {
-      lawyer: { 
-        title: "Law Firms", 
-        cat: "Professional websites for law firms", 
-        desc: "Sleek, responsive, and professional websites designed specifically for law firms to attract clients online.",
-        links: [
-          { name: "Law Firm 1", url: "https://lawfirm1.com" },
-          { name: "Law Firm 2", url: "https://lawfirm2.com" },
-          { name: "Law Firm 3", url: "https://lawfirm3.com" }
-        ]
-      },
-      restaurant: { 
-        title: "Restaurants", 
-        cat: "Websites for restaurants & cafes", 
-        desc: "Showcase menus, online ordering, and reservations with visually appealing restaurant websites.",
-        links: [
-          { name: "Cafe 1", url: "https://cafe1.com" },
-          { name: "Bistro 2", url: "https://bistro2.com" },
-          { name: "Diner 3", url: "https://diner3.com" }
-        ]
-      },
-      ecommerce: { 
-        title: "E-commerce", 
-        cat: "Online stores & marketplaces", 
-        desc: "Fully functional e-commerce websites with shopping cart, payment integration, and mobile responsiveness.",
-        links: [
-          { name: "Shop 1", url: "https://shop1.com" },
-          { name: "Store 2", url: "https://store2.com" },
-          { name: "Shop 3", url: "https://shop3.com" }
-        ]
-      },
-      portfolio: { 
-        title: "Portfolio", 
-        cat: "Showcase your work online", 
-        desc: "Creative, modern portfolio websites for photographers, designers, and freelancers.",
-        links: [
-          { name: "Portfolio 1", url: "https://portfolio1.com" },
-          { name: "Portfolio 2", url: "https://portfolio2.com" },
-          { name: "Portfolio 3", url: "https://portfolio3.com" }
-        ]
-      },
-      smallbusiness: { 
-        title: "Small Businesses", 
-        cat: "Websites for startups & service providers", 
-        desc: "Corporate, service-based websites for salons, gyms, consultants, and local businesses.",
-        links: [
-          { name: "Salon 1", url: "https://salon1.com" },
-          { name: "Gym 2", url: "https://gym2.com" },
-          { name: "Consultant 3", url: "https://consultant3.com" }
-        ]
-      },
-      events: { 
-        title: "Event/Booking", 
-        cat: "Venues, event management, booking platforms", 
-        desc: "Websites that allow event registration, ticketing, and client interaction online.",
-        links: [
-          { name: "Venue 1", url: "https://venue1.com" },
-          { name: "Event 2", url: "https://event2.com" },
-          { name: "Booking 3", url: "https://booking3.com" }
-        ]
-      },
-      corporate: { 
-        title: "Corporate", 
-        cat: "Corporate & consulting websites", 
-        desc: "Professional websites for corporate businesses, consultants, and service-based companies.",
-        links: [
-          { name: "Corp 1", url: "https://corp1.com" },
-          { name: "Consult 2", url: "https://consult2.com" },
-          { name: "Corp 3", url: "https://corp3.com" }
-        ]
-      },
-      education: { 
-        title: "Education", 
-        cat: "Schools, online courses, tutors", 
-        desc: "Educational websites with course listings, schedules, and online learning features.",
-        links: [
-          { name: "School 1", url: "https://school1.com" },
-          { name: "Tutor 2", url: "https://tutor2.com" },
-          { name: "Course 3", url: "https://course3.com" }
-        ]
-      },
-      health: { 
-        title: "Health & Fitness", 
-        cat: "Clinics, gyms, personal trainers", 
-        desc: "Websites for health professionals, clinics, gyms, and personal trainers with booking options.",
-        links: [
-          { name: "Clinic 1", url: "https://clinic1.com" },
-          { name: "Trainer 2", url: "https://trainer2.com" },
-          { name: "Gym 3", url: "https://gym3.com" }
-        ]
-      },
-      blogs: { 
-        title: "Blogs & Personal Branding", 
-        cat: "Influencers, writers, content creators", 
-        desc: "Personal websites and blogs to showcase content, grow an audience, and build a personal brand.",
-        links: [
-          { name: "Blog 1", url: "https://blog1.com" },
-          { name: "Writer 2", url: "https://writer2.com" },
-          { name: "Creator 3", url: "https://creator3.com" }
-        ]
-      }
-    };
+    document.addEventListener("DOMContentLoaded", function () {
+      const buttons = document.querySelectorAll(".shuffle-btn");
+      const projects = document.querySelectorAll(".project-item");
   
-    const buttons = document.querySelectorAll(".shuffle-btn");
-    buttons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        const target = btn.getAttribute("data-target");
-        const project = projects[target];
+      buttons.forEach(btn => {
+        btn.addEventListener("click", function () {
+          buttons.forEach(b => b.classList.remove("active"));
+          this.classList.add("active");
   
-        document.getElementById("display-title").textContent = project.title;
-        document.getElementById("display-cat").textContent = project.cat;
-        document.getElementById("display-desc").textContent = project.desc;
-  
-        // Update project links
-        const linksContainer = document.getElementById("project-links");
-        linksContainer.innerHTML = ""; // clear previous
-        project.links.forEach(link => {
-          const a = document.createElement("a");
-          a.href = link.url;
-          a.target = "_blank";
-          a.className = "btn btn-outline-primary";
-          a.textContent = link.name;
-          linksContainer.appendChild(a);
+          const target = this.getAttribute("data-target");
+          projects.forEach(proj => {
+            proj.style.display = (proj.getAttribute("data-category") === target) ? "block" : "none";
+          });
         });
-  
-        // Update active button
-        buttons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
       });
     });
   </script>
+  
   
   
   

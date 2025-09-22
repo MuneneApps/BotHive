@@ -5,14 +5,14 @@
   <!-- Basic Page Needs
 ================================================== -->
   <meta charset="utf-8">
-  <title>Constra - Construction Html5 Template</title>
+  <title>BotHive</title>
 
   <!-- Mobile Specific Metas
 ================================================== -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="description" content="Construction Html5 Template">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-
+ 
   <!-- Favicon
 ================================================== -->
   <link rel="icon" type="image/png" href="images/favicon.png">
@@ -32,6 +32,8 @@
   <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
   <!-- Template styles-->
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
 
 </head>
 <body>
@@ -79,9 +81,10 @@
       </div>
       <!--/ Container end -->
   </div>
-  <!--/ Topbar end -->
+  <!--/ Topbar end --><!-- in <head> -->
 
-<!-- Header start -->
+
+    <!-- Header start -->
 <header id="header" class="header-one">
   <div class="site-navigation">
     <div class="container">
@@ -89,44 +92,48 @@
         <div class="col-lg-12">
           <nav class="navbar navbar-expand-lg navbar-dark p-0">
 
-            <!-- Menu Icon -->
+            <!-- Menu Icon (Hamburger) -->
             <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbar-collapse"
               aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
 
-            
-            
-
             <!-- Navbar Links -->
             <div id="navbar-collapse" class="collapse navbar-collapse">
               <ul class="nav navbar-nav mr-auto">
-             
 
-                <!-- Our Products Dropdown (Desktop) -->
-                <li><a href="index.html">Home</a></li>
+                <!-- Home -->
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+
+                <!-- Our Products Dropdown -->
                 <li class="nav-item dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Our Products <i class="fa fa-angle-down"></i></a>
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                    Our Products <i class="fa fa-angle-down"></i>
+                  </a>
                   <ul class="dropdown-menu">
-                    <a class="dropdown-item" href="projects.html">AI Agents</a>
-                    <a class="dropdown-item text-success" href="websites.html">Websites</a>
+                    <li><a class="dropdown-item" href="projects.html">AI Agents</a></li>
+                    <li><a class="dropdown-item text-success" href="websites.html">Websites</a></li>
                   </ul>
                 </li>
 
+                <!-- Pricing -->
                 <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
 
                 <!-- Company Dropdown -->
                 <li class="nav-item dropdown">
-                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                    Company <i class="fa fa-angle-down"></i>
+                  </a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="about.html">About Us</a></li>
-                    <!-- <li><a href="team.html">Our People</a></li>-->
-                    <li><a href="testimonials.html">Testimonials</a></li>
-                    
+                    <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                    <!-- <li><a class="dropdown-item" href="team.html">Our People</a></li>-->
+                    <li><a class="dropdown-item" href="testimonials.html">Testimonials</a></li>
                   </ul>
                 </li>
 
+                <!-- Contact -->
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
               </ul>
             </div>
 
@@ -136,8 +143,13 @@
     </div>
   </div>
 </header>
-<!--/ Header end -->
+
+
+
+
 <!--
+
+
 <div id="banner-area" class="banner-area" style="background-image:url(images/banner/banner1.jpg)">
   <div class="banner-text">
     <div class="container">
@@ -158,6 +170,7 @@
       </div><!-- Container end -->
     </div><!-- Banner text end -->
   </div><!-- Banner area end --> 
+
 
   <section id="main-container" class="main-container">
     <div class="container">
@@ -284,11 +297,11 @@
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
   <h3 class="widget-title">Our Chatbots</h3>
   <ul class="list-arrow">
-    <li><a href="chatbot-sales.html">💬 Sales Bot</a></li>
-    <li><a href="chatbot-booking.html">📅 Booking Bot</a></li>
-    <li><a href="chatbot-support.html">🤝 Customer Support Bot</a></li>
-    <li><a href="chatbot-faq.html">❓ FAQ Bot</a></li>
-    <li><a href="chatbot-feedback.html">⭐ Feedback Bot</a></li>
+    <li><a href="Projects.html">💬 Sales Bot</a></li>
+    <li><a href="Projects.html">📅 Booking Bot</a></li>
+    <li><a href="Projects.html">🤝 Customer Support Bot</a></li>
+    <li><a href="Projects.html">❓ FAQ Bot</a></li>
+    <li><a href="Projects.html">⭐ Feedback Bot</a></li>
   </ul>
 </div><!-- Col end -->
 
@@ -296,6 +309,7 @@
       </div><!-- Container end -->
     </div><!-- Footer main end -->
 
+    <a href="#" class="slider btn btn-primary border open-lead-form">Get Started</a>
 
         <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
           <button class="btn btn-primary" title="Back to Top">
@@ -307,9 +321,16 @@
     </div><!-- Copyright end -->
   </footer><!-- Footer end -->
 
-
   <!-- Javascript Files
   ================================================== -->
+<!-- jQuery first -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Popper.js for dropdown positioning -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Bootstrap 4 JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.6.2/js/bootstrap.min.js"></script>
 
   <!-- initialize jQuery Library -->
   <script src="plugins/jQuery/jquery.min.js"></script>
@@ -324,6 +345,7 @@
   <script src="plugins/shuffle/shuffle.min.js" defer></script>
 
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Google Map API Key-->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
   <!-- Google Map Plugin-->

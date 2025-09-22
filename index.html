@@ -35,73 +35,97 @@
   <link rel="stylesheet" href="css/style.css">
 
 
-<style>
-  /* Modal background */
-  .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(4px);
-    animation: fadeIn 0.4s;
-  }
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      margin: 0;
+      padding: 0;
+    }
 
-  /* Modal content */
-  .modal-content {
-    background: #fff;
-    margin: 8% auto;
-    padding: 25px;
-    border-radius: 15px;
-    max-width: 400px;
-    text-align: center;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-    animation: slideIn 0.5s ease-out;
-    position: relative;
-  }
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      padding-top: 80px;
+    }
 
-  .modal-content h2 {
-    margin-bottom: 15px;
-    color: #333;
-  }
-  .modal-content p {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 20px;
-  }
+    .modal-content {
+      background: #fff;
+      margin: auto;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 450px;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      animation: fadeIn 0.4s ease;
+    }
 
-  .modal-content input {
-    width: 90%;
-    padding: 12px;
-    margin: 10px 0;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    font-size: 15px;
-  }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-  /* Close button */
-  .close {
-    position: absolute;
-    right: 20px; top: 15px;
-    font-size: 24px;
-    cursor: pointer;
-    color: #777;
-  }
-  .close:hover { color: #333; }
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 28px;
+      color: #333;
+      cursor: pointer;
+      font-weight: bold;
+    }
 
-  /* Animations */
-  @keyframes slideIn {
-    from { transform: translateY(-60px); opacity: 0; }
-    to   { transform: translateY(0); opacity: 1; }
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
+    .close:hover {
+      color: red;
+    }
 
-  .hidden { display: none; }
-</style>
+    h2 {
+      margin-top: 0;
+      text-align: center;
+    }
+
+    form input, form select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+    }
+
+    /* Force submit button to look visible */
+    form button.slider.btn.btn-primary.border {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-top: 12px;
+      background-color: #007bff !important; /* override bootstrap */
+      color: #fff !important;
+      border: 1px solid #007bff;
+    }
+
+    form button.slider.btn.btn-primary.border:hover {
+      background-color: #0056b3 !important;
+      border-color: #0056b3;
+    }
+
+    /* Success message */
+    .success-message {
+      text-align: center;
+      font-size: 18px;
+      color: green;
+      display: none;
+      padding: 15px;
+    }
+  </style>
 </head>
 <body>
   <div class="body-inner">
@@ -209,7 +233,6 @@
 
 
 
-
 <div class="banner-carousel banner-carousel-1 mb-0">
 
   <!-- Slide 1 -->
@@ -220,12 +243,12 @@
           <div class="col-md-12 text-center">
             <h2 class="slide-title" data-animation-in="slideInLeft">3 Years of Excellence in</h2>
             <h3 class="slide-sub-title" data-animation-in="slideInRight">AI Automation & Web Design</h3>
-            <p data-animation-in="slideInLeft" data-duration-in="1.2">
-              <p data-animation-in="slideInRight">
-                <a href="#" class="slider btn btn-primary border open-otp">Get Started</a>
-                <a href="contact.html" class="slider btn btn-primary border">Talk to Us</a>
-              </p>
-            </p>
+
+            <!-- Get Started Button -->
+            <div data-animation-in="slideInLeft" data-duration-in="1.2">
+              <a href="#" class="slider btn btn-primary border open-lead-form">Get Started</a>
+            </div>
+
           </div>
         </div>
       </div>
@@ -241,10 +264,12 @@
             <h2 class="slide-title-box" data-animation-in="slideInDown">Seamless Digital Setup</h2>
             <h3 class="slide-title" data-animation-in="fadeIn">Maximize ROI with Ease</h3>
             <h3 class="slide-sub-title" data-animation-in="slideInLeft">We Handle Tech, You Enjoy Growth</h3>
-            <p data-animation-in="slideInRight">
-              <a href="#" class="slider btn btn-primary border open-otp">Get Started</a>
-              <a href="contact.html" class="slider btn btn-primary border">Talk to Us</a>
-            </p>
+
+            <!-- Get Started Button -->
+            <div data-animation-in="slideInRight">
+              <a href="#" class="slider btn btn-primary border open-lead-form">Get Started</a>
+            </div>
+
           </div>
         </div>
       </div>
@@ -276,10 +301,7 @@
 
             <!-- Call-to-Action Buttons -->
             <div data-animation-in="slideInLeft">
-              <p data-animation-in="slideInRight">
-                <a href="#" class="slider btn btn-primary border open-otp">Get Started</a>
-                <a href="contact.html" class="slider btn btn-primary border">Talk to Us</a>
-              </p>
+              <a href="#" class="slider btn btn-primary border open-lead-form">Get Started</a>
             </div>
 
           </div>
@@ -289,6 +311,7 @@
   </div>
 
 </div>
+
 
 
 
@@ -306,7 +329,7 @@
         
         <div class="col-md-4 text-center text-md-right mt-3 mt-md-0">
           <div class="call-to-action-btn">
-            <a class="btn btn-dark" href="request-callback.html">Request Callback</a>
+            <a class="btn btn-dark open-callback-form" href="#">Request Callback</a>
           </div>
         </div>
         
@@ -351,7 +374,15 @@
               <p id="display-desc">
                 Engage visitors with sleek, responsive websites designed to convert. From landing pages to e-commerce stores, we build for growth.
               </p>
-              <a id="display-btn" href="contact.html" class="btn btn-primary mt-3">Get Started</a>
+            <!-- Get Started Button -->
+<div data-animation-in="slideInLeft" data-duration-in="1.2">
+  <a href="#" class="slider btn btn-primary border open-lead-form" style="color:#000; font-weight:600;">
+    Get Started
+  </a>
+</div>
+
+
+
             </div>
           </div>
         </div>
@@ -830,11 +861,11 @@
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
   <h3 class="widget-title">Our Chatbots</h3>
   <ul class="list-arrow">
-    <li><a href="chatbot-sales.html">💬 Sales Bot</a></li>
-    <li><a href="chatbot-booking.html">📅 Booking Bot</a></li>
-    <li><a href="chatbot-support.html">🤝 Customer Support Bot</a></li>
-    <li><a href="chatbot-faq.html">❓ FAQ Bot</a></li>
-    <li><a href="chatbot-feedback.html">⭐ Feedback Bot</a></li>
+    <li><a href="Projects.html">💬 Sales Bot</a></li>
+    <li><a href="Projects.html">📅 Booking Bot</a></li>
+    <li><a href="Projects.html">🤝 Customer Support Bot</a></li>
+    <li><a href="Projects.html">❓ FAQ Bot</a></li>
+    <li><a href="Projects.html">⭐ Feedback Bot</a></li>
   </ul>
 </div><!-- Col end -->
 
@@ -842,6 +873,7 @@
       </div><!-- Container end -->
     </div><!-- Footer main end -->
 
+    <a href="#" class="slider btn btn-primary border open-lead-form">Get Started</a>
 
         <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
           <button class="btn btn-primary" title="Back to Top">
@@ -853,53 +885,157 @@
     </div><!-- Copyright end -->
   </footer><!-- Footer end -->
 
-  <div id="otpModal" class="modal">
+ <!-- Lead Form Modal -->
+<div id="leadFormModal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
-    <h2>Sign Up / Login</h2>
-    <p>Enter your phone number to receive an OTP</p>
-    
-    <form id="otpForm">
-      <input type="tel" placeholder="Enter phone number" required>
-      <button type="submit" class="btn">Send OTP</button>
+    <h2>Welcome, Let's Sign You Up</h2>
+    <form id="leadForm">
+      <input type="text" id="name" placeholder="Enter your full name" required>
+      <input type="email" id="email" placeholder="Enter your email" required>
+      <input type="tel" id="phone" placeholder="Enter your phone number" required>
+      
+      <label for="service"><b>Select the product(s) you’re interested in:</b></label>
+      <select id="service" required>
+        <option value="">-- Choose an option --</option>
+        <option value="ai_agent">AI Agent</option>
+        <option value="webdesign">Web Design</option>
+        <option value="both">Both [Web Design + AI Agent]</option>
+      </select>
+
+      <!-- Styled like your other buttons -->
+      <button type="submit" class="slider btn btn-primary border">Submit</button>
     </form>
 
-    <div class="otp-section hidden">
-      <p>Enter OTP sent to your number</p>
-      <input type="text" placeholder="Enter OTP" maxlength="6" required>
-      <button class="btn">Verify</button>
+    <div class="success-message" id="successMessage" style="display:none;">
+      🎉 Thank you! Your order has been received.<br>
+      We’ll contact you shortly to discuss the next steps.
+    </div>
+  </div>
+</div>
+
+
+<!-- Request Callback Modal -->
+<div id="callbackModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Request a Callback</h2>
+    <form id="callbackForm">
+      <input type="text" id="cbName" placeholder="Enter your name" required>
+      <input type="tel" id="cbPhone" placeholder="Enter your phone number" required>
+      
+      <button type="submit" class="btn btn-dark" style="width:100%;">Submit</button>
+    </form>
+    <div class="success-message" id="cbSuccessMessage" style="display:none;">
+      ✅ Thank you! We have received your request.<br>
+      Our team will call you shortly.
     </div>
   </div>
 </div>
 
 
 <script>
-  const modal = document.getElementById("otpModal");
-  const openBtns = document.querySelectorAll(".open-otp");
-  const closeBtn = document.querySelector(".close");
-  const form = document.getElementById("otpForm");
-  const otpSection = document.querySelector(".otp-section");
+/* ---------------- Lead Form Modal ---------------- */
+const leadModal = document.getElementById("leadFormModal");
+const leadCloseBtn = leadModal.querySelector(".close");
+const leadForm = document.getElementById("leadForm");
+const successMessage = document.getElementById("successMessage");
 
-  // Attach click to all Get Started buttons
-  openBtns.forEach(btn => {
-    btn.addEventListener("click", e => {
-      e.preventDefault();
-      modal.style.display = "block";
-    });
-  });
-
-  // Close modal
-  closeBtn.onclick = () => modal.style.display = "none";
-  window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; }
-
-  // Switch to OTP input after sending phone
-  form.onsubmit = (e) => {
+// Attach modal open to all .open-lead-form buttons
+document.querySelectorAll(".open-lead-form").forEach(btn => {
+  btn.addEventListener("click", (e) => {
     e.preventDefault();
-    form.style.display = "none";
-    otpSection.classList.remove("hidden");
-  };
-</script>
+    leadModal.style.display = "block";
+    leadForm.style.display = "block";
+    successMessage.style.display = "none";
+  });
+});
 
+// Close modal
+leadCloseBtn.addEventListener("click", () => {
+  leadModal.style.display = "none";
+});
+window.addEventListener("click", (e) => {
+  if (e.target === leadModal) leadModal.style.display = "none";
+});
+
+// Submit form to backend
+leadForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+  const service = document.getElementById("service").value;
+
+  try {
+    const res = await fetch("http://localhost:5500/api/lead-form", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, phone, service })
+    });
+
+    if (res.ok) {
+      leadForm.style.display = "none";
+      successMessage.style.display = "block";
+      leadForm.reset();
+    } else {
+      alert("❌ Error submitting lead form");
+    }
+  } catch (err) {
+    alert("⚠️ Network error: " + err.message);
+  }
+});
+
+
+/* ---------------- Callback Form Modal ---------------- */
+const cbModal = document.getElementById("callbackModal");
+const cbCloseBtn = cbModal.querySelector(".close");
+const cbForm = document.getElementById("callbackForm");
+const cbSuccessMessage = document.getElementById("cbSuccessMessage");
+
+// Attach modal open to all .open-callback-form buttons
+document.querySelectorAll(".open-callback-form").forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    cbModal.style.display = "block";
+    cbForm.style.display = "block";
+    cbSuccessMessage.style.display = "none";
+  });
+});
+
+// Close modal
+cbCloseBtn.addEventListener("click", () => {
+  cbModal.style.display = "none";
+});
+window.addEventListener("click", (e) => {
+  if (e.target === cbModal) cbModal.style.display = "none";
+});
+
+// Submit form to backend
+cbForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const name = document.getElementById("cbName").value;
+  const phone = document.getElementById("cbPhone").value;
+
+  try {
+    const res = await fetch("http://localhost:5500/api/callback-form", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, phone })
+    });
+
+    if (res.ok) {
+      cbForm.style.display = "none";
+      cbSuccessMessage.style.display = "block";
+      cbForm.reset();
+    } else {
+      alert("❌ Error submitting callback form");
+    }
+  } catch (err) {
+    alert("⚠️ Network error: " + err.message);
+  }
+});
+</script>
 
   <!-- Javascript Files
   ================================================== -->
