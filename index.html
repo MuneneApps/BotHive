@@ -125,6 +125,90 @@
       display: none;
       padding: 15px;
     }
+    .iframe-wrapper {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .iframe-wrapper {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .iframe-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    transform-origin: top left;
+    pointer-events: none;
+    transition: transform 0.4s ease;
+  }
+
+  .portfolio-box:hover iframe {
+    transform: scale(1.05);
+  }
+
+  .portfolio-link {
+    text-decoration: none;
+  }
+
+  .portfolio-box {
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+  }
+
+  .portfolio-box:hover {
+    transform: translateY(-5px);
+    border-color: #007bff;
+  }
+
+  .section-divider {
+    height: 60px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 60px 0;
+  }
+
+  @media (max-width: 768px) {
+    .iframe-wrapper {
+      height: 180px;
+    }
+  }
+
+
+  .review-box {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .review-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  }
+
+  .review-stars span {
+    font-size: 1.1rem;
+  }
+
+  .review-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .review-author {
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .review-box {
+      margin-bottom: 20px;
+    }
+  }
   </style>
 </head>
 <body>
@@ -242,7 +326,7 @@
         <div class="row align-items-center h-100">
           <div class="col-md-12 text-center">
             <h2 class="slide-title" data-animation-in="slideInLeft">3 Years of Excellence in</h2>
-            <h3 class="slide-sub-title" data-animation-in="slideInRight">AI Automation & Web Design</h3>
+            <h3 class="slide-sub-title" data-animation-in="slideInRight"> WEB DESIGN & DEVELOPMENT</h3>
 
             <!-- Get Started Button -->
             <div data-animation-in="slideInLeft" data-duration-in="1.2">
@@ -255,60 +339,65 @@
     </div>
   </div>
 
+  
   <!-- Slide 2 -->
-  <div class="banner-carousel-item" style="background-image:url(images/slider-main/bg1.jpg)">
-    <div class="slider-content text-left">
-      <div class="container h-100">
-        <div class="row align-items-center h-100">
-          <div class="col-md-12">
-            <h2 class="slide-title-box" data-animation-in="slideInDown">Seamless Digital Setup</h2>
-            <h3 class="slide-title" data-animation-in="fadeIn">Maximize ROI with Ease</h3>
-            <h3 class="slide-sub-title" data-animation-in="slideInLeft">We Handle Tech, You Enjoy Growth</h3>
+<div class="banner-carousel-item" style="background-image:url(images/slider-main/bg1.jpg)">
+  <div class="slider-content text-left">
+    <div class="container h-100">
+      <div class="row align-items-center h-100">
+        <div class="col-md-12">
+          <h2 class="slide-title-box" data-animation-in="slideInDown">AI Automation Made Simple</h2>
+          <h3 class="slide-title" data-animation-in="fadeIn">Streamline Operations with Intelligent Automation</h3>
+          <h3 class="slide-sub-title" data-animation-in="slideInLeft">Let AI Handle the Work — You Focus on Results</h3>
 
-            <!-- Get Started Button -->
-            <div data-animation-in="slideInRight">
-              <a href="#" class="slider btn btn-primary border open-lead-form">Get Started</a>
-            </div>
-
+          <!-- Get Started Button -->
+          <div data-animation-in="slideInRight">
+            <a href="#" class="slider btn btn-primary border open-lead-form">Get Started</a>
           </div>
+
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Slide 3 -->
-  <div class="banner-carousel-item" style="background-image:url(images/slider-main/bg1.jpg)">
-    <div class="slider-content text-right">
-      <div class="container h-100">
-        <div class="row align-items-center h-100">
-          <div class="col-md-12">
 
-            <!-- Main Title -->
-            <h2 class="slide-title" data-animation-in="slideInDown" style="color: #ffffff;">
-              <i class="fas fa-comments"></i> Engage • Converse • Convert <i class="fas fa-comments"></i>
-            </h2>
+ <!-- Slide 3 -->
+<div class="banner-carousel-item" style="background-image:url(images/slider-main/bg1.jpg)">
+  <div class="slider-content text-right">
+    <div class="container h-100">
+      <div class="row align-items-center h-100">
+        <div class="col-md-12">
 
-            <!-- Subtitle -->
-            <h3 class="slide-sub-title" data-animation-in="fadeIn">
-              Your Visitors, Our AI Chatbot Agent
-            </h3>
+          <!-- Main Title -->
+          <h2 class="slide-title" data-animation-in="slideInDown" style="color: #ffffff;">
+            <i class="fas fa-globe"></i> Bothive — Web Design • Development • AI Automation <i class="fas fa-globe"></i>
+          </h2>
 
-            <!-- Description -->
-            <p class="slider-description lead" data-animation-in="slideInRight">
-              Live Chat for <strong>Website</strong>, <strong>WhatsApp</strong>, 
-              <strong>Facebook</strong>, <strong>Instagram</strong> & <strong>Telegram</strong>.
-            </p>
+          <!-- Subtitle -->
+          <h3 class="slide-sub-title" data-animation-in="fadeIn">
+            Building Smart Websites that Work, Think & Grow with You
+          </h3>
 
-            <!-- Call-to-Action Buttons -->
-            <div data-animation-in="slideInLeft">
-              <a href="#" class="slider btn btn-primary border open-lead-form">Get Started</a>
-            </div>
+          <!-- Description -->
+          <p class="slider-description lead" data-animation-in="slideInRight">
+            From stunning <strong>web design & development</strong> to seamless 
+            <strong>AI-powered automation</strong>, Bothive transforms how your business engages, 
+            sells, and scales online. Experience performance-driven digital solutions that work 
+            across <strong>websites</strong>, <strong>social platforms</strong>, and <strong>customer chat</strong> systems.
+          </p>
 
+          <!-- Call-to-Action Buttons -->
+          <div data-animation-in="slideInLeft">
+            <a href="#" class="slider btn btn-primary border open-lead-form">Get Started with Bothive</a>
           </div>
+
         </div>
       </div>
     </div>
   </div>
+</div>
+
 
 </div>
 
@@ -340,13 +429,13 @@
 
 
 
-<section id="project-area" class="project-area solid-bg">
+<section id="product-area" class="project-area solid-bg">
   <div class="container">
     <div class="row text-center">
       <div class="col-lg-12">
         <h3 class="section-sub-title">Our Products</h3>
         <h2 class="section-title">
-         — select a chatbot to see its functions.
+          — Explore Bothive’s Digital Solutions
         </h2>
       </div>
     </div>
@@ -355,34 +444,32 @@
       <div class="col-12">
         <!-- Buttons -->
         <div class="shuffle-btn-group mb-4 text-center">
-          <button class="shuffle-btn active" data-target="websites">Websites</button>
-          <button class="shuffle-btn" data-target="salesbot">Sales AI </button>
-          <button class="shuffle-btn" data-target="customercare">CustomerCare AI </button>
-          <button class="shuffle-btn" data-target="donationsbot">Donations AI </button>
-          <button class="shuffle-btn" data-target="ticketingbot">Ticketing AI </button>
-          <button class="shuffle-btn" data-target="eventsbot">Events AI </button>
-          <button class="shuffle-btn" data-target="surveybot">Survey/Research Bot</button>
-          <button class="shuffle-btn" data-target="surveybot">View all </button>
+          <button class="shuffle-btn active" data-target="webdesign">Web Design & Development</button>
+          <button class="shuffle-btn" data-target="webhosting">Web Hosting</button>
+          <button class="shuffle-btn" data-target="aiautomation">AI Automations</button>
+          <button class="shuffle-btn" data-target="bulksms">Bulk SMS</button>
+          <button class="shuffle-btn" data-target="domains">Domain Names</button>
+          <button class="shuffle-btn" data-target="emails">Professional Emails</button>
+          <button class="shuffle-btn" data-target="callertunes">Business CallerTunes</button>
+          
         </div>
 
         <!-- Display Container -->
         <div class="row justify-content-center">
           <div class="col-lg-6 col-md-8">
             <div id="project-display" class="project-text-container text-center p-4 border rounded shadow">
-              <h3 class="project-item-title" id="display-title">Websites</h3>
-              <p class="project-cat" id="display-cat">Your online presence, redefined.</p>
+              <h3 class="project-item-title" id="display-title">Web Design & Development</h3>
+              <p class="project-cat" id="display-cat">Modern, fast, and built for growth.</p>
               <p id="display-desc">
-                Engage visitors with sleek, responsive websites designed to convert. From landing pages to e-commerce stores, we build for growth.
+                We craft responsive, SEO-friendly websites tailored to your brand. From corporate sites to full e-commerce platforms — Bothive builds for performance and conversion.
               </p>
-            <!-- Get Started Button -->
-<div data-animation-in="slideInLeft" data-duration-in="1.2">
-  <a href="#" class="slider btn btn-primary border open-lead-form" style="color:#000; font-weight:600;">
-    Get Started
-  </a>
-</div>
 
-
-
+              <!-- Get Started Button -->
+              <div data-animation-in="slideInLeft" data-duration-in="1.2">
+                <a href="#" class="slider btn btn-primary border open-lead-form" style="color:#000; font-weight:600;" id="display-btn">
+                  Get Started
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -393,48 +480,54 @@
 </section>
 
 <script>
-  const projects = {
-    websites: { 
-      title: "Websites", 
-      cat: "Your online presence, redefined", 
-      desc: "Engage visitors with sleek, responsive websites designed to convert. From landing pages to e-commerce stores, we build for growth.",
+  const products = {
+    webdesign: { 
+      title: "Web Design & Development", 
+      cat: "Modern, fast, and built for growth",
+      desc: "We design and develop high-performing websites that represent your brand and drive results. From landing pages to full-scale eCommerce, Bothive delivers excellence.",
       button: "Get Started"
     },
-    salesbot: { 
-      title: "Sales Bot", 
-      cat: "Boost sales 24/7", 
-      desc: "Automate lead generation, qualify prospects, and close deals even when you're offline. Let AI sell smarter for you.",
-      button: "7 Days Free Trial"
+    webhosting: { 
+      title: "Web Hosting", 
+      cat: "Secure, reliable, and lightning-fast",
+      desc: "Host your website on our premium servers with guaranteed uptime, daily backups, and 24/7 support — ensuring your business is always online.",
+      button: "Get Hosting"
     },
-    customercare: { 
-      title: "CustomerCare Bot", 
-      cat: "Support that never sleeps", 
-      desc: "Deliver instant customer service, reduce response times, and keep clients happy with AI-driven support.",
-      button: "7 Days Free Trial"
+    aiautomation: { 
+      title: "AI Automations", 
+      cat: "Smarter workflows, less manual work",
+      desc: "Automate customer interactions, marketing, and operations using intelligent AI workflows — helping you save time and scale effortlessly.",
+      button: "Automate Now"
     },
-    donationsbot: { 
-      title: "Donations Bot", 
-      cat: "Fundraising made simple", 
-      desc: "Accept and manage donations seamlessly through chat, making it easier for supporters to contribute anytime.",
-      button: "7 Days Free Trial"
+    bulksms: { 
+      title: "Bulk SMS", 
+      cat: "Instant communication at scale",
+      desc: "Reach your audience directly through personalized, high-delivery-rate bulk SMS campaigns — ideal for marketing, alerts, and updates.",
+      button: "Send SMS"
     },
-    ticketingbot: { 
-      title: "Ticketing Bot", 
-      cat: "Smart event management", 
-      desc: "Sell tickets, manage bookings, and answer attendee queries automatically through multiple channels.",
-      button: "7 Days Free Trial"
+    domains: { 
+      title: "Domain Names", 
+      cat: "Your brand’s digital identity",
+      desc: "Secure your business name online with custom domain extensions. Bothive helps you find and manage the perfect domain for your brand.",
+      button: "Find a Domain"
     },
-    eventsbot: { 
-      title: "Events Bot", 
-      cat: "Engage audiences at scale", 
-      desc: "From RSVPs to live event interactions, this bot keeps your attendees connected and engaged.",
-      button: "7 Days Free Trial"
+    emails: { 
+      title: "Professional Emails", 
+      cat: "Build trust with every message",
+      desc: "Get branded business emails (you@yourdomain.com) without needing a website. Strengthen your professional image instantly.",
+      button: "Create Email"
     },
-    surveybot: { 
-      title: "Survey/Research Bot", 
-      cat: "Data-driven insights", 
-      desc: "Collect feedback, run surveys, and analyze results in real-time to make smarter business decisions.",
-      button: "7 Days Free Trial"
+    callertunes: { 
+      title: "Business CallerTunes", 
+      cat: "Turn every call into a brand moment",
+      desc: "Let callers hear your brand story, offers, or greetings before you pick up. Bothive’s Business CallerTunes help businesses sound professional and stay memorable.",
+      button: "Get CallerTunes"
+    },
+    viewall: { 
+      title: "All Products", 
+      cat: "Everything your business needs online",
+      desc: "Explore all Bothive digital solutions — from websites and AI automation to hosting, messaging, and branding tools.",
+      button: "Explore Now"
     }
   };
 
@@ -442,10 +535,10 @@
   buttons.forEach(btn => {
     btn.addEventListener("click", () => {
       const target = btn.getAttribute("data-target");
-      document.getElementById("display-title").textContent = projects[target].title;
-      document.getElementById("display-cat").textContent = projects[target].cat;
-      document.getElementById("display-desc").textContent = projects[target].desc;
-      document.getElementById("display-btn").textContent = projects[target].button;
+      document.getElementById("display-title").textContent = products[target].title;
+      document.getElementById("display-cat").textContent = products[target].cat;
+      document.getElementById("display-desc").textContent = products[target].desc;
+      document.getElementById("display-btn").textContent = products[target].button;
 
       // Update active button
       buttons.forEach(b => b.classList.remove("active"));
@@ -462,10 +555,16 @@
     <div class="row">
         <div class="col-lg-6">
           <div class="ts-intro">
-              <h2 class="into-title">About Us</h2>
-              <h3 class="into-sub-title">AI-Powered Solutions for the Modern Business</h3>
-              <p>We specialize in delivering AI-driven chatbot systems and cutting-edge web solutions that help businesses engage customers faster, smarter, and more effectively.  
-                 By combining intelligent automation, conversational design, and sleek web experiences, we transform the way brands connect with their audience.</p>
+              <h2 class="into-title">About Bothive</h2>
+              <h3 class="into-sub-title">Smart Web & AI Solutions for Growing Businesses</h3>
+              <p>Bothive is a digital powerhouse specializing in <strong>web design & development</strong>, 
+                 <strong>web hosting</strong>, <strong>AI automations</strong>, <strong>bulk messaging</strong>, 
+                 and <strong>digital brand tools</strong> such as <strong>professional emails</strong> and 
+                 <strong>business caller tunes</strong>.  
+                 <br><br>
+                 We help businesses transform their online presence — from stunning websites to intelligent automation — 
+                 empowering brands to engage smarter, work faster, and grow seamlessly in today’s digital economy.
+              </p>
           </div><!-- Intro box end -->
 
           <div class="gap-20"></div>
@@ -474,10 +573,11 @@
               <div class="col-md-6">
                 <div class="ts-service-box">
                     <span class="ts-service-icon">
-                      <i class="fas fa-trophy"></i>
+                      <i class="fas fa-laptop-code"></i>
                     </span>
                     <div class="ts-service-box-content">
-                      <h3 class="service-box-title">AI Excellence You Can Trust</h3>
+                      <h3 class="service-box-title">Modern Web Design & Development</h3>
+                      <p>We build responsive, performance-driven websites that convert visitors into loyal customers.</p>
                     </div>
                 </div><!-- Service 1 end -->
               </div><!-- col end -->
@@ -485,10 +585,11 @@
               <div class="col-md-6">
                 <div class="ts-service-box">
                     <span class="ts-service-icon">
-                      <i class="fas fa-sliders-h"></i>
+                      <i class="fas fa-robot"></i>
                     </span>
                     <div class="ts-service-box-content">
-                      <h3 class="service-box-title">Custom AI Integrations</h3>
+                      <h3 class="service-box-title">AI-Powered Automations</h3>
+                      <p>Automate your workflows, customer engagement, and business operations with smart AI tools built for SMEs.</p>
                     </div>
                 </div><!-- Service 2 end -->
               </div><!-- col end -->
@@ -498,30 +599,32 @@
               <div class="col-md-6">
                 <div class="ts-service-box">
                     <span class="ts-service-icon">
-                      <i class="fas fa-thumbs-up"></i>
+                      <i class="fas fa-server"></i>
                     </span>
                     <div class="ts-service-box-content">
-                      <h3 class="service-box-title">Results-Driven Automation</h3>
+                      <h3 class="service-box-title">Reliable Hosting & Domains</h3>
+                      <p>Fast, secure hosting and domain services to keep your business always online and professional.</p>
                     </div>
-                </div><!-- Service 1 end -->
+                </div><!-- Service 3 end -->
               </div><!-- col end -->
 
               <div class="col-md-6">
                 <div class="ts-service-box">
                     <span class="ts-service-icon">
-                      <i class="fas fa-users"></i>
+                      <i class="fas fa-bullhorn"></i>
                     </span>
                     <div class="ts-service-box-content">
-                      <h3 class="service-box-title">Expert AI Specialists</h3>
+                      <h3 class="service-box-title">Bulk SMS & Business CallerTunes</h3>
+                      <p>Reach, engage, and leave a lasting impression with branded SMS campaigns and custom caller tunes for your business.</p>
                     </div>
-                </div><!-- Service 2 end -->
+                </div><!-- Service 4 end -->
               </div><!-- col end -->
           </div><!-- Content row 2 end -->
         </div><!-- Col end -->
 
         <div class="col-lg-6 mt-4 mt-lg-0">
           <h3 class="into-sub-title">Our Core Values</h3>
-          <p>We believe that the future of customer engagement lies in the perfect blend of AI innovation, human creativity, and ethical responsibility.</p>
+          <p>At Bothive, we believe the future of business lies in the balance of <strong>innovation, connection, and reliability</strong>.</p>
 
           <div class="accordion accordion-group" id="our-values-accordion">
               <div class="card">
@@ -535,10 +638,11 @@
               
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#our-values-accordion">
                     <div class="card-body">
-                      We harness the latest in AI and automation technology to deliver solutions that learn, adapt, and improve over time.
+                      We embrace the latest technology in web development, automation, and communication to deliver forward-thinking digital solutions.
                     </div>
                 </div>
               </div>
+
               <div class="card">
                 <div class="card-header p-0 bg-transparent" id="headingTwo">
                     <h2 class="mb-0">
@@ -549,21 +653,22 @@
                 </div>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#our-values-accordion">
                     <div class="card-body">
-                      Every AI solution we deliver is tailored to enhance customer experience, boost engagement, and drive conversions.
+                      Every solution we craft — from websites to AI systems — is tailored to enhance customer experience and maximize business results.
                     </div>
                 </div>
               </div>
+
               <div class="card">
                 <div class="card-header p-0 bg-transparent" id="headingThree">
                     <h2 class="mb-0">
                       <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                          Integrity
+                          Reliability & Integrity
                       </button>
                     </h2>
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#our-values-accordion">
                     <div class="card-body">
-                      We deploy AI responsibly, ensuring transparency, data security, and trust in every interaction.
+                      We operate with transparency, protect client data, and ensure all Bothive solutions are dependable, ethical, and secure.
                     </div>
                 </div>
               </div>
@@ -573,135 +678,192 @@
         </div><!-- Col end -->
     </div><!-- Row end -->
   </div><!-- Container end -->
-</section><!-- Feature are end -->
+</section><!-- Feature area end -->
 
 
-<section id="facts" class="facts-area dark-bg">
+
+<!-- Portfolio Showcase Section -->
+<section id="portfolio" class="portfolio-area dark-bg py-5">
   <div class="container">
-    <div class="facts-wrapper">
-        <div class="row">
-          
-          <div class="col-md-4 col-sm-6 ts-facts">
-              <div class="ts-facts-img">
-                <img loading="lazy" src="images/icon-image/fact1.png" alt="AI Chatbots Icon">
-              </div>
-              <div class="ts-facts-content">
-                <h2 class="ts-facts-num"><span class="counterUp" data-count="100">0</span>+</h2>
-                <h3 class="ts-facts-title">AI Chatbots Delivered</h3>
-              </div>
-          </div><!-- Col end -->
 
-          <div class="col-md-4 col-sm-6 ts-facts mt-5 mt-sm-0">
-              <div class="ts-facts-img">
-                <img loading="lazy" src="images/icon-image/fact2.png" alt="Happy Clients Icon">
-              </div>
-              <div class="ts-facts-content">
-                <h2 class="ts-facts-num"><span class="counterUp" data-count="250">0</span>+</h2>
-                <h3 class="ts-facts-title">Happy Clients</h3>
-              </div>
-          </div><!-- Col end -->
-
-          <div class="col-md-4 col-sm-6 ts-facts mt-5 mt-md-0">
-              <div class="ts-facts-img">
-                <img loading="lazy" src="images/icon-image/fact3.png" alt="Websites Delivered Icon">
-              </div>
-              <div class="ts-facts-content">
-                <h2 class="ts-facts-num"><span class="counterUp" data-count="120">0</span>+</h2>
-                <h3 class="ts-facts-title">Websites Delivered</h3>
-              </div>
-          </div><!-- Col end -->
-
-        </div> <!-- Facts end -->
+    <!-- Section Title -->
+    <div class="row text-center mb-5">
+      <div class="col-lg-12">
+        <h2 class="section-title text-white">Our Latest Web Projects</h2>
+        <h3 class="section-sub-title text-light">Recent Work by <span class="text-primary">Bothive</span></h3>
+        <p class="text-muted">
+          Explore a selection of websites we’ve recently built — modern, responsive, and designed to deliver results.
+        </p>
+      </div>
     </div>
-    <!--/ Content row end -->
-  </div>
-  <!--/ Container end -->
-</section><!-- Facts end -->
 
+    <!-- Portfolio Grid -->
+    <div class="row g-4 justify-content-center">
+
+      <!-- Project 1 -->
+      <div class="col-lg-4 col-md-6">
+        <a href="https://tflenterprise.com" target="_blank" class="portfolio-link">
+          <div class="portfolio-box shadow rounded overflow-hidden bg-dark">
+            <div class="iframe-wrapper">
+              <iframe src="https://tflenterprise.com" loading="lazy" frameborder="0"></iframe>
+            </div>
+            <div class="portfolio-content text-center p-3">
+              <h4 class="text-white mb-1">TFL Enterprise</h4>
+              <p class="text-muted small">Corporate Website</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Project 2 -->
+     
+
+      <!-- Project 3 -->
+      <div class="col-lg-4 col-md-6">
+        <a href="https://5senses.co.ke/" target="_blank" class="portfolio-link">
+          <div class="portfolio-box shadow rounded overflow-hidden bg-dark">
+            <div class="iframe-wrapper">
+              <iframe src="https://5senses.co.ke/" loading="lazy" frameborder="0"></iframe>
+            </div>
+            <div class="portfolio-content text-center p-3">
+              <h4 class="text-white mb-1">Five Senses Restaurant</h4>
+              <p class="text-muted small">Restaurant Website</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="col-lg-4 col-md-6">
+        <a href="https://mybigorder.com/" target="_blank" class="portfolio-link">
+          <div class="portfolio-box shadow rounded overflow-hidden bg-dark">
+            <div class="iframe-wrapper">
+              <iframe src="https://mybigorder.com/" loading="lazy" frameborder="0"></iframe>
+            </div>
+            <div class="portfolio-content text-center p-3">
+              <h4 class="text-white mb-1">MyBigOrder</h4>
+              <p class="text-muted small">E-commerce Platform</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="col-lg-4 col-md-6">
+        <a href="https://www.waridievents.com/" target="_blank" class="portfolio-link">
+          <div class="portfolio-box shadow rounded overflow-hidden bg-dark">
+            <div class="iframe-wrapper">
+              <iframe src="https://www.waridievents.com/" loading="lazy" frameborder="0"></iframe>
+            </div>
+            <div class="portfolio-content text-center p-3">
+              <h4 class="text-white mb-1">Waridi Events</h4>
+              <p class="text-muted small">Events & Booking Website</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+     
+
+    </div><!-- /row -->
+
+    <!-- View All Button -->
+    <div class="row mt-5">
+      <div class="col text-center">
+        <a href="websites.html" class="btn btn-primary btn-lg px-5">
+          View All Projects
+        </a>
+      </div>
+    </div>
+
+  </div><!-- /container -->
+</section>
+
+<!-- Divider Between Sections -->
+<div class="section-divider my-5"></div>
+
+<!-- Services Section -->
 <section id="ts-service-area" class="ts-service-area pb-0">
   <div class="container">
     <div class="row text-center">
-        <div class="col-12">
-          <h2 class="section-title">We Are Specialists In</h2>
-          <h3 class="section-sub-title">AI & Web Solutions That Drive Results</h3>
-        </div>
+      <div class="col-12">
+        <h2 class="section-title">We Are Specialists In</h2>
+        <h3 class="section-sub-title">Digital & AI Solutions That Empower Businesses</h3>
+      </div>
     </div>
-    <!--/ Title row end -->
 
     <div class="row">
-        <div class="col-lg-4">
-          <div class="ts-service-box d-flex">
-              <div class="ts-service-box-img">
-                <img loading="lazy" src="images/icon-image/service-icon1.png" alt="AI Chatbot Development">
-              </div>
-              <div class="ts-service-box-info">
-                <h3 class="service-box-title"><a href="#">AI Chatbot Development</a></h3>
-                <p>Custom AI-powered chatbots for WhatsApp, Telegram, Instagram, and web to boost engagement and sales.</p>
-              </div>
-          </div><!-- Service 1 end -->
+      <div class="col-lg-4">
+        <div class="ts-service-box d-flex">
+          <div class="ts-service-box-img">
+            <img loading="lazy" src="images/icon-image/service-icon1.png" alt="Web Design and Development">
+          </div>
+          <div class="ts-service-box-info">
+            <h3 class="service-box-title"><a href="#">Web Design & Development</a></h3>
+            <p>We craft high-performing, responsive, and SEO-optimized websites that elevate your brand and convert visitors into clients.</p>
+          </div>
+        </div>
 
-          <div class="ts-service-box d-flex">
-              <div class="ts-service-box-img">
-                <img loading="lazy" src="images/icon-image/service-icon2.png" alt="Web Design">
-              </div>
-              <div class="ts-service-box-info">
-                <h3 class="service-box-title"><a href="#">Modern Web Design</a></h3>
-                <p>Responsive, SEO-friendly websites designed to impress and convert visitors into loyal customers.</p>
-              </div>
-          </div><!-- Service 2 end -->
+        <div class="ts-service-box d-flex">
+          <div class="ts-service-box-img">
+            <img loading="lazy" src="images/icon-image/service-icon2.png" alt="Web Hosting">
+          </div>
+          <div class="ts-service-box-info">
+            <h3 class="service-box-title"><a href="#">Web Hosting</a></h3>
+            <p>Enjoy fast, secure, and reliable hosting solutions with guaranteed uptime, daily backups, and expert technical support.</p>
+          </div>
+        </div>
 
-          <div class="ts-service-box d-flex">
-              <div class="ts-service-box-img">
-                <img loading="lazy" src="images/icon-image/service-icon3.png"  alt="Automation Solutions">
-              </div>
-              <div class="ts-service-box-info">
-                <h3 class="service-box-title"><a href="#">Automation Solutions</a></h3>
-                <p>Streamline workflows with intelligent automation that saves time, reduces costs, and improves efficiency.</p>
-              </div>
-          </div><!-- Service 3 end -->
+        <div class="ts-service-box d-flex">
+          <div class="ts-service-box-img">
+            <img loading="lazy" src="images/icon-image/service-icon3.png" alt="AI Automation">
+          </div>
+          <div class="ts-service-box-info">
+            <h3 class="service-box-title"><a href="#">AI Automations</a></h3>
+            <p>Automate your workflows, customer interactions, and marketing systems using smart AI technology designed for efficiency and growth.</p>
+          </div>
+        </div>
+      </div>
 
-        </div><!-- Col end -->
+      <div class="col-lg-4 text-center">
+        <img loading="lazy" class="img-fluid" src="images/services/service-center.jpg" alt="Bothive Digital Solutions">
+      </div>
 
-        <div class="col-lg-4 text-center">
-          <img loading="lazy" class="img-fluid" src="images/services/service-center.jpg" alt="AI and Web Services">
-        </div><!-- Col end -->
+      <div class="col-lg-4 mt-5 mt-lg-0 mb-4 mb-lg-0">
+        <div class="ts-service-box d-flex">
+          <div class="ts-service-box-img">
+            <img loading="lazy" src="images/icon-image/service-icon4.png" alt="Bulk SMS Marketing">
+          </div>
+          <div class="ts-service-box-info">
+            <h3 class="service-box-title"><a href="#">Bulk SMS Marketing</a></h3>
+            <p>Send targeted messages, promotions, and alerts to your customers instantly with our high-delivery-rate bulk SMS platform.</p>
+          </div>
+        </div>
 
-        <div class="col-lg-4 mt-5 mt-lg-0 mb-4 mb-lg-0">
-          <div class="ts-service-box d-flex">
-              <div class="ts-service-box-img">
-                <img loading="lazy" src="images/icon-image/service-icon4.png" alt="E-commerce Development">
-              </div>
-              <div class="ts-service-box-info">
-                <h3 class="service-box-title"><a href="#">E-commerce Development</a></h3>
-                <p>High-performance online stores with integrated payment systems and AI-driven customer support.</p>
-              </div>
-          </div><!-- Service 4 end -->
+        <div class="ts-service-box d-flex">
+          <div class="ts-service-box-img">
+            <img loading="lazy" src="images/icon-image/service-icon5.png" alt="Domains and Professional Emails">
+          </div>
+          <div class="ts-service-box-info">
+            <h3 class="service-box-title"><a href="#">Domains & Professional Emails</a></h3>
+            <p>Secure your domain and get branded business emails (you@yourdomain.com) — even without a website — to enhance credibility and trust.</p>
+          </div>
+        </div>
 
-          <div class="ts-service-box d-flex">
-              <div class="ts-service-box-img">
-                <img loading="lazy" src="images/icon-image/service-icon5.png" alt="Social Media Bots">
-              </div>
-              <div class="ts-service-box-info">
-                <h3 class="service-box-title"><a href="#">Social Media Bots</a></h3>
-                <p>Automated lead generation and customer engagement through smart bots on popular social platforms.</p>
-              </div>
-          </div><!-- Service 5 end -->
-
-          <div class="ts-service-box d-flex">
-              <div class="ts-service-box-img">
-                <img loading="lazy" src="images/icon-image/service-icon6.png" alt="AI Integration">
-              </div>
-              <div class="ts-service-box-info">
-                <h3 class="service-box-title"><a href="#">AI Integration</a></h3>
-                <p>Enhance your existing systems with AI capabilities for smarter decision-making and better customer experiences.</p>
-              </div>
-          </div><!-- Service 6 end -->
-        </div><!-- Col end -->
+        <div class="ts-service-box d-flex">
+          <div class="ts-service-box-img">
+            <img loading="lazy" src="images/icon-image/service-icon6.png" alt="Business CallerTunes">
+          </div>
+          <div class="ts-service-box-info">
+            <h3 class="service-box-title"><a href="#">Business CallerTunes</a></h3>
+            <p>Make every call a brand experience. Greet your callers with custom audio messages that promote your business even before you answer.</p>
+          </div>
+        </div>
+      </div>
     </div><!-- Content row end -->
-
   </div>
-  <!--/ Container end -->
 </section><!-- Service end -->
+
 
 
 
@@ -824,6 +986,90 @@
 
 <!--/ subscribe end -->
 
+<!-- Reviews Section -->
+<section id="reviews" class="reviews-area dark-bg py-5">
+  <div class="container">
+
+    <!-- Section Title -->
+    <div class="row text-center mb-5">
+      <div class="col-lg-12">
+        <h2 class="section-title text-white">What Our Clients Say</h2>
+        <h3 class="section-sub-title text-light">Reviews from Happy Customers</h3>
+        <p class="text-muted">
+          Hear directly from our clients about their experience working with <span class="text-primary">Bothive</span>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Reviews Grid -->
+    <div class="row g-4 justify-content-center">
+
+      <!-- Review 1 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="review-box shadow rounded p-4 bg-dark text-light">
+          <div class="review-stars mb-2">
+            <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+          </div>
+          <p class="review-text">"Bothive built an amazing website for our business. The design is sleek, fast, and the AI features are outstanding."</p>
+          <h5 class="review-author mt-3 mb-0">– John Doe</h5>
+          <small class="text-muted">Google Review</small>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="review-box shadow rounded p-4 bg-dark text-light">
+          <div class="review-stars mb-2">
+            <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </div>
+          <p class="review-text">"Excellent service and fast delivery. Our website not only looks great but converts leads effectively."</p>
+          <h5 class="review-author mt-3 mb-0">– Sarah W.</h5>
+          <small class="text-muted">Google Review</small>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="review-box shadow rounded p-4 bg-dark text-light">
+          <div class="review-stars mb-2">
+            <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+          </div>
+          <p class="review-text">"Professional team! The AI automation they implemented has saved us hours of work every week."</p>
+          <h5 class="review-author mt-3 mb-0">– Michael K.</h5>
+          <small class="text-muted">Google Review</small>
+        </div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="review-box shadow rounded p-4 bg-dark text-light">
+          <div class="review-stars mb-2">
+            <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+          </div>
+          <p class="review-text">"Highly recommend Bothive for web design and digital automation. The customer support is top-notch."</p>
+          <h5 class="review-author mt-3 mb-0">– Linda M.</h5>
+          <small class="text-muted">Google Review</small>
+        </div>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="review-box shadow rounded p-4 bg-dark text-light">
+          <div class="review-stars mb-2">
+            <span class="text-warning">&#9733;&#9733;&#9733;&#9733;&#9734;</span>
+          </div>
+          <p class="review-text">"Amazing experience! The team understood our needs perfectly and delivered beyond expectations."</p>
+          <h5 class="review-author mt-3 mb-0">– David R.</h5>
+          <small class="text-muted">Google Review</small>
+        </div>
+      </div>
+
+    </div><!-- /row -->
+
+  </div><!-- /container -->
+</section>
+<br
+
 
 
   <footer id="footer" class="footer bg-overlay">
@@ -849,32 +1095,40 @@
           </div><!-- Col end -->
 
           <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
-  <h3 class="widget-title">Working Hours</h3>
-  <div class="working-hours">
-    We are available <strong>24/7</strong> to assist you.  
-    <br><br> Our team is always ready to support you anytime, any day – including weekends and holidays.  
-    <br> For urgent inquiries, reach us via our Hotline or Contact Form.
-  </div>
-</div><!-- Col end -->
+            <h3 class="widget-title">Reach Us Anytime</h3>
+            <div class="working-hours">
+              We’re available <strong>24/7</strong> to assist you.  
+              <br><br>
+              Whether it's weekdays, weekends, or holidays, our support team is always ready to help.
+              <br><br>
+              For urgent assistance, contact us through our hotline or use the button below.
+              <br><br>
+          
+              
+              <a class="btn btn-primary" href="#" style="padding:10px 20px; border-radius:6px; font-weight:600; ">Contact US</a>
+            </div>
+          </div><!-- Col end -->
+          
 
 
           <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
-  <h3 class="widget-title">Our Chatbots</h3>
+  <h3 class="widget-title">Our Products</h3>
   <ul class="list-arrow">
-    <li><a href="Projects.html">💬 Sales Bot</a></li>
-    <li><a href="Projects.html">📅 Booking Bot</a></li>
-    <li><a href="Projects.html">🤝 Customer Support Bot</a></li>
-    <li><a href="Projects.html">❓ FAQ Bot</a></li>
-    <li><a href="Projects.html">⭐ Feedback Bot</a></li>
+    <li><a href="Projects.html">🌐 Web Design & Development</a></li>
+    <li><a href="Projects.html">🖥️ Web Hosting Solutions</a></li>
+    <li><a href="Projects.html">🤖 AI Automations</a></li>
+    <li><a href="Projects.html">💬 Bulk SMS Marketing</a></li>
+    <li><a href="Projects.html">📧 Domains & Professional Emails</a></li>
+    <li><a href="Projects.html">🎵 Business CallerTunes</a></li>
   </ul>
+  
 </div><!-- Col end -->
 
         </div><!-- Row end -->
       </div><!-- Container end -->
     </div><!-- Footer main end -->
 
-    <a href="#" class="slider btn btn-primary border open-lead-form">Get Started</a>
-
+    
         <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
           <button class="btn btn-primary" title="Back to Top">
             <i class="fa fa-angle-double-up"></i>
