@@ -1222,7 +1222,7 @@ leadForm.addEventListener("submit", async (e) => {
   const service = document.getElementById("service").value;
 
   try {
-    const res = await fetch("http://localhost:5500/api/lead-form", {
+    const res = await fetch("https://leadform.munene337.workers.dev/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, email, phone, service })
@@ -1272,7 +1272,7 @@ cbForm.addEventListener("submit", async (e) => {
   const phone = document.getElementById("cbPhone").value;
 
   try {
-    const res = await fetch("http://localhost:5500/api/callback-form", {
+    const res = await fetch("https://leadform.munene337.workers.dev/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name, phone })
