@@ -1129,17 +1129,7 @@
     </div><!-- Footer main end -->
 
     
-        <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
-          <button class="btn btn-primary" title="Back to Top">
-            <i class="fa fa-angle-double-up"></i>
-          </button>
-        </div>
-
-      </div><!-- Container end -->
-    </div><!-- Copyright end -->
-  </footer><!-- Footer end -->
-
- <!-- Lead Form Modal -->
+        <!-- Lead Form Modal -->
 <div id="leadFormModal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
@@ -1148,148 +1138,117 @@
       <input type="text" id="name" placeholder="Enter your full name" required>
       <input type="email" id="email" placeholder="Enter your email" required>
       <input type="tel" id="phone" placeholder="Enter your phone number" required>
-      
-      <label for="service"><b>Select the product(s) you’re interested in:</b></label>
-      <select id="service" required>
-        <option value="">-- Choose an option --</option>
-        <option value="ai_agent">AI Agent</option>
-        <option value="webdesign">Web Design</option>
-        <option value="both">Both [Web Design + AI Agent]</option>
-      </select>
-
-      <!-- Styled like your other buttons -->
       <button type="submit" class="slider btn btn-primary border">Submit</button>
     </form>
 
     <div class="success-message" id="successMessage" style="display:none;">
-      🎉 Thank you! Your order has been received.<br>
-      We’ll contact you shortly to discuss the next steps.
+      🎉 You are welcome! We will contact you shortly to schedule an appointment and discuss further.
     </div>
   </div>
 </div>
 
-
-<!-- Request Callback Modal -->
+<!-- Callback Form Modal -->
 <div id="callbackModal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
     <h2>Request a Callback</h2>
     <form id="callbackForm">
-      <input type="text" id="cbName" placeholder="Enter your name" required>
+      <input type="text" id="cbName" placeholder="Enter your full name" required>
+      <input type="email" id="cbEmail" placeholder="Enter your email" required>
       <input type="tel" id="cbPhone" placeholder="Enter your phone number" required>
-      
-      <button type="submit" class="btn btn-dark" style="width:100%;">Submit</button>
+      <button type="submit" class="slider btn btn-primary border">Submit</button>
     </form>
     <div class="success-message" id="cbSuccessMessage" style="display:none;">
-      ✅ Thank you! We have received your request.<br>
-      Our team will call you shortly.
+      🎉 You are welcome! We will contact you shortly to schedule an appointment and discuss further.
     </div>
   </div>
 </div>
 
+<script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
+<script type="text/javascript">
+  (function() {
+    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
+  })();
+</script>
 
 <script>
-/* ---------------- Lead Form Modal ---------------- */
-const leadModal = document.getElementById("leadFormModal");
-const leadCloseBtn = leadModal.querySelector(".close");
-const leadForm = document.getElementById("leadForm");
-const successMessage = document.getElementById("successMessage");
-
-// Attach modal open to all .open-lead-form buttons
-document.querySelectorAll(".open-lead-form").forEach(btn => {
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    leadModal.style.display = "block";
-    leadForm.style.display = "block";
-    successMessage.style.display = "none";
-  });
-});
-
-// Close modal
-leadCloseBtn.addEventListener("click", () => {
-  leadModal.style.display = "none";
-});
-window.addEventListener("click", (e) => {
-  if (e.target === leadModal) leadModal.style.display = "none";
-});
-
-// Submit form to backend
-leadForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const phone = document.getElementById("phone").value;
-  const service = document.getElementById("service").value;
-
-  try {
-    const res = await fetch("https://leadform.munene337.workers.dev/", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, email, phone, service })
+  // ---------------- Lead Form ----------------
+  const leadModal = document.getElementById("leadFormModal");
+  const leadCloseBtn = leadModal.querySelector(".close");
+  const leadForm = document.getElementById("leadForm");
+  const successMessage = document.getElementById("successMessage");
+  
+  document.querySelectorAll(".open-lead-form").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+      leadModal.style.display = "block";
+      leadForm.style.display = "block";
+      successMessage.style.display = "none";
     });
-
-    if (res.ok) {
+  });
+  
+  leadCloseBtn.addEventListener("click", () => leadModal.style.display = "none");
+  window.addEventListener("click", e => { if (e.target === leadModal) leadModal.style.display = "none"; });
+  
+  // Submit Lead Form
+  leadForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    
+    const templateParams = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      phone: document.getElementById("phone").value
+    };
+  
+    try {
+      await emailjs.send("service_anpo1oa", "YOUR_LEAD_TEMPLATE_ID", templateParams);
       leadForm.style.display = "none";
       successMessage.style.display = "block";
       leadForm.reset();
-    } else {
-      alert("❌ Error submitting lead form");
+    } catch (err) {
+      alert("❌ Error submitting form: " + err.text || err.message);
     }
-  } catch (err) {
-    alert("⚠️ Network error: " + err.message);
-  }
-});
-
-
-/* ---------------- Callback Form Modal ---------------- */
-const cbModal = document.getElementById("callbackModal");
-const cbCloseBtn = cbModal.querySelector(".close");
-const cbForm = document.getElementById("callbackForm");
-const cbSuccessMessage = document.getElementById("cbSuccessMessage");
-
-// Attach modal open to all .open-callback-form buttons
-document.querySelectorAll(".open-callback-form").forEach(btn => {
-  btn.addEventListener("click", (e) => {
-    e.preventDefault();
-    cbModal.style.display = "block";
-    cbForm.style.display = "block";
-    cbSuccessMessage.style.display = "none";
   });
-});
-
-// Close modal
-cbCloseBtn.addEventListener("click", () => {
-  cbModal.style.display = "none";
-});
-window.addEventListener("click", (e) => {
-  if (e.target === cbModal) cbModal.style.display = "none";
-});
-
-// Submit form to backend
-cbForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const name = document.getElementById("cbName").value;
-  const phone = document.getElementById("cbPhone").value;
-
-  try {
-    const res = await fetch("https://leadform.munene337.workers.dev/", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ name, phone })
+  
+  // ---------------- Callback Form ----------------
+  const cbModal = document.getElementById("callbackModal");
+  const cbCloseBtn = cbModal.querySelector(".close");
+  const cbForm = document.getElementById("callbackForm");
+  const cbSuccessMessage = document.getElementById("cbSuccessMessage");
+  
+  document.querySelectorAll(".open-callback-form").forEach(btn => {
+    btn.addEventListener("click", e => {
+      e.preventDefault();
+      cbModal.style.display = "block";
+      cbForm.style.display = "block";
+      cbSuccessMessage.style.display = "none";
     });
-
-    if (res.ok) {
+  });
+  
+  cbCloseBtn.addEventListener("click", () => cbModal.style.display = "none");
+  window.addEventListener("click", e => { if (e.target === cbModal) cbModal.style.display = "none"; });
+  
+  // Submit Callback Form
+  cbForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    
+    const templateParams = {
+      name: document.getElementById("cbName").value,
+      email: document.getElementById("cbEmail").value,
+      phone: document.getElementById("cbPhone").value
+    };
+  
+    try {
+      await emailjs.send("service_anpo1oa", "template_nmwutwf", templateParams);
       cbForm.style.display = "none";
       cbSuccessMessage.style.display = "block";
       cbForm.reset();
-    } else {
-      alert("❌ Error submitting callback form");
+    } catch (err) {
+      alert("❌ Error submitting form: " + err.text || err.message);
     }
-  } catch (err) {
-    alert("⚠️ Network error: " + err.message);
-  }
-});
-</script>
+  });
+  </script>
+  
 
   <!-- Javascript Files
   ================================================== -->
