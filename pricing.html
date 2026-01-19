@@ -29,6 +29,111 @@
   <!-- Template styles-->
   <link rel="stylesheet" href="css/style.css">
 
+
+
+ 
+
+
+
+
+  <!-- CSS for Vertical Layout -->
+<style>
+  /* Packages List */
+  .service-list {
+    display: flex;
+    flex-direction: column;
+    background: #0f172a;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .service-btn {
+    background: #111827;
+    color: #cbd5e1;
+    padding: 15px 20px;
+    border: none;
+    text-align: left;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .service-btn:not(:last-child) {
+    border-bottom: 1px solid rgba(203, 213, 225, 0.1);
+  }
+
+  .service-btn:hover {
+    background: #1e293b;
+    color: #60a5fa;
+  }
+
+  .service-btn.active {
+    background: #2563eb;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  /* Service Details */
+  .service-details {
+    background: #111827;
+    color: #e5e7eb;
+    min-height: 350px;
+    transition: all 0.3s ease;
+  }
+
+  .service-details h3 {
+    color: #60a5fa;
+  }
+
+  .service-details p {
+    color: #cbd5e1;
+    margin-bottom: 20px;
+  }
+
+  /* Detail Cards */
+  .detail-card {
+    background: #1f2937;
+    border: 1px solid rgba(96, 165, 250, 0.2);
+  }
+
+  /* Small responsive adjustment */
+  @media (max-width: 991px) {
+    .service-list {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .service-btn {
+      flex: 1 1 50%;
+      text-align: center;
+      font-size: 14px;
+    }
+    .service-details {
+      margin-top: 20px;
+    }
+  }
+
+
+  /* Scrollable details without resizing */
+  #detail-containers {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 6px;
+  }
+
+  #detail-containers::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  #detail-containers::-webkit-scrollbar-thumb {
+    background: #2563eb;
+    border-radius: 4px;
+  }
+</style>
+
+
+
 </head>
 <body>
   <div class="body-inner">
@@ -104,96 +209,291 @@
       </div>
     </header>
 
-    
-  <section id="main-container" class="main-container">
-    <div class="container">
-      <div class="row text-center">
-        <div class="col-12">
-          <h2 class="section-title">Grab the Packages</h2>
-          <h3 class="section-sub-title">Pricing</h3>
+  <br>
+
+
+  <!-- Services Section -->
+<section id="services-area" class="portfolio-area dark-bg py-5">
+  <div class="container">
+    <div class="row text-center mb-5">
+      <div class="col-lg-12">
+        <h3 class="section-sub-title">BOTHIVE SERVICES</h3>
+        <h2 class="section-title">— Select a service to see details</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Left: Vertical Packages -->
+      <div class="col-lg-4 col-md-5 mb-4">
+        <div class="service-list border rounded shadow">
+          <button class="service-btn active" data-target="webdesign">Web Design & Dev</button>
+          <button class="service-btn" data-target="aiautomation">AI Automation</button>
+          <button class="service-btn" data-target="webhosting">Web Hosting</button>
+          <button class="service-btn" data-target="betting">Betting Website & App</button>
+          <button class="service-btn" data-target="tradingautomation">Trading Automation</button>
+          <button class="service-btn" data-target="thirdpartytrading">3rd-Party Trading Website</button>
         </div>
       </div>
-      <!--/ Title row end -->
-  
-      <div class="row">
-  
-        <!-- Bothive Website Package -->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="ts-pricing-box ts-pricing-featured">
-            <div class="ts-pricing-header">
-              <h2 class="ts-pricing-name">Bothive Website Package</h2>
-              <h2 class="ts-pricing-price">
-                <span class="currency">KSh</span><strong>14,000</strong><small>Total</small>
-              </h2>
-            </div><!-- Pricing header -->
-            <div class="ts-pricing-features">
-              <ul class="list-unstyled">
-                <li>Custom Website Design – 10,500 KSh</li>
-                <li>Hosting (per annum) – 3,000 KSh</li>
-                <li>Domain (per annum) – 500 KSh</li>
-                <li>Fully Responsive & Mobile-Friendly</li>
-                <li>Optimized for Performance & SEO</li>
-              </ul>
-            </div><!-- Features end -->
-            <div class="plan-action">
-              <a href="contact.html" class="btn btn-primary">Order Now</a>
+
+      <!-- Right: Details -->
+      <div class="col-lg-8 col-md-7">
+        <div class="service-details border rounded shadow p-4">
+          <!-- Default Detail -->
+          <h3 id="detail-title">Web Design & Dev</h3>
+          <p id="detail-subtitle">Custom Websites & Web Apps</p>
+
+          <div id="detail-containers" class="row mt-3">
+            <div class="col-md-12 mb-3">
+              <div class="detail-card p-3 rounded shadow-sm bg-dark text-light">
+                Detail container 1 — update content later
+              </div>
             </div>
-          </div><!-- Plan end -->
-        </div><!-- Col end -->
-  
-        <!-- Bothive Bots Package -->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="ts-pricing-box">
-            <div class="ts-pricing-header">
-              <h2 class="ts-pricing-name">Bothive Bots Package</h2>
-              <h2 class="ts-pricing-price">
-                <span class="currency">KSh</span><strong>1,500</strong><small>/Month</small>
-              </h2>
-            </div><!-- Pricing header -->
-            <div class="ts-pricing-features">
-              <ul class="list-unstyled">
-                <li>7-Day Free Trial</li>
-                <li>Free Meta-Compliant Webpage – 0 KSh</li>
-                <li>Monthly Recurring Charges – 1,500 KSh</li>
-                <li>Automated AI Chatbots for Your Website</li>
-                <li>Ongoing Support & Updates</li>
-              </ul>
-            </div><!-- Features end -->
-            <div class="plan-action">
-              <a href="contact.html" class="btn btn-dark">Order Now</a>
+            <div class="col-md-12 mb-3">
+              <div class="detail-card p-3 rounded shadow-sm bg-dark text-light">
+                Detail container 2 — update content later
+              </div>
             </div>
-          </div><!-- Plan end -->
-        </div><!-- Col end -->
-  
-        <!-- Enterprise AI Agents Package -->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="ts-pricing-box ts-pricing-featured">
-            <div class="ts-pricing-header">
-              <h2 class="ts-pricing-name">Enterprise AI Agents</h2>
-              <h2 class="ts-pricing-price">
-                <span class="currency">KSh</span><strong>2,500</strong><small>/Month</small>
-              </h2>
-            </div><!-- Pricing header -->
-            <div class="ts-pricing-features">
-              <ul class="list-unstyled">
-                <li>Setup & Installation – 10,000 KSh</li>
-                <li>Monthly Recurring Charges – 2,500 KSh</li>
-                <li>AI Chatbots for Hotels, Restaurants & Large Businesses</li>
-                <li>Customizable Conversational Flows</li>
-                <li>24/7 Customer Engagement & Support</li>
-              </ul>
-            </div><!-- Features end -->
-            <div class="plan-action">
-              <a href="contact.html" class="btn btn-primary">Order Now</a>
+            <div class="col-md-12 mb-3">
+              <div class="detail-card p-3 rounded shadow-sm bg-dark text-light">
+                Detail container 3 — update content later
+              </div>
             </div>
-          </div><!-- Plan end -->
-        </div><!-- Col end -->
-  
+          </div>
+
+        </div>
       </div>
-      <!--/ Content row end -->
-  
-    </div><!-- Container end -->
-  </section><!-- Main container end -->
+    </div>
+  </div>
+</section>
+
+
+<br>
+
+
+
+
+<script>
+  /* ================================
+     ELEMENT REFERENCES
+  ================================= */
+  const serviceButtons = document.querySelectorAll('.service-btn');
+  const detailTitle = document.getElementById('detail-title');
+  const detailSubtitle = document.getElementById('detail-subtitle');
+  const detailContainers = document.getElementById('detail-containers');
+
+  /* ================================
+     SERVICE DATA CONFIGURATION
+  ================================= */
+  const serviceData = {
+
+    webdesign: {
+      title: "Web Design & Development",
+      subtitle: "Flexible website packages for every business stage",
+      containers: [
+        `
+        <strong>WEBSITE PACKAGE 1 – KES 25,000</strong><br>
+        <small>For Personal Brands & Small Businesses</small><br><br>
+        • Up to 10 responsive pages<br>
+        • WordPress or custom build<br>
+        • M-Pesa payment integration<br>
+        • Online booking system<br>
+        • Free SSL & full security<br>
+        • 1 year free hosting<br>
+        • 10GB storage & unlimited bandwidth<br>
+        • Unlimited business emails<br>
+        • Free maintenance (3 months)<br>
+        • Basic SEO & Google indexing
+        `,
+        `
+        <strong>WEBSITE PACKAGE 2 – KES 50,000</strong><br>
+        <small>For Established SMEs & Online Stores</small><br><br>
+        • Full e-commerce setup<br>
+        • M-Pesa, Cards, Bank & PayPal payments<br>
+        • Conversion-optimized checkout<br>
+        • 1 year premium hosting<br>
+        • 20GB secure storage<br>
+        • Enterprise security & backups<br>
+        • Advanced SEO & analytics<br>
+        • Free maintenance (6 months)
+        `,
+        `
+        <strong>WEBSITE PACKAGE 3 – ENTERPRISE</strong><br>
+        <small>For Institutions & Large Organizations</small><br><br>
+        • Custom enterprise web systems<br>
+        • High-traffic & multi-user architecture<br>
+        • API & system integrations<br>
+        • Advanced security & compliance<br><br>
+        <a href="contact.html" class="btn btn-primary btn-sm">Get a Quote</a>
+        `
+      ]
+    },
+
+    webhosting: {
+      title: "Web Hosting",
+      subtitle: "Professional-grade hosting at an affordable annual cost",
+      containers: [
+        `
+        <strong>HOSTING PACKAGE – KES 3,500 / YEAR</strong><br>
+        <small>Ideal for individuals & businesses running multiple websites</small><br><br>
+        • 10GB SSD storage<br>
+        • cPanel Control Panel<br>
+        • Unlimited monthly bandwidth<br>
+        • Free instant setup<br>
+        • 99.99% uptime guarantee<br>
+        • Daily backups included<br>
+        • Unlimited FREE SSL certificates<br>
+        • Cloudflare CDN integration<br>
+        • 24/7/365 technical support
+        `
+      ]
+    },
+
+    betting: {
+      title: "Betting Website & Android App",
+      subtitle: "Secure, compliant, and real-time gambling platforms",
+      containers: [
+        `
+        <strong>BETTING PLATFORM – KES 150,000</strong><br>
+        <small>Website + Android App (Enterprise Grade)</small><br><br>
+
+        <strong>What We Deliver</strong><br>
+        Each platform is engineered to meet the highest standards of
+        <strong>security, performance, and compliance</strong>, ensuring a smooth
+        and reliable experience for both players and operators.<br><br>
+
+        • Integration with top-tier games APIs for live content<br>
+        • Real-time odds display with dynamic updates<br>
+        • Secure payment gateways with fraud protection<br>
+        • Mobile-first, responsive & user-centric design<br>
+        • Full regulatory compliance & legal alignment<br>
+        • Custom operator dashboards & reporting tools<br>
+        • Dedicated Android betting application
+        `
+      ]
+    },
+
+    aiautomation: {
+      title: "AI Automation",
+      subtitle: "Production-ready AI systems you fully own",
+      containers: [
+        "Ready-to-use AI automations (chatbots, workflows, agents)",
+        "Custom-built AI systems using code & AI models",
+        "API-driven automations for SaaS, apps & internal tools"
+      ],
+      action: {
+        label: "See Automations",
+        link: "automations.html"
+      }
+    },
+
+    thirdpartytrading: {
+  title: "3rd-Party Trading Website",
+  subtitle: "Fully branded trading platforms powered by top market APIs",
+  containers: [
+    `
+    <strong>What We Deliver</strong><br><br>
+
+    • Integration with Deriv, Binance & other top trading APIs<br>
+    • Fully branded & white-label trading platforms<br>
+    • Real-time market data & live pricing feeds<br>
+    • Secure payment gateways with multi-currency support<br>
+    • Scalable architecture for high traffic & multiple users<br><br>
+
+    Each platform is optimized for speed, security, and user engagement —
+    ready for launch under your own brand.
+    <br><br>
+
+    <strong>Price: KES 50,000</strong>
+    `
+  ]
+},
+
+
+    tradingautomation: {
+  title: "Trading Automation",
+  subtitle: "AI-powered trading systems with transparent pricing",
+  containers: [
+    `
+    <strong>Top Ready-Made Trading Strategies</strong><br>
+    <small>Fully coded, AI-optimized & ready to deploy on Forex, Crypto & Deriv</small><br><br>
+
+    • Moving Average Crossover<br>
+    • RSI Reversal Strategy<br>
+    • Bollinger Band Breakout<br>
+    • MACD Trend Following<br>
+    • Fibonacci Retracement Entries<br>
+    • Grid Trading Automation<br>
+    • Scalping High-Frequency Bot<br>
+    • Mean Reversion Strategy<br>
+    • Breakout Pullback Strategy<br>
+    • Trend Momentum (AI Optimized)<br><br>
+
+    Each strategy is independently priced and can be deployed as-is
+    or customized to your trading requirements.
+    `
+  ],
+  action: {
+    label: "View Automations & Pricing",
+    link: "automations.html"
+  }
+}
+
+
+  };
+
+  /* ================================
+     INTERACTION LOGIC
+  ================================= */
+  serviceButtons.forEach(button => {
+    button.addEventListener('click', () => {
+
+      // Toggle active state
+      serviceButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      const target = button.dataset.target;
+      const data = serviceData[target];
+      if (!data) return;
+
+      // Update title & subtitle
+      detailTitle.textContent = data.title;
+      detailSubtitle.textContent = data.subtitle;
+
+      // Clear previous content
+      detailContainers.innerHTML = '';
+
+      // Render content cards
+      data.containers.forEach(item => {
+        const col = document.createElement('div');
+        col.className = 'col-md-12 mb-3';
+        col.innerHTML = `
+          <div class="detail-card p-3 rounded shadow-sm bg-dark text-light">
+            ${item}
+          </div>
+        `;
+        detailContainers.appendChild(col);
+      });
+
+      // Optional action button
+      if (data.action) {
+        const actionCol = document.createElement('div');
+        actionCol.className = 'col-md-12 mt-3';
+        actionCol.innerHTML = `
+          <a href="${data.action.link}" class="btn btn-outline-primary">
+            ${data.action.label}
+          </a>
+        `;
+        detailContainers.appendChild(actionCol);
+      }
+
+    });
+  });
+</script>
+
+
+
+
+
     <!-- Footer -->
     <footer id="footer" class="footer bg-overlay">
       <div class="footer-main">

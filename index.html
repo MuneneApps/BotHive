@@ -35,14 +35,62 @@
   <link rel="stylesheet" href="css/style.css">
 
 
-  <!-- Google Analytics -->
+  
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1QJL3HP408"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+
   gtag('config', 'G-1QJL3HP408');
 </script>
+
+
+<!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'YOUR_PIXEL_ID'); 
+  fbq('track', 'PageView'); 
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+</noscript>
+
+
+<!-- Twitter universal website tag -->
+<script>
+  !function(e,t,n,s,u,a){
+    e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+    },s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,
+    u.src='https://static.ads-twitter.com/uwt.js',
+    a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+  twq('init','YOUR_PIXEL_ID');
+  twq('track','PageView');
+</script>
+
+
+<!-- TikTok Pixel Code -->
+<script>
+  !function (w, d, t) {
+    w.TiktokAnalyticsObject = t; var ttq = w[t] = w[t] || [];
+    ttq.methods = ["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie"];
+    ttq.setAndDefer = function (t, e) { t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments,0))) } };
+    for (var i=0;i<ttq.methods.length;i++) ttq.setAndDefer(ttq, ttq.methods[i]);
+    ttq.instance = function (t) { var e = ttq; return e };
+    ttq.load = function (e) { var n = d.createElement("script"); n.async = !0; n.src = "https://analytics.tiktok.com/i18n/pixel/events.js?id="+e; var s=d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(n,s);};
+    ttq.load('YOUR_PIXEL_ID'); ttq.page();
+  }(window, document, 'ttq');
+</script>
+
 
 
 
@@ -220,6 +268,26 @@
       margin-bottom: 20px;
     }
   }
+
+
+  /* Remove top space above hero heading */
+.hero-single .slider-content {
+  padding-top: 0 !important;
+}
+
+.hero-single .slide-title {
+  margin-top: 0 !important;
+}
+
+
+.responsive-img {
+  width: 100%;        /* Makes the image take full width of its container */
+  height: auto;       /* Keeps the aspect ratio */
+  display: block;     /* Removes small bottom gaps in some browsers */
+  object-fit: cover;  /* Optional: makes image cover container if using fixed height */
+}
+
+
   </style>
 </head>
 <body>
@@ -295,8 +363,14 @@
                 <li class="nav-item dropdown">
                   <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Our Products <i class="fa fa-angle-down"></i></a>
                   <ul class="dropdown-menu">
-                    <a class="dropdown-item" href="projects.html">AI Agents</a>
+                    
                     <a class="dropdown-item text-success" href="websites.html">Websites</a>
+                    <a class="dropdown-item text-success" href="Ai_aut.html">Ai Automations</a>
+                    <a class="dropdown-item text-success" href="web_hosting.html">Web Hosting</a>
+                    <a class="dropdown-item text-success" href="betting_sites.html">Betting Website & App</a>
+                    <a class="dropdown-item text-success" href="trade_automation.html">Trading Automations</a>
+                    <a class="dropdown-item text-success" href="trading_site.html">Third Party Trading Website</a>
+                    
                   </ul>
                 </li>
 
@@ -311,10 +385,11 @@
                     
                     <li><a href="testimonials.html">Testimonials</a></li>
                     
+                    
                   </ul>
                 </li>
-
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Our work</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
               </ul>
             </div>
 
@@ -327,90 +402,46 @@
 <!--/ Header end -->
 
 
+<!-- Hero Section (Single Slide, No Carousel) -->
+<section class="banner-carousel-item hero-single"
+  style="background-image:url(images/bothive.png);">
 
-<div class="banner-carousel banner-carousel-1 mb-0">
-
-  <!-- Slide 1 -->
-  <div class="banner-carousel-item" style="background-image:url(images/slider-main/bg1.jpg)">
-    <div class="slider-content">
-      <div class="container h-100">
-        <div class="row align-items-center h-100">
-          <div class="col-md-12 text-center">
-            <h2 class="slide-title" data-animation-in="slideInLeft">3 Years of Excellence in</h2>
-            <h3 class="slide-sub-title" data-animation-in="slideInRight"> WEB DESIGN & DEVELOPMENT</h3>
-
-            <!-- Get Started Button -->
-            <div data-animation-in="slideInLeft" data-duration-in="1.2">
-              <a href="#" class="slider btn btn-primary border open-lead-form">Get Started</a>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  
-  <!-- Slide 2 -->
-<div class="banner-carousel-item" style="background-image:url(images/slider-main/bg1.jpg)">
-  <div class="slider-content text-left">
+  <div class="slider-content">
     <div class="container h-100">
       <div class="row align-items-center h-100">
-        <div class="col-md-12">
-          <h2 class="slide-title-box" data-animation-in="slideInDown">AI Automation Made Simple</h2>
-          <h3 class="slide-title" data-animation-in="fadeIn">Streamline Operations with Intelligent Automation</h3>
-          <h3 class="slide-sub-title" data-animation-in="slideInLeft">Let AI Handle the Work — You Focus on Results</h3>
+        <div class="col-md-12 text-center">
 
-          <!-- Get Started Button -->
-          <div data-animation-in="slideInRight">
-            <a href="#" class="slider btn btn-primary border open-lead-form">Get Started</a>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
- <!-- Slide 3 -->
-<div class="banner-carousel-item" style="background-image:url(images/slider-main/bg1.jpg)">
-  <div class="slider-content text-right">
-    <div class="container h-100">
-      <div class="row align-items-center h-100">
-        <div class="col-md-12">
-
-          <!-- Main Title -->
-          <h2 class="slide-title" data-animation-in="slideInDown" style="color: #ffffff;">
-            <i class="fas fa-globe"></i> Bothive — Web Design • Development • AI Automation <i class="fas fa-globe"></i>
+          <!-- Main Heading -->
+          <h2 class="slide-title" data-animation-in="slideInDown">
+            Smart Digital Solutions for Modern Businesses
           </h2>
 
-          <!-- Subtitle -->
-          <h3 class="slide-sub-title" data-animation-in="fadeIn">
-            Building Smart Websites that Work, Think & Grow with You
-          </h3>
+          <!-- Services Buttons Grid -->
+          <div class="services-buttons" data-animation-in="slideInUp">
 
-          <!-- Description -->
-          <p class="slider-description lead" data-animation-in="slideInRight">
-            From stunning <strong>web design & development</strong> to seamless 
-            <strong>AI-powered automation</strong>, Bothive transforms how your business engages, 
-            sells, and scales online. Experience performance-driven digital solutions that work 
-            across <strong>websites</strong>, <strong>social platforms</strong>, and <strong>customer chat</strong> systems.
-          </p>
+            <a href="websites.html" class="slider btn btn-primary border open-lead-form">Web Design & Development</a>
+            <a href="web_hosting.html" class="slider btn btn-primary border open-lead-form">Web Hosting</a>
+            <a href="Ai_aut.html" class="slider btn btn-primary border open-lead-form">AI Automations</a>
+            <a href="betting_sites.html" class="slider btn btn-primary border open-lead-form">Betting Website & App</a>
+            <a href="trade_automation.html" class="slider btn btn-primary border open-lead-form">Trading Automations</a>
+            <a href="trading_site.html" class="slider btn btn-primary border open-lead-form">Third Party Trading Website</a>
+            
 
-          <!-- Call-to-Action Buttons -->
-          <div data-animation-in="slideInLeft">
-            <a href="#" class="slider btn btn-primary border open-lead-form">Get Started with Bothive</a>
           </div>
+
+          <!-- Primary CTA -->
+         
 
         </div>
       </div>
     </div>
   </div>
-</div>
+
+</section>
 
 
-</div>
+
+
 
 
 
@@ -439,257 +470,130 @@
 </section>
 
 
-
-<section id="product-area" class="project-area solid-bg">
+<section id="ts-features" class="portfolio-area dark-bg py-5">
   <div class="container">
-    <div class="row text-center">
-      <div class="col-lg-12">
-        <h3 class="section-sub-title">Our Products</h3>
-        <h2 class="section-title">
-          — Explore Bothive’s Digital Solutions
-        </h2>
-      </div>
-    </div>
-
     <div class="row">
-      <div class="col-12">
-        <!-- Buttons -->
-        <div class="shuffle-btn-group mb-4 text-center">
-          <button class="shuffle-btn active" data-target="webdesign">Web Design & Development</button>
-          <button class="shuffle-btn" data-target="webhosting">Web Hosting</button>
-          <button class="shuffle-btn" data-target="aiautomation">AI Automations</button>
-          <button class="shuffle-btn" data-target="bulksms">Bulk SMS</button>
-          <button class="shuffle-btn" data-target="domains">Domain Names</button>
-          <button class="shuffle-btn" data-target="emails">Professional Emails</button>
-          <button class="shuffle-btn" data-target="callertunes">Business CallerTunes</button>
-          
+
+      <!-- LEFT SIDE — ABOUT & BENEFITS -->
+      <div class="col-lg-6">
+        <div class="ts-intro">
+          <h2 class="into-title">Why Businesses Choose Bothive</h2>
+          <h3 class="into-sub-title">Fast delivery, transparent pricing, and long-term support</h3>
+          <p>
+            We help businesses build a strong digital foundation — blending modern web development, automation,
+            communication tools, and reliable hosting. Our approach focuses on <strong>speed, results, and customer success</strong>,
+            giving you digital solutions that don’t just look good — they work, convert, and scale.
+          </p>
         </div>
 
-        <!-- Display Container -->
-        <div class="row justify-content-center">
-          <div class="col-lg-6 col-md-8">
-            <div id="project-display" class="project-text-container text-center p-4 border rounded shadow">
-              <h3 class="project-item-title" id="display-title">Web Design & Development</h3>
-              <p class="project-cat" id="display-cat">Modern, fast, and built for growth.</p>
-              <p id="display-desc">
-                We craft responsive, SEO-friendly websites tailored to your brand. From corporate sites to full e-commerce platforms — Bothive builds for performance and conversion.
-              </p>
+        <div class="gap-20"></div>
 
-              <!-- Get Started Button -->
-              <div data-animation-in="slideInLeft" data-duration-in="1.2">
-                <a href="#" class="slider btn btn-primary border open-lead-form" style="color:#000; font-weight:600;" id="display-btn">
-                  Get Started
-                </a>
+        <div class="row">
+          <!-- Benefit 1 -->
+          <div class="col-md-6">
+            <div class="ts-service-box">
+              <span class="ts-service-icon"><i class="fas fa-tachometer-alt"></i></span>
+              <div class="ts-service-box-content">
+                <h3 class="service-box-title">Faster Delivery Timelines</h3>
+                <p>Launch your projects quickly without compromising on quality — ideal for SMEs ready to grow now.</p>
               </div>
             </div>
           </div>
-        </div>
 
-      </div>
-    </div>
-  </div>
+          <!-- Benefit 2 -->
+          <div class="col-md-6">
+            <div class="ts-service-box">
+              <span class="ts-service-icon"><i class="fas fa-life-ring"></i></span>
+              <div class="ts-service-box-content">
+                <h3 class="service-box-title">Lifetime Support</h3>
+                <p>We remain available even after launch — offering updates, fixes, and guidance whenever you need us.</p>
+              </div>
+            </div>
+          </div>
+        </div><!-- /row -->
+
+        <div class="row">
+          <!-- Benefit 3 -->
+          <div class="col-md-6">
+            <div class="ts-service-box">
+              <span class="ts-service-icon"><i class="fas fa-shield-alt"></i></span>
+              <div class="ts-service-box-content">
+                <h3 class="service-box-title">SEO + Security Included</h3>
+                <p>Your site is built to rank and protected from threats — giving you peace of mind from day one.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefit 4 -->
+          <div class="col-md-6">
+            <div class="ts-service-box">
+              <span class="ts-service-icon"><i class="fas fa-chart-line"></i></span>
+              <div class="ts-service-box-content">
+                <h3 class="service-box-title">Sales-Focused Websites</h3>
+                <p>Every design choice is driven by business goals — helping convert visitors into customers.</p>
+              </div>
+            </div>
+          </div>
+        </div><!-- /row -->
+
+        <div class="row">
+          <!-- Benefit 5 -->
+          <div class="col-md-6">
+            <div class="ts-service-box">
+              <span class="ts-service-icon"><i class="fas fa-robot"></i></span>
+              <div class="ts-service-box-content">
+                <h3 class="service-box-title">Data-Driven Automations</h3>
+                <p>Automate communication, follow-ups, and processes — saving time and increasing results.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefit 6 -->
+          <div class="col-md-6">
+            <div class="ts-service-box">
+              <span class="ts-service-icon"><i class="fas fa-balance-scale"></i></span>
+              <div class="ts-service-box-content">
+                <h3 class="service-box-title">Transparent Pricing</h3>
+                <p>No hidden costs or surprise fees — you see clear pricing before any work begins.</p>
+              </div>
+            </div>
+          </div>
+        </div><!-- /row -->
+      </div><!-- /col -->
+
+
+      <!-- RIGHT SIDE — VALUES / BRAND PROMISE -->
+      <div class="col-lg-6 mt-4 mt-lg-0">
+        <h3 class="into-sub-title">Our Commitment to You</h3>
+        <p>
+          We deliver digital services with reliability and accountability — helping businesses run confidently
+          with tools, support, and expertise they can trust.
+        </p>
+
+        <div class="accordion accordion-group" id="our-values-accordion">
+          
+          
+        
+          
+
+
+          <img src="images/bothive.png" alt="Web Design and Development" class="responsive-img">
+          <br>
+          <img src="images/bothive.png" alt="Web Design and Development" class="responsive-img">
+
+
+        </div><!-- /accordion -->
+      </div><!-- /col -->
+
+    </div><!-- /row -->
+  </div><!-- /container -->
 </section>
 
-<script>
-  const products = {
-    webdesign: { 
-      title: "Web Design & Development", 
-      cat: "Modern, fast, and built for growth",
-      desc: "We design and develop high-performing websites that represent your brand and drive results. From landing pages to full-scale eCommerce, Bothive delivers excellence.",
-      button: "Get Started"
-    },
-    webhosting: { 
-      title: "Web Hosting", 
-      cat: "Secure, reliable, and lightning-fast",
-      desc: "Host your website on our premium servers with guaranteed uptime, daily backups, and 24/7 support — ensuring your business is always online.",
-      button: "Get Hosting"
-    },
-    aiautomation: { 
-      title: "AI Automations", 
-      cat: "Smarter workflows, less manual work",
-      desc: "Automate customer interactions, marketing, and operations using intelligent AI workflows — helping you save time and scale effortlessly.",
-      button: "Automate Now"
-    },
-    bulksms: { 
-      title: "Bulk SMS", 
-      cat: "Instant communication at scale",
-      desc: "Reach your audience directly through personalized, high-delivery-rate bulk SMS campaigns — ideal for marketing, alerts, and updates.",
-      button: "Send SMS"
-    },
-    domains: { 
-      title: "Domain Names", 
-      cat: "Your brand’s digital identity",
-      desc: "Secure your business name online with custom domain extensions. Bothive helps you find and manage the perfect domain for your brand.",
-      button: "Find a Domain"
-    },
-    emails: { 
-      title: "Professional Emails", 
-      cat: "Build trust with every message",
-      desc: "Get branded business emails (you@yourdomain.com) without needing a website. Strengthen your professional image instantly.",
-      button: "Create Email"
-    },
-    callertunes: { 
-      title: "Business CallerTunes", 
-      cat: "Turn every call into a brand moment",
-      desc: "Let callers hear your brand story, offers, or greetings before you pick up. Bothive’s Business CallerTunes help businesses sound professional and stay memorable.",
-      button: "Get CallerTunes"
-    },
-    viewall: { 
-      title: "All Products", 
-      cat: "Everything your business needs online",
-      desc: "Explore all Bothive digital solutions — from websites and AI automation to hosting, messaging, and branding tools.",
-      button: "Explore Now"
-    }
-  };
-
-  const buttons = document.querySelectorAll(".shuffle-btn");
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const target = btn.getAttribute("data-target");
-      document.getElementById("display-title").textContent = products[target].title;
-      document.getElementById("display-cat").textContent = products[target].cat;
-      document.getElementById("display-desc").textContent = products[target].desc;
-      document.getElementById("display-btn").textContent = products[target].button;
-
-      // Update active button
-      buttons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-    });
-  });
-</script>
 
 
+<br>
+<br>
 
-
-<section id="ts-features" class="ts-features">
-  <div class="container">
-    <div class="row">
-        <div class="col-lg-6">
-          <div class="ts-intro">
-              <h2 class="into-title">About Bothive</h2>
-              <h3 class="into-sub-title">Smart Web & AI Solutions for Growing Businesses</h3>
-              <p>Bothive is a digital powerhouse specializing in <strong>web design & development</strong>, 
-                 <strong>web hosting</strong>, <strong>AI automations</strong>, <strong>bulk messaging</strong>, 
-                 and <strong>digital brand tools</strong> such as <strong>professional emails</strong> and 
-                 <strong>business caller tunes</strong>.  
-                 <br><br>
-                 We help businesses transform their online presence — from stunning websites to intelligent automation — 
-                 empowering brands to engage smarter, work faster, and grow seamlessly in today’s digital economy.
-              </p>
-          </div><!-- Intro box end -->
-
-          <div class="gap-20"></div>
-
-          <div class="row">
-              <div class="col-md-6">
-                <div class="ts-service-box">
-                    <span class="ts-service-icon">
-                      <i class="fas fa-laptop-code"></i>
-                    </span>
-                    <div class="ts-service-box-content">
-                      <h3 class="service-box-title">Modern Web Design & Development</h3>
-                      <p>We build responsive, performance-driven websites that convert visitors into loyal customers.</p>
-                    </div>
-                </div><!-- Service 1 end -->
-              </div><!-- col end -->
-
-              <div class="col-md-6">
-                <div class="ts-service-box">
-                    <span class="ts-service-icon">
-                      <i class="fas fa-robot"></i>
-                    </span>
-                    <div class="ts-service-box-content">
-                      <h3 class="service-box-title">AI-Powered Automations</h3>
-                      <p>Automate your workflows, customer engagement, and business operations with smart AI tools built for SMEs.</p>
-                    </div>
-                </div><!-- Service 2 end -->
-              </div><!-- col end -->
-          </div><!-- Content row 1 end -->
-
-          <div class="row">
-              <div class="col-md-6">
-                <div class="ts-service-box">
-                    <span class="ts-service-icon">
-                      <i class="fas fa-server"></i>
-                    </span>
-                    <div class="ts-service-box-content">
-                      <h3 class="service-box-title">Reliable Hosting & Domains</h3>
-                      <p>Fast, secure hosting and domain services to keep your business always online and professional.</p>
-                    </div>
-                </div><!-- Service 3 end -->
-              </div><!-- col end -->
-
-              <div class="col-md-6">
-                <div class="ts-service-box">
-                    <span class="ts-service-icon">
-                      <i class="fas fa-bullhorn"></i>
-                    </span>
-                    <div class="ts-service-box-content">
-                      <h3 class="service-box-title">Bulk SMS & Business CallerTunes</h3>
-                      <p>Reach, engage, and leave a lasting impression with branded SMS campaigns and custom caller tunes for your business.</p>
-                    </div>
-                </div><!-- Service 4 end -->
-              </div><!-- col end -->
-          </div><!-- Content row 2 end -->
-        </div><!-- Col end -->
-
-        <div class="col-lg-6 mt-4 mt-lg-0">
-          <h3 class="into-sub-title">Our Core Values</h3>
-          <p>At Bothive, we believe the future of business lies in the balance of <strong>innovation, connection, and reliability</strong>.</p>
-
-          <div class="accordion accordion-group" id="our-values-accordion">
-              <div class="card">
-                <div class="card-header p-0 bg-transparent" id="headingOne">
-                    <h2 class="mb-0">
-                      <button class="btn btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                          Innovation
-                      </button>
-                    </h2>
-                </div>
-              
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#our-values-accordion">
-                    <div class="card-body">
-                      We embrace the latest technology in web development, automation, and communication to deliver forward-thinking digital solutions.
-                    </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="card-header p-0 bg-transparent" id="headingTwo">
-                    <h2 class="mb-0">
-                      <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                          Customer-Centric Design
-                      </button>
-                    </h2>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#our-values-accordion">
-                    <div class="card-body">
-                      Every solution we craft — from websites to AI systems — is tailored to enhance customer experience and maximize business results.
-                    </div>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="card-header p-0 bg-transparent" id="headingThree">
-                    <h2 class="mb-0">
-                      <button class="btn btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                          Reliability & Integrity
-                      </button>
-                    </h2>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#our-values-accordion">
-                    <div class="card-body">
-                      We operate with transparency, protect client data, and ensure all Bothive solutions are dependable, ethical, and secure.
-                    </div>
-                </div>
-              </div>
-          </div>
-          <!--/ Accordion end -->
-
-        </div><!-- Col end -->
-    </div><!-- Row end -->
-  </div><!-- Container end -->
-</section><!-- Feature area end -->
 
 
 
@@ -790,212 +694,8 @@
   </div><!-- /container -->
 </section>
 
-<!-- Divider Between Sections -->
-<div class="section-divider my-5"></div>
+<br>
 
-<!-- Services Section -->
-<section id="ts-service-area" class="ts-service-area pb-0">
-  <div class="container">
-    <div class="row text-center">
-      <div class="col-12">
-        <h2 class="section-title">We Are Specialists In</h2>
-        <h3 class="section-sub-title">Digital & AI Solutions That Empower Businesses</h3>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-lg-4">
-        <div class="ts-service-box d-flex">
-          <div class="ts-service-box-img">
-            <img loading="lazy" src="images/icon-image/service-icon1.png" alt="Web Design and Development">
-          </div>
-          <div class="ts-service-box-info">
-            <h3 class="service-box-title"><a href="#">Web Design & Development</a></h3>
-            <p>We craft high-performing, responsive, and SEO-optimized websites that elevate your brand and convert visitors into clients.</p>
-          </div>
-        </div>
-
-        <div class="ts-service-box d-flex">
-          <div class="ts-service-box-img">
-            <img loading="lazy" src="images/icon-image/service-icon2.png" alt="Web Hosting">
-          </div>
-          <div class="ts-service-box-info">
-            <h3 class="service-box-title"><a href="#">Web Hosting</a></h3>
-            <p>Enjoy fast, secure, and reliable hosting solutions with guaranteed uptime, daily backups, and expert technical support.</p>
-          </div>
-        </div>
-
-        <div class="ts-service-box d-flex">
-          <div class="ts-service-box-img">
-            <img loading="lazy" src="images/icon-image/service-icon3.png" alt="AI Automation">
-          </div>
-          <div class="ts-service-box-info">
-            <h3 class="service-box-title"><a href="#">AI Automations</a></h3>
-            <p>Automate your workflows, customer interactions, and marketing systems using smart AI technology designed for efficiency and growth.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 text-center">
-        <img loading="lazy" class="img-fluid" src="images/services/service-center.jpg" alt="Bothive Digital Solutions">
-      </div>
-
-      <div class="col-lg-4 mt-5 mt-lg-0 mb-4 mb-lg-0">
-        <div class="ts-service-box d-flex">
-          <div class="ts-service-box-img">
-            <img loading="lazy" src="images/icon-image/service-icon4.png" alt="Bulk SMS Marketing">
-          </div>
-          <div class="ts-service-box-info">
-            <h3 class="service-box-title"><a href="#">Bulk SMS Marketing</a></h3>
-            <p>Send targeted messages, promotions, and alerts to your customers instantly with our high-delivery-rate bulk SMS platform.</p>
-          </div>
-        </div>
-
-        <div class="ts-service-box d-flex">
-          <div class="ts-service-box-img">
-            <img loading="lazy" src="images/icon-image/service-icon5.png" alt="Domains and Professional Emails">
-          </div>
-          <div class="ts-service-box-info">
-            <h3 class="service-box-title"><a href="#">Domains & Professional Emails</a></h3>
-            <p>Secure your domain and get branded business emails (you@yourdomain.com) — even without a website — to enhance credibility and trust.</p>
-          </div>
-        </div>
-
-        <div class="ts-service-box d-flex">
-          <div class="ts-service-box-img">
-            <img loading="lazy" src="images/icon-image/service-icon6.png" alt="Business CallerTunes">
-          </div>
-          <div class="ts-service-box-info">
-            <h3 class="service-box-title"><a href="#">Business CallerTunes</a></h3>
-            <p>Make every call a brand experience. Greet your callers with custom audio messages that promote your business even before you answer.</p>
-          </div>
-        </div>
-      </div>
-    </div><!-- Content row end -->
-  </div>
-</section><!-- Service end -->
-
-
-
-
-
-
-
-
-
-<<section class="content">
-  <div class="container d-flex justify-content-center">
-    <div class="row justify-content-center w-100">
-        <div class="col-lg-8 text-center">
-          <h3 class="column-title">Our Partners</h3>
-
-          <div id="testimonial-slide" class="testimonial-slide">
-
-              <div class="item">
-                <div class="quote-item text-center">
-                    <div class="quote-item-footer mb-3">
-                      <img loading="lazy" class="testimonial-thumb" src="images/clients/testimonial1.png" alt="Twilio">
-                      <div class="quote-item-info">
-                          <h3 class="quote-author">Twilio</h3>
-                      </div>
-                    </div>
-                    <span class="quote-text">
-                      Twilio powers seamless messaging, allowing our chatbots to reach customers via SMS, WhatsApp, and other channels to boost engagement and sales.
-                    </span>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="quote-item text-center">
-                    <div class="quote-item-footer mb-3">
-                      <img loading="lazy" class="testimonial-thumb" src="images/clients/whatsapp.jpeg" alt="WhatsApp Business API">
-                      <div class="quote-item-info">
-                          <h3 class="quote-author">WhatsApp Business API</h3>
-                      </div>
-                    </div>
-                    <span class="quote-text">
-                      WhatsApp Business API enables direct client communication through chatbots, streamlining customer support, lead generation, and transactions.
-                    </span>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="quote-item text-center">
-                    <div class="quote-item-footer mb-3">
-                      <img loading="lazy" class="testimonial-thumb" src="images/clients/MetaGraph.jpeg" alt="MetaGraph API">
-                      <div class="quote-item-info">
-                          <h3 class="quote-author">MetaGraph API</h3>
-                      </div>
-                    </div>
-                    <span class="quote-text">
-                      MetaGraph API allows integration with Facebook Messenger, connecting our chatbots with a large social audience for marketing and sales automation.
-                    </span>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="quote-item text-center">
-                    <div class="quote-item-footer mb-3">
-                      <img loading="lazy" class="testimonial-thumb" src="images/clients/telegram.jpeg" alt="Telegram API">
-                      <div class="quote-item-info">
-                          <h3 class="quote-author">Telegram API</h3>
-                      </div>
-                    </div>
-                    <span class="quote-text">
-                      Telegram API lets our chatbots engage users with fast, secure messaging and automated services, enhancing customer support and interaction.
-                    </span>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="quote-item text-center">
-                    <div class="quote-item-footer mb-3">
-                      <img loading="lazy" class="testimonial-thumb" src="images/clients/Mpesa.png" alt="M-Pesa Daraja API">
-                      <div class="quote-item-info">
-                          <h3 class="quote-author">M-Pesa Daraja API</h3>
-                      </div>
-                    </div>
-                    <span class="quote-text">
-                      M-Pesa Daraja API integrates payment processing directly into chatbots, enabling seamless transactions, invoicing, and financial automation for businesses.
-                    </span>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="quote-item text-center">
-                    <div class="quote-item-footer mb-3">
-                      <img loading="lazy" class="testimonial-thumb" src="images/clients/stripe.png" alt="Stripe API">
-                      <div class="quote-item-info">
-                          <h3 class="quote-author">Stripe API</h3>
-                      </div>
-                    </div>
-                    <span class="quote-text">
-                      Stripe API provides secure, integrated payment solutions for our chatbots, allowing businesses to accept card payments and subscriptions globally.
-                    </span>
-                </div>
-              </div>
-
-              <div class="item">
-                <div class="quote-item text-center">
-                    <div class="quote-item-footer mb-3">
-                      <img loading="lazy" class="testimonial-thumb" src="images/clients/Paypal.png" alt="PayPal API">
-                      <div class="quote-item-info">
-                          <h3 class="quote-author">PayPal API</h3>
-                      </div>
-                    </div>
-                    <span class="quote-text">
-                      PayPal API enables fast, secure online payments through our chatbots, making it easier for customers to purchase services and products instantly.
-                    </span>
-                </div>
-              </div>
-
-          </div><!--/ Testimonial carousel end-->
-        </div><!-- Col end -->
-    </div><!-- Row end -->
-  </div><!--/ Container end -->
-</section><!-- Content end -->
-
-<!--/ subscribe end -->
 
 <!-- Reviews Section -->
 <section id="reviews" class="reviews-area dark-bg py-5">
@@ -1079,7 +779,13 @@
 
   </div><!-- /container -->
 </section>
-<br
+
+
+
+
+
+
+
 
 
 
@@ -1139,127 +845,12 @@
       </div><!-- Container end -->
     </div><!-- Footer main end -->
 
-    
-        <!-- Lead Form Modal -->
-<div id="leadFormModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Welcome, Let's Sign You Up</h2>
-    <form id="leadForm">
-      <input type="text" id="name" placeholder="Enter your full name" required>
-      <input type="email" id="email" placeholder="Enter your email" required>
-      <input type="tel" id="phone" placeholder="Enter your phone number" required>
-      <button type="submit" class="slider btn btn-primary border">Submit</button>
-    </form>
+ 
 
-    <div class="success-message" id="successMessage" style="display:none;">
-      🎉 You are welcome! We will contact you shortly to schedule an appointment and discuss further.
-    </div>
-  </div>
-</div>
+</footer>
 
-<!-- Callback Form Modal -->
-<div id="callbackModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Request a Callback</h2>
-    <form id="callbackForm">
-      <input type="text" id="cbName" placeholder="Enter your full name" required>
-      <input type="email" id="cbEmail" placeholder="Enter your email" required>
-      <input type="tel" id="cbPhone" placeholder="Enter your phone number" required>
-      <button type="submit" class="slider btn btn-primary border">Submit</button>
-    </form>
-    <div class="success-message" id="cbSuccessMessage" style="display:none;">
-      🎉 You are welcome! We will contact you shortly to schedule an appointment and discuss further.
-    </div>
-  </div>
-</div>
 
-<script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2/email.min.js"></script>
-<script type="text/javascript">
-  (function() {
-    emailjs.init("UXVu9Hu9o_Mu8M0Rk"); // Replace with your EmailJS public key
-  })();
-</script>
 
-<script>
-  // ---------------- Lead Form ----------------
-  const leadModal = document.getElementById("leadFormModal");
-  const leadCloseBtn = leadModal.querySelector(".close");
-  const leadForm = document.getElementById("leadForm");
-  const successMessage = document.getElementById("successMessage");
-  
-  document.querySelectorAll(".open-lead-form").forEach(btn => {
-    btn.addEventListener("click", e => {
-      e.preventDefault();
-      leadModal.style.display = "block";
-      leadForm.style.display = "block";
-      successMessage.style.display = "none";
-    });
-  });
-  
-  leadCloseBtn.addEventListener("click", () => leadModal.style.display = "none");
-  window.addEventListener("click", e => { if (e.target === leadModal) leadModal.style.display = "none"; });
-  
-  // Submit Lead Form
-  leadForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    
-    const templateParams = {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      phone: document.getElementById("phone").value
-    };
-  
-    try {
-      await emailjs.send("service_anpo1oa", "template_nmwutwf", templateParams);
-      leadForm.style.display = "none";
-      successMessage.style.display = "block";
-      leadForm.reset();
-    } catch (err) {
-      alert("❌ Error submitting form: " + err.text || err.message);
-    }
-  });
-  
-  // ---------------- Callback Form ----------------
-  const cbModal = document.getElementById("callbackModal");
-  const cbCloseBtn = cbModal.querySelector(".close");
-  const cbForm = document.getElementById("callbackForm");
-  const cbSuccessMessage = document.getElementById("cbSuccessMessage");
-  
-  document.querySelectorAll(".open-callback-form").forEach(btn => {
-    btn.addEventListener("click", e => {
-      e.preventDefault();
-      cbModal.style.display = "block";
-      cbForm.style.display = "block";
-      cbSuccessMessage.style.display = "none";
-    });
-  });
-  
-  cbCloseBtn.addEventListener("click", () => cbModal.style.display = "none");
-  window.addEventListener("click", e => { if (e.target === cbModal) cbModal.style.display = "none"; });
-  
-  // Submit Callback Form
-  cbForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    
-    const templateParams = {
-      name: document.getElementById("cbName").value,
-      email: document.getElementById("cbEmail").value,
-      phone: document.getElementById("cbPhone").value
-    };
-  
-    try {
-      await emailjs.send("service_anpo1oa", "template_nmwutwf", templateParams);
-      cbForm.style.display = "none";
-      cbSuccessMessage.style.display = "block";
-      cbForm.reset();
-    } catch (err) {
-      alert("❌ Error submitting form: " + err.text || err.message);
-    }
-  });
-  </script>
-  
 
   <!-- Javascript Files
   ================================================== -->

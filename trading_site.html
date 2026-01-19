@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs -->
+  <meta charset="utf-8">
+  <title>BotHive - AI & Web Solutions</title>
+
+  <!-- Mobile Specific Metas -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="AI Agents, Chatbots & Web Design">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/32/000000/bot.png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="plugins/animate-css/animate.css">
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+  <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
+  <link rel="stylesheet" href="css/style.css">
+
+<style>
+
+/* ===============================
+   THIRD-PARTY TRADING WEBSITES
+   (Matches Bothive Global Service Colors)
+================================ */
+
+/* Section background */
+#trading-websites-service {
+  background: linear-gradient(180deg, #0b1220 0%, #0f172a 100%);
+  color: #e5e7eb;
+  padding: 80px 0;
+}
+
+/* Section subtitles (accent) */
+#trading-websites-service .section-sub-title {
+  color: #60a5fa; /* SAME accent as other services */
+  letter-spacing: 1px;
+}
+
+/* Headings */
+#trading-websites-service h2,
+#trading-websites-service h3,
+#trading-websites-service h5 {
+  color: #f9fafb;
+}
+
+/* Paragraphs */
+#trading-websites-service p {
+  color: #cbd5e1;
+  line-height: 1.7;
+}
+
+/* ===============================
+   CARDS
+================================ */
+#trading-websites-service .service-card {
+  background: linear-gradient(180deg, #0f172a 0%, #020617 100%);
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  border-radius: 14px;
+  padding: 32px;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+#trading-websites-service .service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,.4);
+}
+
+/* ===============================
+   HERO HIGHLIGHT
+================================ */
+#trading-websites-service .service-highlight {
+  position: relative;
+  background: linear-gradient(135deg, #111827, #0f172a);
+  border: 1px solid rgba(96, 165, 250, 0.25);
+  border-radius: 18px;
+  padding: 48px;
+  overflow: hidden;
+}
+
+/* ===============================
+   BUTTONS (MATCHED)
+================================ */
+#trading-websites-service .btn-primary {
+  background: #2563eb;
+  border-color: #2563eb;
+  box-shadow: 0 12px 30px rgba(37,99,235,.35);
+}
+
+#trading-websites-service .btn-outline-primary {
+  border-color: #60a5fa;
+  color: #60a5fa;
+}
+
+#trading-websites-service .btn-outline-primary:hover {
+  background: #60a5fa;
+  color: #020617;
+}
+
+/* ===============================
+   TECH PILLS
+================================ */
+#trading-websites-service .tech-pill {
+  background: #020617;
+  border: 1px solid rgba(148,163,184,0.2);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 14px;
+  color: #e5e7eb;
+}
+
+/* ===============================
+   FLOATING SHAPES (SUBTLE + CONSISTENT)
+================================ */
+#trading-websites-service .floating-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#trading-websites-service .shape {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.18;
+  filter: blur(10px);
+  animation: floatRotate 22s infinite linear;
+}
+
+/* SAME ACCENT COLOR — DIFFERENT SIZES ONLY */
+#trading-websites-service .shape-1 {
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, #60a5fa, transparent 60%);
+  top: -60px;
+  left: -40px;
+}
+
+#trading-websites-service .shape-2 {
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, #60a5fa, transparent 60%);
+  bottom: 20%;
+  right: -40px;
+}
+
+#trading-websites-service .shape-3 {
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, #60a5fa, transparent 60%);
+  top: 35%;
+  right: 10%;
+}
+
+#trading-websites-service .shape-4 {
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, #60a5fa, transparent 60%);
+  bottom: -40px;
+  left: 25%;
+}
+
+/* Animation */
+@keyframes floatRotate {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-30px) rotate(180deg); }
+  100% { transform: translateY(0) rotate(360deg); }
+}
+
+/* Ensure content stays above shapes */
+#trading-websites-service .service-highlight > *:not(.floating-shapes) {
+  position: relative;
+  z-index: 2;
+}
+
+
+
+</style>
+    
+
+</head>
+<body>
+  <div class="body-inner">
+
+    <!-- Top Bar -->
+    <div id="top-bar" class="top-bar">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-8">
+            <ul class="top-info text-center text-md-left"></ul>
+          </div>
+          <div class="col-lg-4 col-md-4 top-social text-center text-md-right">
+            <ul class="list-unstyled">
+              <li>
+                <a title="Facebook" href="https://www.facebook.com/profile.php?id=61579377060731"><i class="fab fa-facebook-f"></i></a>
+                <a title="LinkedIn" href="https://www.linkedin.com/in/munene-kelvin-40632b290"><i class="fab fa-linkedin"></i></a>
+                <a title="Instagram" href="https://www.instagram.com/_bothive/"><i class="fab fa-instagram"></i></a>
+                <a title="TikTok" href="https://www.tiktok.com/@yourusername" target="_blank"><i class="fab fa-tiktok"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header id="header" class="header-one">
+      <div class="site-navigation">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg navbar-dark p-0">
+
+                <!-- Hamburger -->
+                <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbar-collapse"
+                  aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Nav links -->
+                <div id="navbar-collapse" class="collapse navbar-collapse">
+                  <ul class="nav navbar-nav mr-auto">
+
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+
+                    <li class="nav-item dropdown">
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Our Products <i class="fa fa-angle-down"></i></a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="projects.html">AI Agents</a></li>
+                        <li><a class="dropdown-item text-success" href="websites.html">Websites</a></li>
+                      </ul>
+                    </li>
+
+                    <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+
+                    <li class="nav-item dropdown">
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                        <li><a class="dropdown-item" href="testimonials.html">Testimonials</a></li>
+                      </ul>
+                    </li>
+
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+
+                  </ul>
+                </div>
+
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 
+    Banner
+    <div id="banner-area" class="banner-area" style="background-image:url(images/banner/banner1.jpg)">
+      <div class="banner-text">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="banner-heading">
+                <h1 class="banner-title">AI Agents</h1>
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Our Products</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">AI Agents</li>
+                  </ol>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+    -->
+
+    <!-- Third-Party Trading Websites Section -->
+<section id="trading-websites-service" class="project-area solid-bg">
+    <div class="container">
+  
+      <!-- HERO / VALUE PROPOSITION -->
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-10">
+          <div class="service-highlight">
+  
+            <!-- Decorative animated layer -->
+            <div class="floating-shapes">
+              <span class="shape shape-1"></span>
+              <span class="shape shape-2"></span>
+              <span class="shape shape-3"></span>
+              <span class="shape shape-4"></span>
+            </div>
+  
+            <h3 class="section-sub-title">Third-Party Trading Websites</h3>
+  
+            <h2 class="section-title mt-3">
+              Custom Trading Platforms Powered by Leading APIs
+            </h2>
+  
+            <p class="mt-4">
+              At <strong>Bothive</strong>, we develop fully branded trading websites that let businesses offer professional trading services
+              with their own identity — while leveraging top-tier APIs like <strong>Deriv</strong> and <strong>Binance</strong>.
+            </p>
+  
+            <p class="mt-3">
+              Our platforms are designed for security, compliance, and scalability. Users enjoy real-time pricing, seamless order execution,
+              and a polished, intuitive interface that inspires confidence.
+            </p>
+  
+            <div class="mt-5">
+              <a href="contact.html" class="btn btn-outline-primary btn-lg mr-3">
+                Discuss Your Trading Platform
+              </a>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+  
+      <!-- SERVICE BREAKDOWN -->
+      <div class="row mt-5">
+  
+        <!-- PLATFORM FEATURES -->
+        <div class="col-lg-6 mb-4">
+          <div class="service-card h-100">
+            <h3 class="mb-3">What We Deliver</h3>
+  
+            <p>
+              We build fully branded, turnkey trading platforms that integrate the best APIs in the market.
+              Every website is optimized for speed, security, and user engagement.
+            </p>
+  
+            <ul class="list-arrow mt-4">
+              <li>Integration with Deriv, Binance, and other top trading APIs</li>
+              <li>Custom branding & whitelabel solutions</li>
+              <li>Real-time market data & live pricing</li>
+              <li>Secure payment gateways & multi-currency support</li>
+              <li>Scalable architecture for high traffic and multiple users</li>
+            </ul>
+  
+            <a href="pricing.html" class="btn btn-primary btn-lg mt-3">
+              Explore Trading Platforms
+            </a>
+          </div>
+        </div>
+  
+        <!-- TECH STACK & COMPATIBILITY -->
+        <div class="col-lg-6 mb-4">
+          <div class="service-card h-100">
+            <h3 class="mb-3 text-center">Technologies & Integrations</h3>
+  
+            <p class="text-center mb-4">
+              We leverage secure, scalable tools to give you complete control over your trading services.
+            </p>
+  
+            <div class="row text-center">
+              <div class="col-6 col-md-4 mb-3"><div class="tech-pill">Deriv API</div></div>
+              <div class="col-6 col-md-4 mb-3"><div class="tech-pill">Binance API</div></div>
+              <div class="col-6 col-md-4 mb-3"><div class="tech-pill">Node.js</div></div>
+              <div class="col-6 col-md-4 mb-3"><div class="tech-pill">Python</div></div>
+              <div class="col-6 col-md-4 mb-3"><div class="tech-pill">REST APIs</div></div>
+              <div class="col-6 col-md-4 mb-3"><div class="tech-pill">Payment Integrations</div></div>
+              <div class="col-6 col-md-4 mb-3"><div class="tech-pill">WebSockets</div></div>
+              <div class="col-6 col-md-4 mb-3"><div class="tech-pill">PostgreSQL</div></div>
+              <div class="col-6 col-md-4 mb-3"><div class="tech-pill">Docker Deployment</div></div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+      <!-- DIFFERENTIATION -->
+      <div class="row mt-4">
+        <div class="col-lg-12">
+          <div class="service-card text-center">
+  
+            <h3 class="mb-3">Why Businesses Trust Bothive</h3>
+  
+            <p class="mb-4">
+              We combine compliance, security, and cutting-edge API integrations to deliver platforms that work out of the box.
+              Every project is treated as a partnership — not just a code delivery.
+            </p>
+  
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <h5>Secure & Compliant</h5>
+                <p>
+                  Platforms built to meet regulatory requirements while protecting user data and funds.
+                </p>
+              </div>
+  
+              <div class="col-md-4 mb-3">
+                <h5>Real-Time & Interactive</h5>
+                <p>
+                  Users experience fast, real-time market updates and interactive trading interfaces.
+                </p>
+              </div>
+  
+              <div class="col-md-4 mb-3">
+                <h5>Fully Branded & Scalable</h5>
+                <p>
+                  Your brand stays front-and-center, with architecture that grows as your user base expands.
+                </p>
+              </div>
+            </div>
+  
+            <div class="mt-4">
+              <a href="contact.html" class="btn btn-outline-primary btn-lg">
+                Build Your Trading Website
+              </a>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+  
+
+  
+
+
+
+    <!-- Footer -->
+    <footer id="footer" class="footer bg-overlay">
+      <div class="footer-main">
+        <div class="container">
+          <div class="row justify-content-between">
+
+            <div class="col-lg-4 col-md-6 footer-widget footer-about">
+              <h3 class="widget-title">About Us</h3>
+              <img loading="lazy" class="footer-logo" src="images/bothive.png" alt="BotHive">
+              <p>We build powerful automation AI chatbots and modern web design solutions that help businesses grow online.</p>
+            </div>
+
+            <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
+              <h3 class="widget-title">Working Hours</h3>
+              <p>We are available <strong>24/7</strong> including weekends & holidays. For urgent inquiries, reach us via Hotline or Contact Form.</p>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
+              <h3 class="widget-title">Our Chatbots</h3>
+              <ul class="list-arrow">
+                <li><a href="chatbot-sales.html">💬 Sales Bot</a></li>
+                <li><a href="chatbot-booking.html">📅 Booking Bot</a></li>
+                <li><a href="chatbot-support.html">🤝 Support Bot</a></li>
+                <li><a href="chatbot-faq.html">❓ FAQ Bot</a></li>
+                <li><a href="chatbot-feedback.html">⭐ Feedback Bot</a></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- Body inner -->
+
+  <!-- Scripts -->
+  <script src="plugins/jQuery/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="plugins/bootstrap/bootstrap.min.js"></script>
+  <script src="plugins/slick/slick.min.js"></script>
+  <script src="plugins/slick/slick-animation.min.js"></script>
+  <script src="plugins/colorbox/jquery.colorbox.js"></script>
+  <script src="plugins/shuffle/shuffle.min.js"></script>
+  <script src="js/script.js"></script>
+
+  <!-- Category switching -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const buttons = document.querySelectorAll(".shuffle-btn");
+      const projects = document.querySelectorAll(".project-item");
+      buttons.forEach(btn => {
+        btn.addEventListener("click", function () {
+          buttons.forEach(b => b.classList.remove("active"));
+          this.classList.add("active");
+          const target = this.getAttribute("data-target");
+          projects.forEach(proj => {
+            proj.style.display = (proj.getAttribute("data-category") === target) ? "block" : "none";
+          });
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
