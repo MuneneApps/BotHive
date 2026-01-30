@@ -180,6 +180,72 @@
 }
 
 
+/* ===============================
+   TRADING AUTOMATION CONTACT POPUP
+================================ */
+
+.contact-popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.contact-popup {
+  background: #ffffff;
+  max-width: 420px;
+  width: 90%;
+  padding: 28px 26px 30px;
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0,0,0,.25);
+  text-align: center;
+  position: relative;
+  animation: popupFade 0.25s ease;
+}
+
+.contact-popup h4 {
+  font-weight: 600;
+}
+
+.contact-popup .close-popup {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 26px;
+  cursor: pointer;
+  color: #555;
+}
+
+.contact-popup .close-popup:hover {
+  color: #000;
+}
+
+.contact-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.contact-icons img {
+  width: 40px;
+  transition: transform .2s ease;
+}
+
+.contact-icons img:hover {
+  transform: scale(1.15);
+}
+
+@keyframes popupFade {
+  from { opacity:0; transform: translateY(12px) scale(.96); }
+  to   { opacity:1; transform: translateY(0) scale(1); }
+}
+
+
 
 
 </style>
@@ -210,55 +276,66 @@
       </div>
     </div>
 
-    <!-- Header -->
     <header id="header" class="header-one">
-      <div class="site-navigation">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <nav class="navbar navbar-expand-lg navbar-dark p-0">
+  <div class="site-navigation">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <nav class="navbar navbar-expand-lg navbar-dark p-0">
 
-                <!-- Hamburger -->
-                <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbar-collapse"
-                  aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+            <!-- Menu Icon -->
+            <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbar-collapse"
+              aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <!-- Nav links -->
-                <div id="navbar-collapse" class="collapse navbar-collapse">
-                  <ul class="nav navbar-nav mr-auto">
+           
 
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <!-- Navbar Links -->
+            <div id="navbar-collapse" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav mr-auto">
+             
 
-                    <li class="nav-item dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Our Products <i class="fa fa-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="projects.html">AI Agents</a></li>
-                        <li><a class="dropdown-item text-success" href="websites.html">Websites</a></li>
-                      </ul>
-                    </li>
-
-                    <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
-
-                    <li class="nav-item dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="about.html">About Us</a></li>
-                        <li><a class="dropdown-item" href="testimonials.html">Testimonials</a></li>
-                      </ul>
-                    </li>
-
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-
+                <!-- Our Products Dropdown (Desktop) -->
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Our Products <i class="fa fa-angle-down"></i></a>
+                  <ul class="dropdown-menu">
+                    
+                    <a class="dropdown-item text-success" href="websites.html">Websites</a>
+                    <a class="dropdown-item text-success" href="Ai_aut.html">Ai Automations</a>
+                    <a class="dropdown-item text-success" href="web_hosting.html">Web Hosting</a>
+                    <a class="dropdown-item text-success" href="betting_sites.html">Betting Website & App</a>
+                    <a class="dropdown-item text-success" href="trade_automation.html">Trading Automations</a>
+                    <a class="dropdown-item text-success" href="trading_site.html">Third Party Trading Website</a>
+                    
                   </ul>
-                </div>
+                </li>
 
-              </nav>
+                <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+
+                <!-- Company Dropdown -->
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="about.html">About Us</a></li>
+                    <!-- <li><a href="team.html">Our People</a></li>-->
+                    
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    
+                    
+                  </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="projects.html">Our work</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+              </ul>
             </div>
-          </div>
+
+          </nav>
         </div>
       </div>
-    </header>
+    </div>
+  </div>
+</header>
 
     <!-- 
     Banner
@@ -319,9 +396,9 @@
             </p>
   
             <div class="mt-5">
-              <a href="contact.html" class="btn btn-outline-primary btn-lg mr-3">
-                Request Your Trading Automation
-              </a>
+              <a href="#" class="btn btn-outline-primary btn-lg open-contact-popup">
+  Request Your Trading Automation
+</a>
             </div>
   
           </div>
@@ -353,9 +430,11 @@
               <li>Trend Momentum AI Optimized</li>
             </ul>
   
-            <a href="pricing.html" class="btn btn-primary btn-lg mt-3">
-              Browse Strategies
-            </a>
+            <a href="projects.html?filter=trade" class="btn btn-primary btn-lg">
+  Browse Strategies
+</a>
+
+
           </div>
         </div>
   
@@ -422,9 +501,9 @@
             </div>
   
             <div class="mt-4">
-              <a href="contact.html" class="btn btn-outline-primary btn-lg">
-                Build Your Trading Bot
-              </a>
+             <a href="#" class="btn btn-outline-primary btn-lg open-contact-popup">
+  Build Your Trading Bot
+</a>
             </div>
   
           </div>
@@ -435,44 +514,105 @@
   </section>
   
   
-  
+  <div id="contactPopup" class="contact-popup-overlay">
+  <div class="contact-popup">
+    <span class="close-popup" id="closeContactPopup">&times;</span>
+    <h4>Contact Us – Trading Automations</h4>
+
+    <div class="contact-icons">
+      <a href="https://wa.me/254713077490" target="_blank">
+        <img src="images/smicons/whatsapp.png" alt="WhatsApp">
+      </a>
+      <a href="https://t.me/BothiveSupport" target="_blank">
+        <img src="images/smicons/telegram.jfif" alt="Telegram">
+      </a>
+      <a href="https://m.me/BotHive" target="_blank">
+        <img src="images/smicons/fb.jfif" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/direct/t/_bothive" target="_blank">
+        <img src="images/smicons/ig.jfif" alt="Instagram">
+      </a>
+      <a href="https://www.upwork.com/freelancers/~01ab753f7e91037678" target="_blank">
+        <img src="images/smicons/upwork.png" alt="Upwork">
+      </a>
+      <a href="https://www.linkedin.com/in/munene-kelvin-40632b290" target="_blank">
+        <img src="images/smicons/linkedin.png" alt="LinkedIn">
+      </a>
+    </div>
+  </div>
+</div>
+
+
 
   
 
 
 
-    <!-- Footer -->
-    <footer id="footer" class="footer bg-overlay">
-      <div class="footer-main">
-        <div class="container">
-          <div class="row justify-content-between">
+   
 
-            <div class="col-lg-4 col-md-6 footer-widget footer-about">
-              <h3 class="widget-title">About Us</h3>
-              <img loading="lazy" class="footer-logo" src="images/bothive.png" alt="BotHive">
-              <p>We build powerful automation AI chatbots and modern web design solutions that help businesses grow online.</p>
-            </div>
+  <footer id="footer" class="footer bg-overlay">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-lg-4 col-md-6 footer-widget footer-about">
+            <h3 class="widget-title">About Us</h3>
+            <img loading="lazy" class="footer-logo" src="images/bothive.png" alt="Constra">
+            <p>
+We build modern websites, provide secure hosting, and deliver powerful AI and trade automation solutions. From betting platforms to third-party trading websites, we help businesses automate processes, increase efficiency, and grow online.
+</p>
 
-            <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
-              <h3 class="widget-title">Working Hours</h3>
-              <p>We are available <strong>24/7</strong> including weekends & holidays. For urgent inquiries, reach us via Hotline or Contact Form.</p>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
-              <h3 class="widget-title">Our Chatbots</h3>
-              <ul class="list-arrow">
-                <li><a href="chatbot-sales.html">💬 Sales Bot</a></li>
-                <li><a href="chatbot-booking.html">📅 Booking Bot</a></li>
-                <li><a href="chatbot-support.html">🤝 Support Bot</a></li>
-                <li><a href="chatbot-faq.html">❓ FAQ Bot</a></li>
-                <li><a href="chatbot-feedback.html">⭐ Feedback Bot</a></li>
+            <div class="footer-social">
+              <ul>
+                <li><a href="https://facebook.com/themefisher" aria-label="Facebook"><i
+                      class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://twitter.com/themefisher" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li><a href="https://instagram.com/themefisher" aria-label="Instagram"><i
+                      class="fab fa-instagram"></i></a></li>
+                <li><a href="https://github.com/themefisher" aria-label="Github"><i class="fab fa-github"></i></a></li>
               </ul>
-            </div>
+            </div><!-- Footer social end -->
+          </div><!-- Col end -->
 
-          </div>
-        </div>
-      </div>
-    </footer>
+          <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
+  <h3 class="widget-title">Talk to Us</h3>
+  <div class="working-hours">
+    
+    
+    We’re available <strong>24/7</strong> to discuss web development, hosting, AI automation, trade systems, betting platforms, and third-party trading solutions.
+    <br><br>
+    Whether you need a quick consultation or a full-scale solution, our experts are ready to guide you from idea to execution.
+    <br><br>
+    <a class="btn btn-primary" href="#" style="padding:10px 20px; border-radius:6px; font-weight:600;">
+      Free Consultation
+    </a>
+  </div>
+</div><!-- Col end -->
+
+          
+
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
+  <h3 class="widget-title">Our Products</h3>
+  <ul class="list-arrow">
+    <li><a href="websites.html">🎨 Web Design & Development</a></li>
+<li><a href="web_hosting.html">☁️ Web Hosting Solutions</a></li>
+<li><a href="Ai_aut.html">🧠 AI Automations</a></li>
+<li><a href="trade_automation.html">📈 Trading Automations</a></li>
+<li><a href="betting_sites.html">🎯 Betting Websites</a></li>
+<li><a href="trading_site.html">🔗 Third-Party Trading Websites</a></li>
+
+  </ul>
+  
+</div><!-- Col end -->
+
+        </div><!-- Row end -->
+      </div><!-- Container end -->
+    </div><!-- Footer main end -->
+
+ 
+
+</footer>
 
   </div><!-- Body inner -->
 
@@ -486,23 +626,39 @@
   <script src="plugins/shuffle/shuffle.min.js"></script>
   <script src="js/script.js"></script>
 
-  <!-- Category switching -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const buttons = document.querySelectorAll(".shuffle-btn");
-      const projects = document.querySelectorAll(".project-item");
-      buttons.forEach(btn => {
-        btn.addEventListener("click", function () {
-          buttons.forEach(b => b.classList.remove("active"));
-          this.classList.add("active");
-          const target = this.getAttribute("data-target");
-          projects.forEach(proj => {
-            proj.style.display = (proj.getAttribute("data-category") === target) ? "block" : "none";
-          });
-        });
-      });
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const popup = document.getElementById("contactPopup");
+  const closeBtn = document.getElementById("closeContactPopup");
+  const openButtons = document.querySelectorAll(".open-contact-popup");
+
+  if (!popup || !closeBtn || openButtons.length === 0) {
+    console.warn("Contact popup elements missing");
+    return;
+  }
+
+  // OPEN POPUP
+  openButtons.forEach(btn => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      popup.style.display = "flex";
     });
-  </script>
+  });
+
+  // CLOSE BUTTON
+  closeBtn.addEventListener("click", function () {
+    popup.style.display = "none";
+  });
+
+  // CLICK OUTSIDE TO CLOSE
+  popup.addEventListener("click", function (e) {
+    if (e.target === popup) {
+      popup.style.display = "none";
+    }
+  });
+});
+</script>
+
 
 </body>
 </html>

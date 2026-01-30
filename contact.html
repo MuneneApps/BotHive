@@ -22,7 +22,54 @@
   <link rel="stylesheet" href="plugins/slick/slick-theme.css">
   <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
   <link rel="stylesheet" href="css/style.css">
+<style >
+  .contact-icon-grid {
+  gap: 25px;
+}
 
+.contact-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.contact-icon img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 6px;
+}
+
+.contact-icon span {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.contact-icon:hover {
+  transform: translateY(-4px);
+  opacity: 0.85;
+}
+
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.map-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 6px;
+}
+
+
+</style>
 </head>
 <body>
   <div class="body-inner">
@@ -49,150 +96,242 @@
       </div>
     </div>
 
-    <!-- Header -->
-    <header id="header" class="header-one">
-      <div class="site-navigation">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <nav class="navbar navbar-expand-lg navbar-dark p-0">
+ <header id="header" class="header-one">
+  <div class="site-navigation">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <nav class="navbar navbar-expand-lg navbar-dark p-0">
 
-                <!-- Hamburger -->
-                <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbar-collapse"
-                  aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+            <!-- Menu Icon -->
+            <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbar-collapse"
+              aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <!-- Nav Links -->
-                <div id="navbar-collapse" class="collapse navbar-collapse">
-                  <ul class="nav navbar-nav mr-auto">
+           
 
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <!-- Navbar Links -->
+            <div id="navbar-collapse" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav mr-auto">
+             
 
-                    <li class="nav-item dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Our Products <i class="fa fa-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="projects.html">AI Agents</a></li>
-                        <li><a class="dropdown-item text-success" href="websites.html">Websites</a></li>
-                      </ul>
-                    </li>
-
-                    <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
-
-                    <li class="nav-item dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a class="dropdown-item" href="about.html">About Us</a></li>
-                        <li><a class="dropdown-item" href="testimonials.html">Testimonials</a></li>
-                      </ul>
-                    </li>
-
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-
+                <!-- Our Products Dropdown (Desktop) -->
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Our Products <i class="fa fa-angle-down"></i></a>
+                  <ul class="dropdown-menu">
+                    
+                    <a class="dropdown-item text-success" href="websites.html">Websites</a>
+                    <a class="dropdown-item text-success" href="Ai_aut.html">Ai Automations</a>
+                    <a class="dropdown-item text-success" href="web_hosting.html">Web Hosting</a>
+                    <a class="dropdown-item text-success" href="betting_sites.html">Betting Website & App</a>
+                    <a class="dropdown-item text-success" href="trade_automation.html">Trading Automations</a>
+                    <a class="dropdown-item text-success" href="trading_site.html">Third Party Trading Website</a>
+                    
                   </ul>
-                </div>
+                </li>
 
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
+                <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
 
-    <!-- Contact Section -->
-    <section id="main-container" class="main-container">
-      <div class="container">
-
-        <div class="row text-center">
-          <div class="col-12">
-            <h2 class="section-title">Reaching Our Office</h2>
-            <h3 class="section-sub-title">Find Our Location</h3>
-          </div>
-        </div>
-
-        <div class="row justify-content-center mt-4">
-
-          <!-- Email -->
-          <div class="col-md-4">
-            <div class="ts-service-box-bg text-center h-100">
-              <span class="ts-service-icon icon-round"><i class="fa fa-envelope mr-0"></i></span>
-              <div class="ts-service-box-content">
-                <h4>Email Us</h4>
-                <p>info@bothive.co.ke</p>
-                <a href="mailto:info@bothive.co.ke" class="btn btn-primary mt-2">Send Email</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Phone -->
-          <div class="col-md-4">
-            <div class="ts-service-box-bg text-center h-100">
-              <span class="ts-service-icon icon-round"><i class="fa fa-phone-square mr-0"></i></span>
-              <div class="ts-service-box-content">
-                <h4>Call Us</h4>
-                <p>(+254) 713077490</p>
-                <a href="tel:+254713077490" class="btn btn-primary mt-2">Call Now</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- WhatsApp -->
-          <div class="col-md-4">
-            <div class="ts-service-box-bg text-center h-100">
-              <span class="ts-service-icon icon-round"><i class="fa fa-whatsapp mr-0"></i></span>
-              <div class="ts-service-box-content">
-                <h4>WhatsApp</h4>
-                <p>(+254) 713077490</p>
-                <a href="https://wa.me/254713077490" target="_blank" class="btn btn-success mt-2">Chat on WhatsApp</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="footer" class="footer bg-overlay">
-      <div class="footer-main">
-        <div class="container">
-          <div class="row justify-content-between">
-
-            <div class="col-lg-4 col-md-6 footer-widget footer-about">
-              <h3 class="widget-title">About Us</h3>
-              <img loading="lazy" class="footer-logo" src="images/bothive.png" alt="BotHive">
-              <p>We build powerful AI chatbots and modern web solutions that help businesses engage customers, streamline operations, and grow online with confidence.</p>
-            </div>
-
-            <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
-              <h3 class="widget-title">Working Hours</h3>
-              <div class="working-hours">
-                We are available <strong>24/7</strong> including weekends & holidays.<br>
-                For urgent inquiries, reach us via Hotline or Contact Form.
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
-              <h3 class="widget-title">Our Chatbots</h3>
-              <ul class="list-arrow">
-                <li><a href="projects.html">💬 Sales Bot</a></li>
-                <li><a href="projects.html">📅 Booking Bot</a></li>
-                <li><a href="projects.html">🤝 Support Bot</a></li>
-                <li><a href="projects.html">❓ FAQ Bot</a></li>
-                <li><a href="projects.html">⭐ Feedback Bot</a></li>
+                <!-- Company Dropdown -->
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="about.html">About Us</a></li>
+                    <!-- <li><a href="team.html">Our People</a></li>-->
+                    
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    
+                    
+                  </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="projects.html">Our work</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
               </ul>
             </div>
 
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+    <!-- Contact Section -->
+<section id="main-container" class="main-container">
+  <div class="container">
+
+    <div class="row text-center">
+      <div class="col-12">
+        <h2 class="section-title">Get in Touch</h2>
+        <h3 class="section-sub-title">Reach Us Instantly on Your Preferred Platform</h3>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-4">
+
+      <div class="col-lg-8">
+        <div class="ts-service-box-bg text-center">
+          <div class="ts-service-box-content">
+
+            <h4 class="mb-4">Contact BotHive Via</h4>
+
+            <div class="d-flex justify-content-center flex-wrap gap-4 contact-icon-grid">
+
+              <a href="https://wa.me/254713077490" target="_blank" class="contact-icon">
+                <img src="images/smicons/whatsapp.png" alt="WhatsApp">
+                <span>WhatsApp</span>
+              </a>
+
+              <a href="https://t.me/BothiveSupport" target="_blank" class="contact-icon">
+                <img src="images/smicons/telegram.jfif" alt="Telegram">
+                <span>Telegram</span>
+              </a>
+
+              <a href="https://m.me/BotHive" target="_blank" class="contact-icon">
+                <img src="images/smicons/fb.jfif" alt="Facebook Messenger">
+                <span>Facebook</span>
+              </a>
+
+              <a href="https://www.instagram.com/direct/t/_bothive" target="_blank" class="contact-icon">
+                <img src="images/smicons/ig.jfif" alt="Instagram">
+                <span>Instagram</span>
+              </a>
+
+            </div>
+
+            <p class="mt-4 text-muted">
+              Available <strong>24/7</strong> for web development, hosting, AI automation,
+              trading systems, and betting platforms.
+            </p>
+
           </div>
         </div>
       </div>
 
-      <a href="#" class="slider btn btn-primary border open-lead-form">Get Started</a>
+    </div>
+  </div>
+</section>
 
-      <div id="back-to-top" class="back-to-top position-fixed">
-        <button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-double-up"></i></button>
+
+<!-- Location Section -->
+<section id="location" class="main-container">
+  <div class="container">
+
+    <div class="row text-center">
+      <div class="col-12">
+        <h2 class="section-title">Our Location</h2>
+        <h3 class="section-sub-title">Visit or Locate BotHive Offices</h3>
       </div>
-    </footer>
+    </div>
+
+    <div class="row align-items-center mt-4">
+
+      <!-- Location Info -->
+      <div class="col-lg-4 mb-4 mb-lg-0">
+        <h4>BotHive Technologies</h4>
+        <p>
+          We operate from Nairobi, Kenya, serving clients locally and globally
+          with professional web development, hosting, AI automation, trading
+          systems, and betting platforms.
+        </p>
+
+        <p>
+          Our team works with businesses worldwide while maintaining a strong
+          local presence for consultations, partnerships, and support.
+        </p>
+
+        <ul class="list-unstyled mt-3">
+          <li><strong>Location:</strong> Nairobi, Kenya</li>
+          <li><strong>Availability:</strong> 24/7 Online Support</li>
+        </ul>
+      </div>
+
+      <!-- Google Map -->
+      <div class="col-lg-8">
+        <div class="map-responsive shadow-sm rounded">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255282.32335424496!2d36.84739685!3d-1.3032089500000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2c81b38187df22d%3A0x356cc1d98be4255!2sBothive!5e0!3m2!1sen!2ske!4v1769756705085!5m2!1sen!2ske"
+            width="100%"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+  <footer id="footer" class="footer bg-overlay">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-lg-4 col-md-6 footer-widget footer-about">
+            <h3 class="widget-title">About Us</h3>
+            <img loading="lazy" class="footer-logo" src="images/bothive.png" alt="Constra">
+            <p>
+We build modern websites, provide secure hosting, and deliver powerful AI and trade automation solutions. From betting platforms to third-party trading websites, we help businesses automate processes, increase efficiency, and grow online.
+</p>
+
+            <div class="footer-social">
+              <ul>
+                <li><a href="https://facebook.com/themefisher" aria-label="Facebook"><i
+                      class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://twitter.com/themefisher" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li><a href="https://instagram.com/themefisher" aria-label="Instagram"><i
+                      class="fab fa-instagram"></i></a></li>
+                <li><a href="https://github.com/themefisher" aria-label="Github"><i class="fab fa-github"></i></a></li>
+              </ul>
+            </div><!-- Footer social end -->
+          </div><!-- Col end -->
+
+          <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
+  <h3 class="widget-title">Talk to Us</h3>
+  <div class="working-hours">
+    
+    
+    We’re available <strong>24/7</strong> to discuss web development, hosting, AI automation, trade systems, betting platforms, and third-party trading solutions.
+    <br><br>
+    Whether you need a quick consultation or a full-scale solution, our experts are ready to guide you from idea to execution.
+    <br><br>
+    <a class="btn btn-primary" href="#" style="padding:10px 20px; border-radius:6px; font-weight:600;">
+      Free Consultation
+    </a>
+  </div>
+</div><!-- Col end -->
+
+          
+
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
+  <h3 class="widget-title">Our Products</h3>
+  <ul class="list-arrow">
+    <li><a href="websites.html">🎨 Web Design & Development</a></li>
+<li><a href="web_hosting.html">☁️ Web Hosting Solutions</a></li>
+<li><a href="Ai_aut.html">🧠 AI Automations</a></li>
+<li><a href="trade_automation.html">📈 Trading Automations</a></li>
+<li><a href="betting_sites.html">🎯 Betting Websites</a></li>
+<li><a href="trading_site.html">🔗 Third-Party Trading Websites</a></li>
+
+  </ul>
+  
+</div><!-- Col end -->
+
+        </div><!-- Row end -->
+      </div><!-- Container end -->
+    </div><!-- Footer main end -->
+
+ 
+
+</footer>
 
   </div><!-- Body Inner -->
 

@@ -20,6 +20,107 @@
   <link rel="stylesheet" href="plugins/slick/slick-theme.css">
   <link rel="stylesheet" href="plugins/colorbox/colorbox.css">
   <link rel="stylesheet" href="css/style.css">
+<!-- Overlay & Hover CSS -->
+<style>
+.portfolio-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+.portfolio-card:hover {
+  transform: scale(1.05);
+}
+.portfolio-card .overlay {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  padding: 10px 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.portfolio-card:hover .overlay {
+  opacity: 1;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 576px) {
+  .portfolio-card .overlay h5 {
+    font-size: 14px;
+    padding: 5px;
+  }
+  .btn[data-filter] {
+    font-size: 12px;
+    padding: 0.25rem 0.5rem;
+    margin: 2px;
+  }
+}
+
+/* Ensure cards are uniform height and images fit nicely */
+.portfolio-card {
+  height: 100%;
+}
+.portfolio-card img {
+  height: 150px;
+  object-fit: cover;
+}
+
+
+/* Portfolio & Contact Popup Overlay */
+.portfolio-popup-overlay, .contact-popup-overlay {
+  position: fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(0,0,0,0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* Popup box */
+.portfolio-popup, .contact-popup {
+  background: #fff;
+  max-width: 450px;
+  width: 90%;
+  padding: 28px 26px 30px;
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+  text-align: center;
+  position: relative;
+  animation: popupFadeIn 0.25s ease;
+}
+
+/* Close button */
+.portfolio-popup .close-popup, .contact-popup .close-popup {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 26px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #555;
+}
+.portfolio-popup .close-popup:hover, .contact-popup .close-popup:hover {
+  color: #000;
+}
+
+/* Purchase Button */
+#purchaseBtn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@keyframes popupFadeIn {
+  from { opacity:0; transform: translateY(12px) scale(0.96);}
+  to { opacity:1; transform: translateY(0) scale(1);}
+}
+
+</style>
 
 </head>
 <body>
@@ -48,145 +149,276 @@
     </div>
     <!--/ Topbar end -->
 
-    <!-- Header -->
-    <header id="header" class="header-one">
-      <div class="site-navigation">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <nav class="navbar navbar-expand-lg navbar-dark p-0">
+   <header id="header" class="header-one">
+  <div class="site-navigation">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <nav class="navbar navbar-expand-lg navbar-dark p-0">
 
-                <!-- Hamburger -->
-                <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbar-collapse"
-                  aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+            <!-- Menu Icon -->
+            <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbar-collapse"
+              aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <!-- Navbar Links -->
-                <div id="navbar-collapse" class="collapse navbar-collapse">
-                  <ul class="nav navbar-nav mr-auto">
+           
 
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <!-- Navbar Links -->
+            <div id="navbar-collapse" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav mr-auto">
+             
 
-                    <!-- Our Products Dropdown -->
-                    <li class="nav-item dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Our Products <i class="fa fa-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="projects.html">AI Agents</a></li>
-                        <li><a class="dropdown-item text-success" href="websites.html">Websites</a></li>
-                      </ul>
-                    </li>
-
-                    <!-- Pricing -->
-                    <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
-
-                    <!-- Company Dropdown -->
-                    <li class="nav-item dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="about.html">About Us</a></li>
-                        <li><a class="dropdown-item" href="testimonials.html">Testimonials</a></li>
-                      </ul>
-                    </li>
-
-                    <!-- Contact -->
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                <!-- Our Products Dropdown (Desktop) -->
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Our Products <i class="fa fa-angle-down"></i></a>
+                  <ul class="dropdown-menu">
+                    
+                    <a class="dropdown-item text-success" href="websites.html">Websites</a>
+                    <a class="dropdown-item text-success" href="Ai_aut.html">Ai Automations</a>
+                    <a class="dropdown-item text-success" href="web_hosting.html">Web Hosting</a>
+                    <a class="dropdown-item text-success" href="betting_sites.html">Betting Website & App</a>
+                    <a class="dropdown-item text-success" href="trade_automation.html">Trading Automations</a>
+                    <a class="dropdown-item text-success" href="trading_site.html">Third Party Trading Website</a>
+                    
                   </ul>
-                </div>
+                </li>
 
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <!--/ Header end -->
+                <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
 
-    <!-- Project Section -->
-    <section id="project-area" class="project-area solid-bg">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-lg-12">
-            <h3 class="section-sub-title">AI Agents</h3>
-            <h2 class="section-title">— select an AI Agent to see its functions.</h2>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-12">
-            <!-- Buttons -->
-            <div class="shuffle-btn-group mb-4 text-center">
-              <button class="shuffle-btn active" data-target="salesbot">Sales AI</button>
-              <button class="shuffle-btn" data-target="customercare">CustomerCare AI</button>
-              <button class="shuffle-btn" data-target="donationsbot">Donations AI</button>
-              <button class="shuffle-btn" data-target="ticketingbot">Ticketing AI</button>
-              <button class="shuffle-btn" data-target="eventsbot">Events AI</button>
-              <button class="shuffle-btn" data-target="surveybot">Survey/Research Bot</button>
-            </div>
-
-            <!-- Display Container -->
-            <div class="row justify-content-center">
-              <div class="col-lg-6 col-md-8">
-                <div id="project-display" class="project-text-container text-center p-4 border rounded shadow">
-                  <h3 class="project-item-title" id="display-title">Sales AI</h3>
-                  <p class="project-cat" id="display-cat">Boost sales 24/7</p>
-                  <p id="display-desc">
-                    Automate lead generation, qualify prospects, and close deals even when you're offline. Let AI sell smarter for you.
-                  </p>
-                  <a id="display-btn" href="contact.html" class="btn btn-primary mt-3">7 Days Free Trial</a>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="footer" class="footer bg-overlay">
-      <div class="footer-main">
-        <div class="container">
-          <div class="row justify-content-between">
-
-            <div class="col-lg-4 col-md-6 footer-widget footer-about">
-              <h3 class="widget-title">About Us</h3>
-              <img loading="lazy" class="footer-logo" src="images/bothive.png" alt="BotHive">
-              <p>We build powerful automation AI chatbots and modern web design solutions that help businesses engage customers, streamline operations, and grow online with confidence.</p>
-            </div>
-
-            <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
-              <h3 class="widget-title">Working Hours</h3>
-              <div class="working-hours">
-                We are available <strong>24/7</strong> to assist you.  
-                <br><br> Our team is always ready to support you anytime, any day – including weekends and holidays.  
-                <br> For urgent inquiries, reach us via our Hotline or Contact Form.
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
-              <h3 class="widget-title">Our Chatbots</h3>
-              <ul class="list-arrow">
-                <li><a href="projects.html">💬 Sales Bot</a></li>
-                <li><a href="projects.html">📅 Booking Bot</a></li>
-                <li><a href="projects.html">🤝 Customer Support Bot</a></li>
-                <li><a href="projects.html">❓ FAQ Bot</a></li>
-                <li><a href="projects.html">⭐ Feedback Bot</a></li>
+                <!-- Company Dropdown -->
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="about.html">About Us</a></li>
+                    <!-- <li><a href="team.html">Our People</a></li>-->
+                    
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    
+                    
+                  </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="projects.html">Our work</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
               </ul>
             </div>
 
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+    </header>
+    <!--/ Header end -->
+
+<!-- Unified Portfolio Section -->
+<section id="portfolio-area" class="portfolio-area py-5 bg-light">
+  <div class="container">
+    <div class="row">
+
+      <!-- Website Project (no popup, normal link) -->
+      <div class="col-sm-6 col-md-3 mb-4 portfolio-item" data-category="websites">
+        <a href="https://example.com" target="_blank" class="text-decoration-none">
+          <div class="card shadow-sm rounded overflow-hidden portfolio-card">
+            <img src="images/projectsimages/website.jpg" class="card-img-top" alt="Website 1">
+            <div class="p-3">
+              <h6 class="card-title">Website 1</h6>
+              <p class="card-text">Hotel website</p>
+            </div>
+          </div>
+        </a>
+      </div>
+        <!-- Website Project (no popup, normal link) -->
+      <div class="col-sm-6 col-md-3 mb-4 portfolio-item" data-category="betting">
+
+        <a href="https://example.com" target="_blank" class="text-decoration-none">
+          <div class="card shadow-sm rounded overflow-hidden portfolio-card">
+            <img src="images/projectsimages/website.jpg" class="card-img-top" alt="Website 1">
+            <div class="p-3">
+              <h6 class="card-title">Website 1</h6>
+              <p class="card-text">Hotel website</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+
+       <!-- Website Project (no popup, normal link) -->
+      <div class="col-sm-6 col-md-3 mb-4 portfolio-item" data-category="tradingwebsites">
+
+        <a href="https://example.com" target="_blank" class="text-decoration-none">
+          <div class="card shadow-sm rounded overflow-hidden portfolio-card">
+            <img src="images/projectsimages/website.jpg" class="card-img-top" alt="Website 1">
+            <div class="p-3">
+              <h6 class="card-title">Website 1</h6>
+              <p class="card-text">Hotel website</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- AI Automation Example -->
+      <div class="col-sm-6 col-md-3 mb-4 portfolio-item" data-category="ai">
+        <div class="card shadow-sm rounded overflow-hidden portfolio-card ai-trade-card"
+             data-title="YouTube AI Automation"
+             data-description="Automate YouTube content uploads, scheduling, and analytics."
+             data-installation="Install Python & YouTube API keys. Run setup script."
+             data-requirements="YouTube account, Python 3.10+, API keys"
+             data-pricing="$499 - $999">
+          <img src="images/projectsimages/AIautomation.jpg" class="card-img-top" alt="YouTube Automation">
+          <div class="p-3">
+            <h6 class="card-title">YouTube AI Automation</h6>
+            <p class="card-text">YouTube AI automation</p>
+            <button class="btn btn-outline-primary btn-sm mt-2 view-details-btn">View Details & Pricing</button>
           </div>
         </div>
       </div>
 
-      <a href="#" class="slider btn btn-primary border open-lead-form">Get Started</a>
-
-      <div id="back-to-top" data-spy="affix" data-offset-top="10" class="back-to-top position-fixed">
-        <button class="btn btn-primary" title="Back to Top">
-          <i class="fa fa-angle-double-up"></i>
-        </button>
+      <!-- Trade Automation Example -->
+      <div class="col-sm-6 col-md-3 mb-4 portfolio-item" data-category="trade">
+        <div class="card shadow-sm rounded overflow-hidden portfolio-card ai-trade-card"
+             data-title="Martingale Trading Bot"
+             data-description="Automates martingale trading on supported platforms."
+             data-installation="Install bot, connect broker API, configure risk settings."
+             data-requirements="Broker account, VPS (optional), API access"
+             data-pricing="$599 - $1,200">
+          <img src="images/projectsimages/tradeauto.jpg" class="card-img-top" alt="Trade Automation">
+          <div class="p-3">
+            <h6 class="card-title">Martingale Trading Bot</h6>
+            <p class="card-text">Martingale trading bot</p>
+            <button class="btn btn-outline-primary btn-sm mt-2 view-details-btn">View Details & Pricing</button>
+          </div>
+        </div>
       </div>
-    </footer>
+
+      <!-- Add more AI or Trade automations here with data-* attributes -->
+
+      
+    </div>
+  </div>
+</section>
+
+<!-- Portfolio Popup Overlay -->
+<div id="portfolioPopup" class="portfolio-popup-overlay">
+  <div class="portfolio-popup">
+    <span class="close-popup" id="portfolioClose">&times;</span>
+
+    <h4 id="popupTitle">Project Title</h4>
+    <p id="popupDescription">Project description goes here.</p>
+    <p id="popupInstallation"><strong>Installation:</strong> -</p>
+    <p id="popupRequirements"><strong>Requirements:</strong> -</p>
+    <p id="popupPricing"><strong>Pricing:</strong> $XXX</p>
+
+    <button id="purchaseBtn" class="btn btn-primary mt-3">Purchase / Contact</button>
+  </div>
+</div>
+
+
+<!-- Contact Popup Overlay -->
+<div id="contactPopup" class="contact-popup-overlay">
+  <div class="contact-popup">
+    <span class="close-popup" id="closeContactPopup">&times;</span>
+    <h4 class="mb-3">Contact Us Via</h4>
+
+    <div class="contact-icons">
+      <a href="https://wa.me/254713077490" target="_blank">
+        <img src="images/smicons/whatsapp.png" alt="WhatsApp" width="40">
+      </a>
+
+      <a href="https://t.me/BothiveSupport" target="_blank">
+        <img src="images/smicons/telegram.jfif" alt="Telegram" width="40">
+      </a>
+
+      <a href="https://m.me/BotHive" target="_blank">
+        <img src="images/smicons/fb.jfif" alt="Facebook" width="40">
+      </a>
+
+      <a href="https://www.instagram.com/direct/t/_bothive" target="_blank">
+        <img src="images/smicons/ig.jfif" alt="Instagram" width="40">
+      </a>
+
+      <a href="https://www.upwork.com/freelancers/~01ab753f7e91037678" target="_blank">
+        <img src="images/smicons/upwork.png" alt="Upwork" width="40">
+      </a>
+
+      <a href="https://www.tiktok.com/@_bothive" target="_blank">
+        <img src="images/smicons/tiktok.png" alt="TikTok" width="40">
+      </a>
+
+      <a href="https://www.linkedin.com/in/munene-kelvin-40632b290" target="_blank">
+        <img src="images/smicons/linkedin.png" alt="LinkedIn" width="40">
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
+
+  <footer id="footer" class="footer bg-overlay">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-lg-4 col-md-6 footer-widget footer-about">
+            <h3 class="widget-title">About Us</h3>
+            <img loading="lazy" class="footer-logo" src="images/bothive.png" alt="Constra">
+            <p>
+We build modern websites, provide secure hosting, and deliver powerful AI and trade automation solutions. From betting platforms to third-party trading websites, we help businesses automate processes, increase efficiency, and grow online.
+</p>
+
+            <div class="footer-social">
+              <ul>
+                <li><a href="https://facebook.com/themefisher" aria-label="Facebook"><i
+                      class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://twitter.com/themefisher" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li><a href="https://instagram.com/themefisher" aria-label="Instagram"><i
+                      class="fab fa-instagram"></i></a></li>
+                <li><a href="https://github.com/themefisher" aria-label="Github"><i class="fab fa-github"></i></a></li>
+              </ul>
+            </div><!-- Footer social end -->
+          </div><!-- Col end -->
+
+          <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
+  <h3 class="widget-title">Talk to Us</h3>
+  <div class="working-hours">
+    
+    
+    We’re available <strong>24/7</strong> to discuss web development, hosting, AI automation, trade systems, betting platforms, and third-party trading solutions.
+    <br><br>
+    Whether you need a quick consultation or a full-scale solution, our experts are ready to guide you from idea to execution.
+    <br><br>
+    <a class="btn btn-primary" href="#" style="padding:10px 20px; border-radius:6px; font-weight:600;">
+      Free Consultation
+    </a>
+  </div>
+</div><!-- Col end -->
+
+          
+
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
+  <h3 class="widget-title">Our Products</h3>
+  <ul class="list-arrow">
+    <li><a href="websites.html">🎨 Web Design & Development</a></li>
+<li><a href="web_hosting.html">☁️ Web Hosting Solutions</a></li>
+<li><a href="Ai_aut.html">🧠 AI Automations</a></li>
+<li><a href="trade_automation.html">📈 Trading Automations</a></li>
+<li><a href="betting_sites.html">🎯 Betting Websites</a></li>
+<li><a href="trading_site.html">🔗 Third-Party Trading Websites</a></li>
+
+  </ul>
+  
+</div><!-- Col end -->
+
+        </div><!-- Row end -->
+      </div><!-- Container end -->
+    </div><!-- Footer main end -->
+
+ 
+
+</footer>
 
   </div><!-- Body inner end -->
 
@@ -201,31 +433,128 @@
   <script src="plugins/google-map/map.js" defer></script>
   <script src="js/script.js"></script>
 
-  <script>
-    // Project Switcher
-    const projects = {
-      salesbot: { title: "Sales AI", cat: "Boost sales 24/7", desc: "Automate lead generation, qualify prospects, and close deals even when you're offline. Let AI sell smarter for you.", button: "7 Days Free Trial" },
-      customercare: { title: "CustomerCare AI", cat: "Support that never sleeps", desc: "Deliver instant customer service, reduce response times, and keep clients happy with AI-driven support.", button: "7 Days Free Trial" },
-      donationsbot: { title: "Donations AI", cat: "Fundraising made simple", desc: "Accept and manage donations seamlessly through chat, making it easier for supporters to contribute anytime.", button: "7 Days Free Trial" },
-      ticketingbot: { title: "Ticketing AI", cat: "Smart event management", desc: "Sell tickets, manage bookings, and answer attendee queries automatically through multiple channels.", button: "7 Days Free Trial" },
-      eventsbot: { title: "Events AI", cat: "Engage audiences at scale", desc: "From RSVPs to live event interactions, this bot keeps your attendees connected and engaged.", button: "7 Days Free Trial" },
-      surveybot: { title: "Survey/Research Bot", cat: "Data-driven insights", desc: "Collect feedback, run surveys, and analyze results in real-time to make smarter business decisions.", button: "7 Days Free Trial" }
-    };
+ 
+<script>
 
-    const buttons = document.querySelectorAll(".shuffle-btn");
-    buttons.forEach(btn => {
-      btn.addEventListener("click", () => {
-        const target = btn.getAttribute("data-target");
-        document.getElementById("display-title").textContent = projects[target].title;
-        document.getElementById("display-cat").textContent = projects[target].cat;
-        document.getElementById("display-desc").textContent = projects[target].desc;
-        document.getElementById("display-btn").textContent = projects[target].button;
+  document.addEventListener("DOMContentLoaded", function() {
+  const portfolioPopup = document.getElementById("portfolioPopup");
+  const portfolioClose = document.getElementById("portfolioClose");
+  const popupTitle = document.getElementById("popupTitle");
+  const popupDescription = document.getElementById("popupDescription");
+  const popupInstallation = document.getElementById("popupInstallation");
+  const popupRequirements = document.getElementById("popupRequirements");
+  const popupPricing = document.getElementById("popupPricing");
+  const purchaseBtn = document.getElementById("purchaseBtn");
 
-        buttons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-      });
+  const contactPopup = document.getElementById("contactPopup");
+  const contactClose = document.getElementById("closeContactPopup");
+
+  // All AI & Trade cards
+  const aiTradeCards = document.querySelectorAll(".ai-trade-card");
+  const viewButtons = document.querySelectorAll(".view-details-btn");
+
+  // Open Portfolio Popup
+  function openPortfolioPopup(card){
+    popupTitle.innerText = card.dataset.title || "Project Title";
+    popupDescription.innerText = card.dataset.description || "Description not available.";
+    popupInstallation.innerHTML = `<strong>Installation:</strong> ${card.dataset.installation || "-"}`;
+    popupRequirements.innerHTML = `<strong>Requirements:</strong> ${card.dataset.requirements || "-"}`;
+    popupPricing.innerHTML = `<strong>Pricing:</strong> ${card.dataset.pricing || "Contact us"}`;
+
+    portfolioPopup.style.display = "flex";
+  }
+
+  // Card click (outside button)
+  aiTradeCards.forEach(card => {
+    card.addEventListener("click", function(e){
+      if(e.target.classList.contains("view-details-btn")) return;
+      openPortfolioPopup(card);
     });
-  </script>
+  });
+
+  // View Details button click
+  viewButtons.forEach(btn => {
+    btn.addEventListener("click", function(e){
+      e.stopPropagation();
+      const card = btn.closest(".ai-trade-card");
+      openPortfolioPopup(card);
+    });
+  });
+
+  // Close Portfolio Popup
+  portfolioClose.addEventListener("click", ()=> portfolioPopup.style.display="none");
+  portfolioPopup.addEventListener("click", e => { if(e.target === portfolioPopup) portfolioPopup.style.display="none"; });
+
+  // Purchase button opens Contact Popup
+  purchaseBtn.addEventListener("click", ()=> contactPopup.style.display="flex");
+
+  // Close Contact Popup
+  contactClose.addEventListener("click", ()=> contactPopup.style.display="none");
+  contactPopup.addEventListener("click", e => { if(e.target === contactPopup) contactPopup.style.display="none"; });
+});
+
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get("category");
+
+  if (!category) return; // no filter, show all
+
+  const items = document.querySelectorAll(".portfolio-item");
+
+  items.forEach(item => {
+    const itemCategory = item.dataset.category;
+
+    if (itemCategory !== category) {
+      item.style.display = "none";
+    } else {
+      item.style.display = "block";
+    }
+  });
+
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(window.location.search);
+  const filter = params.get("filter");
+
+  if (!filter) return;
+
+  document.querySelectorAll(".portfolio-item").forEach(item => {
+    const category = item.getAttribute("data-category");
+    item.style.display = category === filter ? "block" : "none";
+  });
+
+  const portfolio = document.getElementById("portfolio-area");
+  if (portfolio) {
+    portfolio.scrollIntoView({ behavior: "smooth" });
+  }
+});
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(window.location.search);
+  const filter = params.get("filter");
+
+  if (!filter) return;
+
+  document.querySelectorAll(".portfolio-item").forEach(item => {
+    item.style.display =
+      item.dataset.category === filter ? "block" : "none";
+  });
+
+  const portfolio = document.getElementById("portfolio-area");
+  if (portfolio) {
+    portfolio.scrollIntoView({ behavior: "smooth" });
+  }
+});
+</script>
 
 </body>
 </html>

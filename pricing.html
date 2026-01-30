@@ -130,6 +130,147 @@
     background: #2563eb;
     border-radius: 4px;
   }
+
+
+
+  
+/* ===============================
+   CONTACT POPUP OVERLAY
+================================ */
+.contact-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* ===============================
+   POPUP BOX
+================================ */
+.contact-popup {
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  padding: 28px 26px 30px;
+  border-radius: 18px;
+  position: relative;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  animation: popupFadeIn 0.25s ease;
+}
+
+/* ===============================
+   CLOSE BUTTON
+================================ */
+.close-popup {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 26px;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+}
+
+.close-popup:hover {
+  color: #000;
+}
+
+/* ===============================
+   POPUP TITLE
+================================ */
+.contact-popup h4 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* ===============================
+   ICON GRID (HORIZONTAL 2 ROWS)
+================================ */
+.contact-icons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* CHANGE 4 → 3 or 5 if needed */
+  gap: 18px;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+/* ===============================
+   ICON BUTTON
+================================ */
+.contact-icons a {
+  width: 70px;
+  height: 70px;
+  border-radius: 16px;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* ===============================
+   ICON IMAGE
+================================ */
+.contact-icons img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+/* ===============================
+   HOVER EFFECT
+================================ */
+.contact-icons a:hover {
+  transform: translateY(-4px) scale(1.06);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* ===============================
+   MOBILE OPTIMIZATION
+================================ */
+@media (max-width: 480px) {
+  .contact-popup {
+    margin: 0 16px;
+  }
+
+  .contact-icons {
+    grid-template-columns: repeat(3, 1fr); /* mobile = 3 per row */
+  }
+
+  .contact-icons a {
+    width: 64px;
+    height: 64px;
+  }
+
+  .contact-icons img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* ===============================
+   ANIMATION
+================================ */
+@keyframes popupFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+
 </style>
 
 
@@ -159,60 +300,72 @@
       </div>
     </div>
 
-    <!-- Header -->
     <header id="header" class="header-one">
-      <div class="site-navigation">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <nav class="navbar navbar-expand-lg navbar-dark p-0">
+  <div class="site-navigation">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <nav class="navbar navbar-expand-lg navbar-dark p-0">
 
-                <!-- Hamburger -->
-                <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbar-collapse"
-                  aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
+            <!-- Menu Icon -->
+            <button class="navbar-toggler mr-2" type="button" data-toggle="collapse" data-target="#navbar-collapse"
+              aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-                <!-- Nav Links -->
-                <div id="navbar-collapse" class="collapse navbar-collapse">
-                  <ul class="nav navbar-nav mr-auto">
+           
 
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <!-- Navbar Links -->
+            <div id="navbar-collapse" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav mr-auto">
+             
 
-                    <li class="nav-item dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Our Products <i class="fa fa-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="projects.html">AI Agents</a></li>
-                        <li><a class="dropdown-item text-success" href="websites.html">Websites</a></li>
-                      </ul>
-                    </li>
-
-                    <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
-
-                    <li class="nav-item dropdown">
-                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a class="dropdown-item" href="about.html">About Us</a></li>
-                        <li><a class="dropdown-item" href="testimonials.html">Testimonials</a></li>
-                      </ul>
-                    </li>
-
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-
+                <!-- Our Products Dropdown (Desktop) -->
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Our Products <i class="fa fa-angle-down"></i></a>
+                  <ul class="dropdown-menu">
+                    
+                    <a class="dropdown-item text-success" href="websites.html">Websites</a>
+                    <a class="dropdown-item text-success" href="Ai_aut.html">Ai Automations</a>
+                    <a class="dropdown-item text-success" href="web_hosting.html">Web Hosting</a>
+                    <a class="dropdown-item text-success" href="betting_sites.html">Betting Website & App</a>
+                    <a class="dropdown-item text-success" href="trade_automation.html">Trading Automations</a>
+                    <a class="dropdown-item text-success" href="trading_site.html">Third Party Trading Website</a>
+                    
                   </ul>
-                </div>
+                </li>
 
-              </nav>
+                <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+
+                <!-- Company Dropdown -->
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="about.html">About Us</a></li>
+                    <!-- <li><a href="team.html">Our People</a></li>-->
+                    
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    
+                    
+                  </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="projects.html">Our work</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+              </ul>
             </div>
-          </div>
+
+          </nav>
         </div>
       </div>
-    </header>
-
+    </div>
+  </div>
+</header>
   <br>
 
 
-  <!-- Services Section -->
+  <div class="body-inner">
+
+<!-- ================= SERVICES SECTION ================= -->
 <section id="services-area" class="portfolio-area dark-bg py-5">
   <div class="container">
     <div class="row text-center mb-5">
@@ -223,7 +376,7 @@
     </div>
 
     <div class="row">
-      <!-- Left: Vertical Packages -->
+      <!-- LEFT -->
       <div class="col-lg-4 col-md-5 mb-4">
         <div class="service-list border rounded shadow">
           <button class="service-btn active" data-target="webdesign">Web Design & Dev</button>
@@ -235,31 +388,13 @@
         </div>
       </div>
 
-      <!-- Right: Details -->
+      <!-- RIGHT -->
       <div class="col-lg-8 col-md-7">
         <div class="service-details border rounded shadow p-4">
-          <!-- Default Detail -->
-          <h3 id="detail-title">Web Design & Dev</h3>
-          <p id="detail-subtitle">Custom Websites & Web Apps</p>
+          <h3 id="detail-title"></h3>
+          <p id="detail-subtitle"></p>
 
-          <div id="detail-containers" class="row mt-3">
-            <div class="col-md-12 mb-3">
-              <div class="detail-card p-3 rounded shadow-sm bg-dark text-light">
-                Detail container 1 — update content later
-              </div>
-            </div>
-            <div class="col-md-12 mb-3">
-              <div class="detail-card p-3 rounded shadow-sm bg-dark text-light">
-                Detail container 2 — update content later
-              </div>
-            </div>
-            <div class="col-md-12 mb-3">
-              <div class="detail-card p-3 rounded shadow-sm bg-dark text-light">
-                Detail container 3 — update content later
-              </div>
-            </div>
-          </div>
-
+          <div id="detail-containers" class="row mt-3"></div>
         </div>
       </div>
     </div>
@@ -267,270 +402,158 @@
 </section>
 
 
-<br>
+
+</div>
+
+  <!-- Contact Popup Overlay -->
+<div id="contactPopup" class="contact-popup-overlay">
+  <div class="contact-popup">
+    <span class="close-popup" id="closeContactPopup">&times;</span>
+    <h4 class="mb-3">Contact Us Via</h4>
+
+    <div class="contact-icons">
+      <!-- your icons here -->
+      <div class="contact-icons">
+        <a href="https://wa.me/254713077490" target="_blank">
+          <img src="images/smicons/whatsapp.png" alt="WhatsApp">
+        </a>
+      
+        <a href="https://t.me/BothiveSupport" target="_blank">
+          <img src="images/smicons/telegram.jfif" alt="Telegram">
+        </a>
+      
+       
+      
+        <a href="https://m.me/BotHive" target="_blank">
+          <img src="images/smicons/fb.jfif" alt="Facebook">
+        </a>
+      
+        <a href="https://www.instagram.com/direct/t/_bothive" target="_blank">
+          <img src="images/smicons/ig.jfif" alt="Instagram">
+        </a>
+    
+       
+    
+        <a href="https://www.upwork.com/freelancers/~01ab753f7e91037678" target="_blank">
+          <img src="images/smicons/upwork.png" alt="Upwork">
+        </a>
+    
+        <a href="https://www.tiktok.com/@_bothive" target="_blank">
+          <img src="images/smicons/tiktok.png" alt="tiktok">
+        </a>
+    
+        <a href="https://www.linkedin.com/in/munene-kelvin-40632b290" target="_blank">
+          <img src="images/smicons/linkedin.png" alt="linkedin">
+        </a>
+</div>     
+    </div>
+  </div>
+</div>
 
 
 
+  <footer id="footer" class="footer bg-overlay">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-lg-4 col-md-6 footer-widget footer-about">
+            <h3 class="widget-title">About Us</h3>
+            <img loading="lazy" class="footer-logo" src="images/bothive.png" alt="Constra">
+            <p>
+We build modern websites, provide secure hosting, and deliver powerful AI and trade automation solutions. From betting platforms to third-party trading websites, we help businesses automate processes, increase efficiency, and grow online.
+</p>
 
-<script>
-  /* ================================
-     ELEMENT REFERENCES
-  ================================= */
-  const serviceButtons = document.querySelectorAll('.service-btn');
-  const detailTitle = document.getElementById('detail-title');
-  const detailSubtitle = document.getElementById('detail-subtitle');
-  const detailContainers = document.getElementById('detail-containers');
-
-  /* ================================
-     SERVICE DATA CONFIGURATION
-  ================================= */
-  const serviceData = {
-
-    webdesign: {
-      title: "Web Design & Development",
-      subtitle: "Flexible website packages for every business stage",
-      containers: [
-        `
-        <strong>WEBSITE PACKAGE 1 – KES 25,000</strong><br>
-        <small>For Personal Brands & Small Businesses</small><br><br>
-        • Up to 10 responsive pages<br>
-        • WordPress or custom build<br>
-        • M-Pesa payment integration<br>
-        • Online booking system<br>
-        • Free SSL & full security<br>
-        • 1 year free hosting<br>
-        • 10GB storage & unlimited bandwidth<br>
-        • Unlimited business emails<br>
-        • Free maintenance (3 months)<br>
-        • Basic SEO & Google indexing
-        `,
-        `
-        <strong>WEBSITE PACKAGE 2 – KES 50,000</strong><br>
-        <small>For Established SMEs & Online Stores</small><br><br>
-        • Full e-commerce setup<br>
-        • M-Pesa, Cards, Bank & PayPal payments<br>
-        • Conversion-optimized checkout<br>
-        • 1 year premium hosting<br>
-        • 20GB secure storage<br>
-        • Enterprise security & backups<br>
-        • Advanced SEO & analytics<br>
-        • Free maintenance (6 months)
-        `,
-        `
-        <strong>WEBSITE PACKAGE 3 – ENTERPRISE</strong><br>
-        <small>For Institutions & Large Organizations</small><br><br>
-        • Custom enterprise web systems<br>
-        • High-traffic & multi-user architecture<br>
-        • API & system integrations<br>
-        • Advanced security & compliance<br><br>
-        <a href="contact.html" class="btn btn-primary btn-sm">Get a Quote</a>
-        `
-      ]
-    },
-
-    webhosting: {
-      title: "Web Hosting",
-      subtitle: "Professional-grade hosting at an affordable annual cost",
-      containers: [
-        `
-        <strong>HOSTING PACKAGE – KES 3,500 / YEAR</strong><br>
-        <small>Ideal for individuals & businesses running multiple websites</small><br><br>
-        • 10GB SSD storage<br>
-        • cPanel Control Panel<br>
-        • Unlimited monthly bandwidth<br>
-        • Free instant setup<br>
-        • 99.99% uptime guarantee<br>
-        • Daily backups included<br>
-        • Unlimited FREE SSL certificates<br>
-        • Cloudflare CDN integration<br>
-        • 24/7/365 technical support
-        `
-      ]
-    },
-
-    betting: {
-      title: "Betting Website & Android App",
-      subtitle: "Secure, compliant, and real-time gambling platforms",
-      containers: [
-        `
-        <strong>BETTING PLATFORM – KES 150,000</strong><br>
-        <small>Website + Android App (Enterprise Grade)</small><br><br>
-
-        <strong>What We Deliver</strong><br>
-        Each platform is engineered to meet the highest standards of
-        <strong>security, performance, and compliance</strong>, ensuring a smooth
-        and reliable experience for both players and operators.<br><br>
-
-        • Integration with top-tier games APIs for live content<br>
-        • Real-time odds display with dynamic updates<br>
-        • Secure payment gateways with fraud protection<br>
-        • Mobile-first, responsive & user-centric design<br>
-        • Full regulatory compliance & legal alignment<br>
-        • Custom operator dashboards & reporting tools<br>
-        • Dedicated Android betting application
-        `
-      ]
-    },
-
-    aiautomation: {
-      title: "AI Automation",
-      subtitle: "Production-ready AI systems you fully own",
-      containers: [
-        "Ready-to-use AI automations (chatbots, workflows, agents)",
-        "Custom-built AI systems using code & AI models",
-        "API-driven automations for SaaS, apps & internal tools"
-      ],
-      action: {
-        label: "See Automations",
-        link: "automations.html"
-      }
-    },
-
-    thirdpartytrading: {
-  title: "3rd-Party Trading Website",
-  subtitle: "Fully branded trading platforms powered by top market APIs",
-  containers: [
-    `
-    <strong>What We Deliver</strong><br><br>
-
-    • Integration with Deriv, Binance & other top trading APIs<br>
-    • Fully branded & white-label trading platforms<br>
-    • Real-time market data & live pricing feeds<br>
-    • Secure payment gateways with multi-currency support<br>
-    • Scalable architecture for high traffic & multiple users<br><br>
-
-    Each platform is optimized for speed, security, and user engagement —
-    ready for launch under your own brand.
-    <br><br>
-
-    <strong>Price: KES 50,000</strong>
-    `
-  ]
-},
-
-
-    tradingautomation: {
-  title: "Trading Automation",
-  subtitle: "AI-powered trading systems with transparent pricing",
-  containers: [
-    `
-    <strong>Top Ready-Made Trading Strategies</strong><br>
-    <small>Fully coded, AI-optimized & ready to deploy on Forex, Crypto & Deriv</small><br><br>
-
-    • Moving Average Crossover<br>
-    • RSI Reversal Strategy<br>
-    • Bollinger Band Breakout<br>
-    • MACD Trend Following<br>
-    • Fibonacci Retracement Entries<br>
-    • Grid Trading Automation<br>
-    • Scalping High-Frequency Bot<br>
-    • Mean Reversion Strategy<br>
-    • Breakout Pullback Strategy<br>
-    • Trend Momentum (AI Optimized)<br><br>
-
-    Each strategy is independently priced and can be deployed as-is
-    or customized to your trading requirements.
-    `
-  ],
-  action: {
-    label: "View Automations & Pricing",
-    link: "automations.html"
-  }
-}
-
-
-  };
-
-  /* ================================
-     INTERACTION LOGIC
-  ================================= */
-  serviceButtons.forEach(button => {
-    button.addEventListener('click', () => {
-
-      // Toggle active state
-      serviceButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
-
-      const target = button.dataset.target;
-      const data = serviceData[target];
-      if (!data) return;
-
-      // Update title & subtitle
-      detailTitle.textContent = data.title;
-      detailSubtitle.textContent = data.subtitle;
-
-      // Clear previous content
-      detailContainers.innerHTML = '';
-
-      // Render content cards
-      data.containers.forEach(item => {
-        const col = document.createElement('div');
-        col.className = 'col-md-12 mb-3';
-        col.innerHTML = `
-          <div class="detail-card p-3 rounded shadow-sm bg-dark text-light">
-            ${item}
-          </div>
-        `;
-        detailContainers.appendChild(col);
-      });
-
-      // Optional action button
-      if (data.action) {
-        const actionCol = document.createElement('div');
-        actionCol.className = 'col-md-12 mt-3';
-        actionCol.innerHTML = `
-          <a href="${data.action.link}" class="btn btn-outline-primary">
-            ${data.action.label}
-          </a>
-        `;
-        detailContainers.appendChild(actionCol);
-      }
-
-    });
-  });
-</script>
-
-
-
-
-
-    <!-- Footer -->
-    <footer id="footer" class="footer bg-overlay">
-      <div class="footer-main">
-        <div class="container">
-          <div class="row justify-content-between">
-            <div class="col-lg-4 col-md-6 footer-widget footer-about">
-              <h3 class="widget-title">About Us</h3>
-              <img loading="lazy" class="footer-logo" src="images/bothive.png" alt="BotHive">
-              <p>We build powerful automation AI chatbots and modern web design solutions that help businesses engage customers, streamline operations, and grow online with confidence.</p>
-            </div>
-            <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
-              <h3 class="widget-title">Working Hours</h3>
-              <div class="working-hours">
-                We are available <strong>24/7</strong> to assist you.  
-                <br><br>Our team is always ready to support you anytime, any day – including weekends and holidays.  
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
-              <h3 class="widget-title">Our Chatbots</h3>
-              <ul class="list-arrow">
-                <li><a href="projects.html">💬 Sales Bot</a></li>
-                <li><a href="projects.html">📅 Booking Bot</a></li>
-                <li><a href="projects.html">🤝 Customer Support Bot</a></li>
-                <li><a href="projects.html">❓ FAQ Bot</a></li>
-                <li><a href="projects.html">⭐ Feedback Bot</a></li>
+            <div class="footer-social">
+              <ul>
+                <li><a href="https://facebook.com/themefisher" aria-label="Facebook"><i
+                      class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://twitter.com/themefisher" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li><a href="https://instagram.com/themefisher" aria-label="Instagram"><i
+                      class="fab fa-instagram"></i></a></li>
+                <li><a href="https://github.com/themefisher" aria-label="Github"><i class="fab fa-github"></i></a></li>
               </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+            </div><!-- Footer social end -->
+          </div><!-- Col end -->
 
-      <a href="#" class="slider btn btn-primary border open-lead-form">Get Started</a>
+          <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
+  <h3 class="widget-title">Talk to Us</h3>
+  <div class="working-hours">
+    
+    
+    We’re available <strong>24/7</strong> to discuss web development, hosting, AI automation, trade systems, betting platforms, and third-party trading solutions.
+    <br><br>
+    Whether you need a quick consultation or a full-scale solution, our experts are ready to guide you from idea to execution.
+    <br><br>
+    <a class="btn btn-primary" href="#" style="padding:10px 20px; border-radius:6px; font-weight:600;">
+      Free Consultation
+    </a>
+  </div>
+</div><!-- Col end -->
 
-      <div id="back-to-top" class="back-to-top position-fixed">
-        <button class="btn btn-primary" title="Back to Top"><i class="fa fa-angle-double-up"></i></button>
-      </div>
-    </footer>
+  <footer id="footer" class="footer bg-overlay">
+    <div class="footer-main">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-lg-4 col-md-6 footer-widget footer-about">
+            <h3 class="widget-title">About Us</h3>
+            <img loading="lazy" class="footer-logo" src="images/bothive.png" alt="Constra">
+            <p>
+We build modern websites, provide secure hosting, and deliver powerful AI and trade automation solutions. From betting platforms to third-party trading websites, we help businesses automate processes, increase efficiency, and grow online.
+</p>
+
+            <div class="footer-social">
+              <ul>
+                <li><a href="https://facebook.com/themefisher" aria-label="Facebook"><i
+                      class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://twitter.com/themefisher" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li><a href="https://instagram.com/themefisher" aria-label="Instagram"><i
+                      class="fab fa-instagram"></i></a></li>
+                <li><a href="https://github.com/themefisher" aria-label="Github"><i class="fab fa-github"></i></a></li>
+              </ul>
+            </div><!-- Footer social end -->
+          </div><!-- Col end -->
+
+          <div class="col-lg-4 col-md-6 footer-widget mt-5 mt-md-0">
+  <h3 class="widget-title">Talk to Us</h3>
+  <div class="working-hours">
+    
+    
+    We’re available <strong>24/7</strong> to discuss web development, hosting, AI automation, trade systems, betting platforms, and third-party trading solutions.
+    <br><br>
+    Whether you need a quick consultation or a full-scale solution, our experts are ready to guide you from idea to execution.
+    <br><br>
+    <a class="btn btn-primary" href="#" style="padding:10px 20px; border-radius:6px; font-weight:600;">
+      Free Consultation
+    </a>
+  </div>
+</div><!-- Col end -->
+
+          
+
+
+          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0 footer-widget">
+  <h3 class="widget-title">Our Products</h3>
+  <ul class="list-arrow">
+    <li><a href="websites.html">🎨 Web Design & Development</a></li>
+<li><a href="web_hosting.html">☁️ Web Hosting Solutions</a></li>
+<li><a href="Ai_aut.html">🧠 AI Automations</a></li>
+<li><a href="trade_automation.html">📈 Trading Automations</a></li>
+<li><a href="betting_sites.html">🎯 Betting Websites</a></li>
+<li><a href="trading_site.html">🔗 Third-Party Trading Websites</a></li>
+
+  </ul>
+  
+</div><!-- Col end -->
+
+        </div><!-- Row end -->
+      </div><!-- Container end -->
+    </div><!-- Footer main end -->
+
+ 
+
+</footer>
 
   </div><!-- Body Inner -->
 
@@ -545,5 +568,198 @@
   <script src="plugins/google-map/map.js"></script>
   <script src="js/script.js"></script>
 
+
+
+    <script>
+/* ================================
+   ELEMENT REFERENCES
+================================ */
+const serviceButtons = document.querySelectorAll('.service-btn');
+const detailTitle = document.getElementById('detail-title');
+const detailSubtitle = document.getElementById('detail-subtitle');
+const detailContainers = document.getElementById('detail-containers');
+
+/* ================================
+   SERVICE DATA
+================================ */
+const serviceData = {
+
+  webdesign: {
+    title: "Web Design & Development",
+    subtitle: "Flexible website packages for every business stage",
+    containers: [
+      `
+      <strong>WEBSITE PACKAGE 1 – KES 25,000</strong><br><br>
+      • Up to 10 pages<br>
+      • M-Pesa integration<br>
+      • Free SSL & hosting (1 year)<br>
+      • Business emails<br><br>
+      <a href="#" class="btn btn-primary btn-sm open-contact-popup">Order Now</a>
+      `,
+      `
+      <strong>WEBSITE PACKAGE 2 – KES 50,000</strong><br><br>
+      • Full e-commerce<br>
+      • M-Pesa, Cards & PayPal<br>
+      • Advanced SEO & security<br><br>
+      <a href="#" class="btn btn-primary btn-sm open-contact-popup">Order Now</a>
+      `,
+      `
+      <strong>ENTERPRISE WEBSITE</strong><br><br>
+      • Custom systems<br>
+      • APIs & integrations<br><br>
+      <a href="#" class="btn btn-primary btn-sm open-contact-popup">Order Now</a>
+      `
+    ]
+  },
+
+  webhosting: {
+    title: "Web Hosting",
+    subtitle: "Reliable annual hosting",
+    containers: [
+      `
+      <strong>KES 3,500 / YEAR</strong><br><br>
+      • 10GB SSD<br>
+      • Free SSL<br>
+      • Daily backups<br><br>
+      <a href="#" class="btn btn-success btn-sm open-contact-popup">Buy Now</a>
+      `
+    ]
+  },
+
+  betting: {
+    title: "Betting Website & Android App",
+    subtitle: "Enterprise-grade betting systems",
+    containers: [
+      `
+      • Live odds & APIs<br>
+      • Secure payments<br>
+      • Admin dashboard<br><br>
+      <strong>KES 150,000</strong><br><br>
+      <a href="#" class="btn btn-primary btn-sm open-contact-popup">Order Now</a>
+      `
+    ]
+  },
+
+  thirdpartytrading: {
+    title: "3rd-Party Trading Website",
+    subtitle: "White-label trading platforms",
+    containers: [
+      `
+      • Binance / Deriv APIs<br>
+      • Real-time pricing<br>
+      • Fully branded<br><br>
+      <strong>KES 50,000</strong><br><br>
+      <a href="#" class="btn btn-primary btn-sm open-contact-popup">Order Now</a>
+      `
+    ]
+  },
+
+  aiautomation: {
+    title: "AI Automation",
+    subtitle: "Production-ready AI systems",
+    containers: [
+      `
+      <strong>AI AUTOMATION</strong><br><br>
+      • Chatbots & workflows<br>
+      • Custom AI systems<br>
+      • API automations<br><br>
+      <a href="#" class="btn btn-success btn-sm open-contact-popup">Buy Now</a>
+      `
+    ]
+  },
+
+  tradingautomation: {
+    title: "Trading Automation",
+    subtitle: "AI-powered trading bots",
+    containers: [
+      `
+      <strong>TRADING AUTOMATION</strong><br><br>
+      • Forex & Crypto strategies<br>
+      • Scalping & grid bots<br>
+      • Custom AI optimization<br><br>
+      <a href="#" class="btn btn-success btn-sm open-contact-popup">Buy Now</a>
+      `
+    ]
+  }
+
+};
+
+/* ================================
+   RENDER FUNCTION
+================================ */
+function renderService(key) {
+  const data = serviceData[key];
+
+  if (!data) {
+    detailTitle.textContent = "";
+    detailSubtitle.textContent = "";
+    detailContainers.innerHTML = `
+      <div class="col-md-12 mb-3">
+        <div class="detail-card p-3 rounded shadow-sm bg-dark text-light">
+          Service not found.
+        </div>
+      </div>`;
+    return;
+  }
+
+  detailTitle.textContent = data.title;
+  detailSubtitle.textContent = data.subtitle;
+  detailContainers.innerHTML = "";
+
+  data.containers.forEach(item => {
+    detailContainers.innerHTML += `
+      <div class="col-md-12 mb-3">
+        <div class="detail-card p-3 rounded shadow-sm bg-dark text-light">
+          ${item}
+        </div>
+      </div>`;
+  });
+}
+
+/* ================================
+   SERVICE BUTTON NAVIGATION
+================================ */
+serviceButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    serviceButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderService(btn.dataset.target);
+  });
+});
+
+/* ================================
+   CONTACT POPUP (UNIVERSAL)
+================================ */
+document.addEventListener("click", function (e) {
+  const trigger = e.target.closest(".open-contact-popup");
+  if (!trigger) return;
+
+  e.preventDefault();
+
+  const popup = document.getElementById("contactPopup");
+  if (popup) popup.style.display = "flex";
+});
+
+document.getElementById("closeContactPopup")?.addEventListener("click", () => {
+  document.getElementById("contactPopup").style.display = "none";
+});
+
+document.getElementById("contactPopup")?.addEventListener("click", e => {
+  if (e.target.id === "contactPopup") {
+    e.currentTarget.style.display = "none";
+  }
+});
+
+/* ================================
+   DEFAULT LOAD
+================================ */
+renderService("webdesign");
+</script>
+
+
+
+
+
 </body>
+
 </html>
