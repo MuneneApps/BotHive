@@ -1,0 +1,11 @@
+# Deployment configuration for Bothive website
+deployment:
+  tasks:
+    # Live folder
+    - export DEPLOYPATH=/home2/winzonep/bothive
+
+    # Sync repo to live folder
+    - /usr/bin/rsync -av --delete \
+        --exclude='.git' \
+        --exclude='.cpanel.yml' \
+        ./ $DEPLOYPATH
