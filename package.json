@@ -1,28 +1,14 @@
 {
-  "name": "@themesberg/volt-react-dashboard",
-  "description": "Volt React Dashboard is a free and open source admin dashboard template powered by React.js and Bootstrap 5",
-  "author": "Themesberg",
-  "keywords": [
-    "bootstrap 5",
-    "react",
-    "react dashboard",
-    "react admin template",
-    "free react",
-    "react ui library",
-    "react bootstrap 5",
-    "bootstrap 5 dashboard",
-    "themesberg"
-  ],
+  "name": "bothive",
+  "description": "BotHive - Website Frontend",
+  "author": "MuneneApps",
+  "version": "1.0.0",
   "license": "MIT",
-  "homepage": "https://themewagon.github.io/volt-react-dashboard/",
-  "bugs": {
-    "url": "https://github.com/themesberg/volt-react-dashboard/issues"
-  },
+  "homepage": "https://github.com/MuneneApps/BotHive",
   "repository": {
     "type": "git",
-    "url": "https://github.com/themewagon/volt-react-dashboard/"
+    "url": "https://github.com/MuneneApps/BotHive"
   },
-  "version": "1.0.1",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
@@ -36,7 +22,12 @@
     "bootstrap": "5.3",
     "chartist": "^0.11.4",
     "chartist-plugin-tooltips-updated": "^0.1.4",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
     "moment-timezone": "^0.5.31",
+    "nodemailer": "^8.0.7",
+    "pg": "^8.20.0",
     "react": "^16.13.1",
     "react-chartist": "^0.14.4",
     "react-copy-to-clipboard": "^5.0.3",

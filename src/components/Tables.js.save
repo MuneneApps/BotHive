@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 import { Routes } from "../routes";
 import { pageVisits, pageTraffic, pageRanking } from "../data/tables";
 import transactions from "../data/transactions";
-
+import commands from "../data/commands";
 
 const ValueChange = ({ value, suffix }) => {
   const valueIcon = value < 0 ? faAngleDown : faAngleUp;
@@ -28,7 +28,7 @@ export const PageVisitsTable = () => {
   const TableRow = (props) => {
     const { pageName, views, returnValue, bounceRate } = props;
     const bounceIcon = bounceRate < 0 ? faArrowDown : faArrowUp;
-    const bounceTxtColor = bounceRate < 0 ? "text-danger" : "text-success";
+myk    const bounceTxtColor = bounceRate < 0 ? "text-danger" : "text-success";
 
     return (
       <tr>
@@ -296,3 +296,51 @@ export const TransactionsTable = () => {
   );
 };
 
+export const CommandsTable = () => {
+  const TableRow = (props) => {
+    const { name, usage = [], description, link } = props;
+
+    return (
+      <tr>
+        <td className="border-0" style={{ width: '5%' }}>
+          <code>{name}</code>
+        </td>
+        <td className="fw-bold border-0" style={{ width: '5%' }}>
+          <ul className="ps-0">
+            {usage.map(u => (
+              <ol key={u} className="ps-0">
+                <code>{u}</code>
+              </ol>
+            ))}
+          </ul>
+        </td>
+        <td className="border-0" style={{ width: '50%' }}>
+          <pre className="m-0 p-0">{description}</pre>
+        </td>
+        <td className="border-0" style={{ width: '40%' }}>
+          <pre><Card.Link href={link} target="_blank">Read More <FontAwesomeIcon icon={faExternalLinkAlt} className="ms-1" /></Card.Link></pre>
+        </td>
+      </tr>
+    );
+  };
+
+  return (
+    <Card border="light" className="shadow-sm">
+      <Card.Body className="p-0">
+        <Table responsive className="table-centered rounded" style={{ whiteSpace: 'pre-wrap', wordWrap: 'break-word' }}>
+          <thead className="thead-light">
+            <tr>
+              <th className="border-0" style={{ width: '5%' }}>Name</th>
+              <th className="border-0" style={{ width: '5%' }}>Usage</th>
+              <th className="border-0" style={{ width: '50%' }}>Description</th>
+              <th className="border-0" style={{ width: '40%' }}>Extra</th>
+            </tr>
+          </thead>
+          <tbody>
+            {commands.map(c => <TableRow key={`command-${c.id}`} {...c} />)}
+          </tbody>
+        </Table>
+      </Card.Body>
+    </Card>
+  );
+};
