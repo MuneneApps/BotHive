@@ -7,7 +7,7 @@ const app = express();
 
 // CORS - restrict to your actual domain in production
 const allowedOrigins = process.env.NODE_ENV === "production"
-  ? [process.env.FRONTEND_URL || "https://yourdomain.com"]
+  ? [process.env.FRONTEND_URL || "https://bothive.co.ke"]
   : ["http://localhost:3000", "http://localhost:4000"];
 
 app.use(cors({
