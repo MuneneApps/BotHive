@@ -15,6 +15,9 @@ import EtimsLogo from "../assets/img/etims.jpg";
 import MaintenanceImg from "../assets/img/maintainance.png";
 
 import teamMembers from "../data/teamMembers";
+// add this import at the top of Widgets.js
+import { useHistory } from "react-router-dom";
+import { Routes } from "../routes";
 
 export const SocialMediaWidget = () => {
   const platforms = [
@@ -578,25 +581,123 @@ export const DoneProjectsWidget = () => {
   );
 };
 
+
+
+// Desktop version
 export const SalesValueWidget = () => {
+  const history = useHistory();
+
   const services = [
-    { id: 1, icon: faCashRegister, title: "Custom POS Systems", description: "Streamline your sales with a powerful point-of-sale system tailored to your business needs. Fast, reliable, and easy to use.", color: "#a8edea" },
-    { id: 2, icon: faChartArea, title: "Web Design", description: "Get a stunning, conversion-focused website that represents your brand and keeps customers coming back.", color: "#fed6e3" },
-    { id: 3, icon: faChartBar, title: "Web Hosting", description: "Fast, secure, and always-on hosting solutions so your business never misses a beat — guaranteed uptime.", color: "#d4fc79" }
+    {
+      id: 1,
+      icon: faCashRegister,
+      title: "Custom POS Systems",
+      description:
+        "Streamline your sales with a powerful point-of-sale system tailored to your business needs. Fast, reliable, and easy to use.",
+      imagePath: "../../assets/hero.png", // pos background image
+      color: "#a8edea",
+      path: Routes.POSSystemPage.path,
+    },
+    {
+      id: 2,
+      icon: faChartArea,
+      title: "Web Design",
+      description:
+        "Get a stunning, conversion-focused website that represents your brand and keeps customers coming back.",
+      imagePath: "../../assets/webdesign.png", // web design background image
+      color: "#fed6e3",
+      path: Routes.WebDesignPage.path,
+    },
+    {
+      id: 3,
+      icon: faChartBar,
+      title: "Web Hosting",
+      description:
+        "Fast, secure, and always-on hosting solutions so your business never misses a beat — guaranteed uptime.",
+      imagePath: "../../assets/hosting.png", // web hosting background image
+      color: "#d4fc79",
+      path: Routes.WebHostingPage.path,
+    },
   ];
+
   return (
-    <Card style={{ background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)", border: "none", borderRadius: "16px", boxShadow: "0 8px 32px rgba(0,0,0,0.3)" }}>
+    <Card
+      style={{
+        background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
+        border: "none",
+        borderRadius: "16px",
+        boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
+      }}
+    >
       <Card.Body className="p-4">
         <Row className="g-4">
           {services.map((service, index) => (
-            <Col key={service.id} xs={12} md={4} style={{ borderRight: index < 2 ? "1px solid rgba(255,255,255,0.1)" : "none" }}>
+            <Col
+              key={service.id}
+              xs={12}
+              md={4}
+              style={{ borderRight: index < 2 ? "1px solid rgba(255,255,255,0.1)" : "none" }}
+            >
               <div className="d-flex flex-column align-items-center text-center h-100 px-3">
-                <div style={{ width: 60, height: 60, borderRadius: "50%", background: `${service.color}22`, border: `2px solid ${service.color}`, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "16px" }}>
-                  <FontAwesomeIcon icon={service.icon} style={{ color: service.color, fontSize: "1.4rem" }} />
+                {/* Background image container */}
+                <div
+                  style={{
+                    width: 60,
+                    height: 60,
+                    borderRadius: "50%",
+                    backgroundImage: `url(${service.imagePath})`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                    border: `2px solid ${service.color}`,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    marginBottom: "16px",
+                  }}
+                >
+                  {/* Optional: keep icon as fallback if needed */}
+                  <FontAwesomeIcon
+                    icon={service.icon}
+                    style={{ color: "rgba(255,255,255,0.9)", fontSize: "1.1rem", opacity: 0 }}
+                  />
                 </div>
-                <h5 style={{ color: "#ffffff", fontWeight: 700, marginBottom: "10px", fontFamily: "'Segoe UI', system-ui, sans-serif" }}>{service.title}</h5>
-                <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.85rem", lineHeight: 1.6, marginBottom: "20px", flexGrow: 1 }}>{service.description}</p>
-                <Button size="sm" style={{ background: `linear-gradient(90deg, ${service.color}, ${service.color}aa)`, border: "none", color: "#1a1a2e", fontWeight: 700, borderRadius: "20px", padding: "6px 20px" }}>Get Started</Button>
+                <h5
+                  style={{
+                    color: "#ffffff",
+                    fontWeight: 700,
+                    marginBottom: "10px",
+                    fontFamily: "'Segoe UI', system-ui, sans-serif",
+                  }}
+                >
+                  {service.title}
+                </h5>
+                <p
+                  style={{
+                    color: "rgba(255,255,255,0.65)",
+                    fontSize: "0.85rem",
+                    lineHeight: 1.6,
+                    marginBottom: "20px",
+                    flexGrow: 1,
+                  }}
+                >
+                  {service.description}
+                </p>
+                <button
+                  onClick={() => history.push(service.path)}
+                  style={{
+                    background: `linear-gradient(90deg, ${service.color}, ${service.color}aa)`,
+                    border: "none",
+                    color: "#1a1a2e",
+                    fontWeight: 700,
+                    borderRadius: "20px",
+                    padding: "6px 20px",
+                    cursor: "pointer",
+                    fontSize: "13px",
+                  }}
+                >
+                  Get Started
+                </button>
               </div>
             </Col>
           ))}
@@ -606,24 +707,113 @@ export const SalesValueWidget = () => {
   );
 };
 
+// Mobile version
 export const SalesValueWidgetPhone = () => {
+  const history = useHistory();
+
   const services = [
-    { id: 1, icon: faCashRegister, title: "Custom POS Systems", description: "Streamline your sales with a powerful point-of-sale system tailored to your business needs.", color: "#a8edea" },
-    { id: 2, icon: faChartArea, title: "Web Design", description: "Get a stunning, conversion-focused website that represents your brand and keeps customers coming back.", color: "#fed6e3" },
-    { id: 3, icon: faChartBar, title: "Web Hosting", description: "Fast, secure, and always-on hosting so your business never misses a beat.", color: "#d4fc79" }
+    {
+      id: 1,
+      icon: faCashRegister,
+      title: "Custom POS Systems",
+      description:
+        "Streamline your sales with a powerful point-of-sale system tailored to your business needs.",
+      imagePath: "/images/pos.png",
+      color: "#a8edea",
+      path: Routes.POSSystemPage.path,
+    },
+    {
+      id: 2,
+      icon: faChartArea,
+      title: "Web Design",
+      description:
+        "Get a stunning, conversion-focused website that represents your brand and keeps customers coming back.",
+      imagePath: "/images/webdesign.png",
+      color: "#fed6e3",
+      path: Routes.WebDesignPage.path,
+    },
+    {
+      id: 3,
+      icon: faChartBar,
+      title: "Web Hosting",
+      description:
+        "Fast, secure, and always-on hosting so your business never misses a beat.",
+      imagePath: "/images/webhost.png",
+      color: "#d4fc79",
+      path: Routes.WebHostingPage.path,
+    },
   ];
+
   return (
     <div className="d-flex flex-column gap-3">
-      {services.map(service => (
-        <Card key={service.id} style={{ background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)", border: "none", borderRadius: "16px", boxShadow: "0 8px 32px rgba(0,0,0,0.3)" }}>
+      {services.map((service) => (
+        <Card
+          key={service.id}
+          style={{
+            background: "linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)",
+            border: "none",
+            borderRadius: "16px",
+            boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
+          }}
+        >
           <Card.Body className="p-4">
             <div className="d-flex flex-column align-items-center text-center">
-              <div style={{ width: 56, height: 56, borderRadius: "50%", background: `${service.color}22`, border: `2px solid ${service.color}`, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "14px" }}>
-                <FontAwesomeIcon icon={service.icon} style={{ color: service.color, fontSize: "1.3rem" }} />
+              <div
+                style={{
+                  width: 56,
+                  height: 56,
+                  borderRadius: "50%",
+                  backgroundImage: `url(${service.imagePath})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                  backgroundRepeat: "no-repeat",
+                  border: `2px solid ${service.color}`,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: "14px",
+                }}
+              >
+                <FontAwesomeIcon
+                  icon={service.icon}
+                  style={{ color: "rgba(255,255,255,0.9)", fontSize: "1.1rem", opacity: 0 }}
+                />
               </div>
-              <h5 style={{ color: "#ffffff", fontWeight: 700, marginBottom: "10px", fontFamily: "'Segoe UI', system-ui, sans-serif" }}>{service.title}</h5>
-              <p style={{ color: "rgba(255,255,255,0.65)", fontSize: "0.85rem", lineHeight: 1.6, marginBottom: "18px" }}>{service.description}</p>
-              <Button size="sm" style={{ background: `linear-gradient(90deg, ${service.color}, ${service.color}aa)`, border: "none", color: "#1a1a2e", fontWeight: 700, borderRadius: "20px", padding: "6px 20px" }}>Get Started</Button>
+              <h5
+                style={{
+                  color: "#ffffff",
+                  fontWeight: 700,
+                  marginBottom: "10px",
+                  fontFamily: "'Segoe UI', system-ui, sans-serif",
+                }}
+              >
+                {service.title}
+              </h5>
+              <p
+                style={{
+                  color: "rgba(255,255,255,0.65)",
+                  fontSize: "0.85rem",
+                  lineHeight: 1.6,
+                  marginBottom: "18px",
+                }}
+              >
+                {service.description}
+              </p>
+              <button
+                onClick={() => history.push(service.path)}
+                style={{
+                  background: `linear-gradient(90deg, ${service.color}, ${service.color}aa)`,
+                  border: "none",
+                  color: "#1a1a2e",
+                  fontWeight: 700,
+                  borderRadius: "20px",
+                  padding: "6px 20px",
+                  cursor: "pointer",
+                  fontSize: "13px",
+                }}
+              >
+                Get Started
+              </button>
             </div>
           </Card.Body>
         </Card>
@@ -631,7 +821,6 @@ export const SalesValueWidgetPhone = () => {
     </div>
   );
 };
-
 export const LocationWidget = () => {
   return (
     <Card border="light" className="shadow-sm h-100">

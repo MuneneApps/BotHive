@@ -1,37 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { Routes } from "../routes";
 
 // pages
 import DashboardOverview from "./dashboard/DashboardOverview";
-import Transactions from "./Transactions";
-import Settings from "./Settings";
-import BootstrapTables from "./tables/BootstrapTables";
-import Signin from "./examples/Signin";
-import Signup from "./examples/Signup";
-import ForgotPassword from "./examples/ForgotPassword";
-import ResetPassword from "./examples/ResetPassword";
-import Lock from "./examples/Lock";
-import NotFoundPage from "./examples/NotFound";
-import ServerError from "./examples/ServerError";
+import POSSystemPage from "./services/POSSystemPage";
+import WebDesignPage from "./services/WebDesignPage";
+import WebHostingPage from "./services/WebHostingPage";
+
+import Supermarket from "./POS/supermarket";
+import Restaurant from "./POS/restaurant";
+import Wines from "./POS/wines";
+import Retail from "./POS/retail";
 
 // components
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Preloader from "../components/Preloader";
-
-const RouteWithLoader = ({ component: Component, ...rest }) => {
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoaded(true), 1000);
-    return () => clearTimeout(timer);
-  }, []);
-
-  return (
-    <Route {...rest} render={props => ( <> <Preloader show={loaded ? false : true} /> <Component {...props} /> </> ) } />
-  );
-};
 
 const RouteWithSidebar = ({ component: Component, ...rest }) => {
   const [loaded, setLoaded] = useState(false);
@@ -42,47 +27,59 @@ const RouteWithSidebar = ({ component: Component, ...rest }) => {
   }, []);
 
   const localStorageIsSettingsVisible = () => {
-    return localStorage.getItem('settingsVisible') === 'false' ? false : true
-  }
+    return localStorage.getItem('settingsVisible') === 'false' ? false : true;
+  };
 
   const [showSettings, setShowSettings] = useState(localStorageIsSettingsVisible);
 
   const toggleSettings = () => {
     setShowSettings(!showSettings);
     localStorage.setItem('settingsVisible', !showSettings);
-  }
+  };
 
   return (
     <Route {...rest} render={props => (
       <>
         <Preloader show={loaded ? false : true} />
-        <main className="content">
+        <main className="content" style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 24px" }}>
           <Navbar />
           <Component {...props} />
           <Footer toggleSettings={toggleSettings} showSettings={showSettings} />
         </main>
       </>
-    )}
-    />
+    )} />
   );
 };
 
 export default () => (
   <Switch>
-    <RouteWithLoader exact path={Routes.Signin.path} component={Signin} />
-    <RouteWithLoader exact path={Routes.Signup.path} component={Signup} />
-    <RouteWithLoader exact path={Routes.ForgotPassword.path} component={ForgotPassword} />
-    <RouteWithLoader exact path={Routes.ResetPassword.path} component={ResetPassword} />
-    <RouteWithLoader exact path={Routes.Lock.path} component={Lock} />
-    <RouteWithLoader exact path={Routes.NotFound.path} component={NotFoundPage} />
-    <RouteWithLoader exact path={Routes.ServerError.path} component={ServerError} />
-
-    {/* pages */}
     <RouteWithSidebar exact path={Routes.DashboardOverview.path} component={DashboardOverview} />
-    <RouteWithSidebar exact path={Routes.Transactions.path} component={Transactions} />
-    <RouteWithSidebar exact path={Routes.Settings.path} component={Settings} />
-    <RouteWithSidebar exact path={Routes.BootstrapTables.path} component={BootstrapTables} />
+    <RouteWithSidebar exact path={Routes.POSSystemPage.path} component={POSSystemPage} />
+    <RouteWithSidebar exact path={Routes.WebDesignPage.path} component={WebDesignPage} />
+    <RouteWithSidebar exact path={Routes.WebHostingPage.path} component={WebHostingPage} />
 
-    <Redirect to={Routes.DashboardOverview.path} />
+    <RouteWithSidebar
+  exact
+  path={Routes.POSRetail.path}
+  component={Retail}
+/>
+
+<RouteWithSidebar
+  exact
+  path={Routes.POSSupermarket.path}
+  component={Supermarket}
+/>
+
+<RouteWithSidebar
+  exact
+  path={Routes.POSWines.path}
+  component={Wines}
+/>
+
+<RouteWithSidebar
+  exact
+  path={Routes.POSRestaurant.path}
+  component={Restaurant}
+/>
   </Switch>
 );

@@ -1,20 +1,14 @@
 export const Routes = {
-    // MAIN LANDING PAGE (your navbar + widgets page)
-    Home: { path: "/" },
+  DashboardOverview: { path: "/" },
 
-    // OPTIONAL FULL PAGE VIEW OF QUOTE (future use)
-    QuotePage: { path: "/quote" },
+  // MAIN SERVICES
+  POSSystemPage: { path: "/services/pos" },
+  WebDesignPage: { path: "/services/webdesign" },
+  WebHostingPage: { path: "/services/webhosting" },
 
-    // OPTIONAL FULL NEWSLETTER PAGE (if you expand later)
-    NewsletterPage: { path: "/newsletter" },
-
-    // ADMIN / BACKEND PANEL (future POS dashboard)
-    Dashboard: { path: "/dashboard" },
-
-    // AUTH SYSTEM (future SaaS expansion)
-    SignIn: { path: "/signin" },
-    SignUp: { path: "/signup" },
-
-    // SAFETY / ERROR
-    NotFound: { path: "/404" }
+  // POS SUB-PAGES
+  POSRetail: { path: "/services/POS/retail" },
+  POSSupermarket: { path: "/services/POS/supermarket" },
+  POSWines: { path: "/services/POS/wines" },
+  POSRestaurant: { path: "/services/POS/restaurant" },
 };
