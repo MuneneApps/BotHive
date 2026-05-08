@@ -1,29 +1,36 @@
-cat > .gitignore << 'EOF'
 # Dependencies
 node_modules/
 
 # Production build
 build/
 
-# Environment variables (NEVER commit these)
+# Environment variables - NEVER commit these
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-# Mac system files
+# Database dumps - NEVER commit these
+*.dump
+*.sql
+*.backup
+
+# Mac/Linux system files
 .DS_Store
+Thumbs.db
 
 # Logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*.log
 
 # Editor folders
 .vscode/
 .idea/
+*.swp
+*.sav
 
 # Yarn
 yarn.lock
-EOF

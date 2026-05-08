@@ -210,7 +210,7 @@ export default (props) => {
             <div className="d-none d-md-flex align-items-center" style={{ marginTop: "12px", marginBottom: "12px" }}>
               <div style={{ background: "linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%)", borderRadius: "12px", padding: "10px 20px", maxWidth: "600px" }}>
                 <p style={{ margin: 0, fontWeight: 600, color: "#fff" }}>
-                  🚀 Start selling smarter today — custom POS systems, websites & hosting for growth.
+                  <span>🚀 </span>Start selling smarter today — custom POS systems, websites & hosting for growth.
                 </p>
               </div>
             </div>
