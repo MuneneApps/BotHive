@@ -1,7 +1,7 @@
 import React from "react";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faAngleDown, faAngleUp, faChartArea, faChartBar, faChartLine, faFlagUsa, faFolderOpen, faGlobeEurope, faPaperclip, faUserPlus, faCashRegister, faStar, faStarHalfAlt, faRobot, faHeadset, faTimes, faUndo, faPaperPlane } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faAngleUp, faChartArea, faChartBar, faChartLine, faFlagUsa, faFolderOpen, faGlobeEurope, faPaperclip, faUserPlus, faCashRegister, faStar, faStarHalfAlt, faRobot, faHeadset, faTimes, faUndo, faPaperPlane, faBolt, faComments } from '@fortawesome/free-solid-svg-icons';
 import { faAngular, faBootstrap, faReact, faVuejs, faGoogle, faFacebook, faInstagram, faTiktok, faTwitter, faTelegram, faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faStar as faStarEmpty } from "@fortawesome/free-regular-svg-icons";
 
@@ -15,9 +15,15 @@ import EtimsLogo from "../assets/img/etims.jpg";
 import MaintenanceImg from "../assets/img/maintainance.png";
 
 import teamMembers from "../data/teamMembers";
-// add this import at the top of Widgets.js
 import { useHistory } from "react-router-dom";
 import { Routes } from "../routes";
+
+import posImage from "../assets/img/hero.png";
+import webImage from "../assets/img/Bothiveweb.png";
+import hostingImage from "../assets/img/Bothivehosting.png";
+
+import QuickBooksImg from "../assets/img/quickboks.png";
+import MCPImg from "../assets/img/mcp.png";
 
 export const SocialMediaWidget = () => {
   const platforms = [
@@ -76,23 +82,29 @@ export const MaintenanceAdWidget = ({ onContact }) => {
         <Row className="d-block d-xl-flex align-items-center">
           <Col xl={5} className="text-xl-center d-flex align-items-center justify-content-xl-center mb-3 mb-xl-0">
             <img
-              src={MaintenanceImg}
-              alt="Maintenance & Support"
-              style={{ width: "100%", maxWidth: "120px", height: "80px", objectFit: "cover", borderRadius: "8px" }}
+              src={QuickBooksImg}
+              alt="QuickBooks Accounting"
+              style={{
+                width: "100%",
+                maxWidth: "130px",
+                height: "90px",
+                objectFit: "contain",
+                borderRadius: "8px",
+              }}
             />
           </Col>
           <Col xs={12} xl={7} className="px-xl-0">
-            <small className="text-muted d-block">POS & Web Support</small>
-            <h3 className="mb-1" style={{ color: "#185FA5" }}>We've Got You</h3>
+            <small className="text-muted d-block">Accounting & Finance</small>
+            <h3 className="mb-1" style={{ color: "#2CA01C" }}>Powered by QuickBooks</h3>
             <small className="d-block" style={{ color: "#444" }}>
-              <span style={{ color: "#1D9E75", fontWeight: 500 }}>Remote & Onsite</span> POS maintenance
+              <span style={{ color: "#2CA01C", fontWeight: 500 }}>Real-time</span> sales & expense tracking
             </small>
             <small className="d-block" style={{ color: "#444" }}>
-              <span style={{ color: "#1D9E75", fontWeight: 500 }}>24/7</span> Web design & hosting support
+              <span style={{ color: "#2CA01C", fontWeight: 500 }}>Automated</span> invoicing & reporting
             </small>
             <div className="mt-2">
-              <Button variant="outline-primary" size="sm" onClick={onContact}>
-                Contact us
+              <Button variant="success" size="sm" onClick={onContact}>
+                Learn More
               </Button>
             </div>
           </Col>
@@ -207,45 +219,92 @@ export const EtimsAdWidget = ({ onLearnMore }) => {
   );
 };
 
-export const GoogleReviewWidget = (props) => {
-  const { rating = 4.5, totalReviews = 128, onViewMore } = props;
-  const renderStars = (rating) => {
-    return [1, 2, 3, 4, 5].map((star) => {
-      if (rating >= star) return <FontAwesomeIcon key={star} icon={faStar} className="text-warning" />;
-      if (rating >= star - 0.5) return <FontAwesomeIcon key={star} icon={faStarHalfAlt} className="text-warning" />;
-      return <FontAwesomeIcon key={star} icon={faStarEmpty} className="text-warning" />;
-    });
-  };
+export const GoogleReviewWidget = ({ onViewMore }) => {
+  const features = [
+    { icon: faBolt, label: "Smart auto-checkout & upsell prompts" },
+    { icon: faChartLine, label: "Real-time sales insights & predictions" },
+    { icon: faComments, label: "AI customer engagement agent" },
+  ];
+
   return (
-    <Card border="light" className="shadow-sm">
-      <Card.Body>
-        <Row className="d-block d-xl-flex align-items-center">
-          <Col xl={5} className="text-xl-center d-flex align-items-center justify-content-xl-center mb-3 mb-xl-0">
-            <div className="icon icon-shape icon-md icon-shape-secondary rounded me-4 me-sm-0">
-              <FontAwesomeIcon icon={faGoogle} />
+    <Card border="light" className="shadow-sm" style={{ borderRadius: "16px", overflow: "hidden" }}>
+      <div style={{ background: "linear-gradient(135deg, #0f3460 0%, #1a1a2e 100%)", padding: "12px 16px 8px" }}>
+        <div className="d-flex align-items-center gap-2">
+          <img
+            src={MCPImg}
+            alt="AI POS Agent"
+            style={{
+              width: 42,
+              height: 42,
+              borderRadius: "50%",
+              objectFit: "cover",
+              border: "1px solid rgba(255,255,255,0.2)",
+            }}
+          />
+          <div>
+            <small style={{ color: "rgba(255,255,255,0.6)", fontSize: "0.7rem" }}>Bothive Intelligence</small>
+            <h6 className="mb-0" style={{ color: "#ffffff", fontWeight: 700, fontSize: "0.95rem" }}>
+              AI Agents for POS
+            </h6>
+          </div>
+          <span
+            className="ms-auto"
+            style={{
+              background: "linear-gradient(90deg, #a8edea, #1D9E75)",
+              color: "#0f3460",
+              fontSize: "0.65rem",
+              fontWeight: 700,
+              borderRadius: "20px",
+              padding: "2px 10px",
+            }}
+          >
+            LIVE
+          </span>
+        </div>
+      </div>
+
+      <Card.Body className="pt-3 pb-3">
+        <div className="d-flex flex-column gap-2 mb-3">
+          {features.map((f, i) => (
+            <div key={i} className="d-flex align-items-start gap-2">
+              <div
+                style={{
+                  width: 26,
+                  height: 26,
+                  borderRadius: "8px",
+                  background: "linear-gradient(135deg, #0f3460, #1D9E75)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexShrink: 0,
+                }}
+              >
+                <FontAwesomeIcon icon={f.icon} style={{ color: "#a8edea", fontSize: "0.65rem" }} />
+              </div>
+              <small style={{ color: "#444", lineHeight: 1.4, fontSize: "0.78rem" }}>{f.label}</small>
             </div>
-            <div className="d-sm-none">
-              <h5>Google Reviews</h5>
-              <h3 className="mb-1">{rating}/5</h3>
-            </div>
-          </Col>
-          <Col xs={12} xl={7} className="px-xl-0">
-            <div className="d-none d-sm-block">
-              <h5>Google Reviews</h5>
-              <h3 className="mb-1">{rating}/5</h3>
-            </div>
-            <div className="mb-1">{renderStars(rating)}</div>
-            <small className="text-muted">Based on {totalReviews} reviews</small>
-            <div className="mt-2">
-              <Button variant="outline-primary" size="sm" onClick={onViewMore}>View more</Button>
-            </div>
-          </Col>
-        </Row>
+          ))}
+        </div>
+
+        <Button
+          size="sm"
+          onClick={onViewMore}
+          style={{
+            background: "linear-gradient(90deg, #0f3460, #1D9E75)",
+            border: "none",
+            borderRadius: "20px",
+            fontWeight: 600,
+            fontSize: "0.78rem",
+            padding: "5px 18px",
+            color: "#fff",
+          }}
+        >
+          <FontAwesomeIcon icon={faRobot} className="me-1" /> Explore AI Agents
+        </Button>
       </Card.Body>
     </Card>
   );
 };
-
 export const CircleChartWidget = (props) => {
   const { title, data = [] } = props;
   const series = data.map(d => d.value);
@@ -588,37 +647,37 @@ export const SalesValueWidget = () => {
   const history = useHistory();
 
   const services = [
-    {
-      id: 1,
-      icon: faCashRegister,
-      title: "Custom POS Systems",
-      description:
-        "Streamline your sales with a powerful point-of-sale system tailored to your business needs. Fast, reliable, and easy to use.",
-      imagePath: "../../assets/hero.png", // pos background image
-      color: "#a8edea",
-      path: Routes.POSSystemPage.path,
-    },
-    {
-      id: 2,
-      icon: faChartArea,
-      title: "Web Design",
-      description:
-        "Get a stunning, conversion-focused website that represents your brand and keeps customers coming back.",
-      imagePath: "../../assets/webdesign.png", // web design background image
-      color: "#fed6e3",
-      path: Routes.WebDesignPage.path,
-    },
-    {
-      id: 3,
-      icon: faChartBar,
-      title: "Web Hosting",
-      description:
-        "Fast, secure, and always-on hosting solutions so your business never misses a beat — guaranteed uptime.",
-      imagePath: "../../assets/hosting.png", // web hosting background image
-      color: "#d4fc79",
-      path: Routes.WebHostingPage.path,
-    },
-  ];
+  {
+    id: 1,
+    icon: faCashRegister,
+    title: "Custom POS Systems",
+    description:
+      "Streamline your sales with a powerful point-of-sale system tailored to your business needs. Fast, reliable, and easy to use.",
+    imagePath: posImage,
+    color: "#a8edea",
+    path: Routes.POSSystemPage.path,
+  },
+  {
+    id: 2,
+    icon: faChartArea,
+    title: "Web Design",
+    description:
+      "Get a stunning, conversion-focused website that represents your brand and keeps customers coming back.",
+    imagePath: webImage,
+    color: "#fed6e3",
+    path: Routes.WebDesignPage.path,
+  },
+  {
+    id: 3,
+    icon: faChartBar,
+    title: "Web Hosting",
+    description:
+      "Fast, secure, and always-on hosting solutions so your business never misses a beat — guaranteed uptime.",
+    imagePath: hostingImage,
+    color: "#d4fc79",
+    path: Routes.WebHostingPage.path,
+  },
+];
 
   return (
     <Card
@@ -642,8 +701,8 @@ export const SalesValueWidget = () => {
                 {/* Background image container */}
                 <div
                   style={{
-                    width: 60,
-                    height: 60,
+                    width: 150,
+                    height: 150,
                     borderRadius: "50%",
                     backgroundImage: `url(${service.imagePath})`,
                     backgroundSize: "cover",
@@ -712,38 +771,37 @@ export const SalesValueWidgetPhone = () => {
   const history = useHistory();
 
   const services = [
-    {
-      id: 1,
-      icon: faCashRegister,
-      title: "Custom POS Systems",
-      description:
-        "Streamline your sales with a powerful point-of-sale system tailored to your business needs.",
-      imagePath: "/images/pos.png",
-      color: "#a8edea",
-      path: Routes.POSSystemPage.path,
-    },
-    {
-      id: 2,
-      icon: faChartArea,
-      title: "Web Design",
-      description:
-        "Get a stunning, conversion-focused website that represents your brand and keeps customers coming back.",
-      imagePath: "/images/webdesign.png",
-      color: "#fed6e3",
-      path: Routes.WebDesignPage.path,
-    },
-    {
-      id: 3,
-      icon: faChartBar,
-      title: "Web Hosting",
-      description:
-        "Fast, secure, and always-on hosting so your business never misses a beat.",
-      imagePath: "/images/webhost.png",
-      color: "#d4fc79",
-      path: Routes.WebHostingPage.path,
-    },
-  ];
-
+  {
+    id: 1,
+    icon: faCashRegister,
+    title: "Custom POS Systems",
+    description:
+      "Streamline your sales with a powerful point-of-sale system tailored to your business needs.",
+    imagePath: posImage,
+    color: "#a8edea",
+    path: Routes.POSSystemPage.path,
+  },
+  {
+    id: 2,
+    icon: faChartArea,
+    title: "Web Design",
+    description:
+      "Get a stunning, conversion-focused website that represents your brand and keeps customers coming back.",
+    imagePath: webImage,
+    color: "#fed6e3",
+    path: Routes.WebDesignPage.path,
+  },
+  {
+    id: 3,
+    icon: faChartBar,
+    title: "Web Hosting",
+    description:
+      "Fast, secure, and always-on hosting so your business never misses a beat.",
+    imagePath: hostingImage,
+    color: "#d4fc79",
+    path: Routes.WebHostingPage.path,
+  },
+];
   return (
     <div className="d-flex flex-column gap-3">
       {services.map((service) => (
@@ -760,8 +818,8 @@ export const SalesValueWidgetPhone = () => {
             <div className="d-flex flex-column align-items-center text-center">
               <div
                 style={{
-                  width: 56,
-                  height: 56,
+                  width: 150,
+                  height: 150,
                   borderRadius: "50%",
                   backgroundImage: `url(${service.imagePath})`,
                   backgroundSize: "cover",
