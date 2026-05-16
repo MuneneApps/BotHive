@@ -1,7 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home2/winzonep/bothive
+    - export DEPLOYPATH=/home2/bothive
 
     # Copy project files
     - /usr/bin/rsync -av --delete --exclude='.git' --exclude='node_modules' --exclude='.env' --exclude='*.dump' --exclude='*.sql' ./ $DEPLOYPATH
