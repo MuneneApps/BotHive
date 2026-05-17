@@ -1,13 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home2/bothive
-
-    # Copy project files
+    - export DEPLOYPATH=/home2/winzonep/bothive
     - /usr/bin/rsync -av --delete --exclude='.git' --exclude='node_modules' --exclude='.env' --exclude='*.dump' --exclude='*.sql' ./ $DEPLOYPATH
-
-    # Install dependencies
     - /usr/local/bin/node /usr/local/bin/npm install --prefix $DEPLOYPATH
-
-    # Build React app
     - /usr/local/bin/node /usr/local/bin/npm run build --prefix $DEPLOYPATH

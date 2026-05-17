@@ -1,0 +1,25 @@
+# Bothive Deployment Configuration
+deployment:
+  tasks:
+    # Deploy React build (frontend) to public web directory
+    - export FRONTEND=/home2/winzonep/public_html/bothive
+    # Deploy backend to app directory
+    - export BACKEND=/home2/winzonep/bothive
+
+    # 1. Sync React build to public_html/bothive (serves the website)
+    - /usr/bin/rsync -av --delete
+        --exclude='.git'
+        --exclude='.cpanel.yml'
+        ./build/ $FRONTEND
+
+    # 2. Sync backend files to app directory (Node.js backend)
+    - /usr/bin/rsync -av --delete
+        --exclude='.git'
+        --exclude='node_modules'
+        --exclude='build'
+        --exclude='.env'
+        --exclude='src/assets'
+        --exclude='*.dump'
+        --exclude='*.sql'
+        --exclude='public'
+        ./ $BACKEND
