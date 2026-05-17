@@ -1,19 +1,21 @@
 {
   "files": {
     "main.css": "/static/css/main.82244e1c.chunk.css",
-    "main.js": "/static/js/main.ccb95e09.chunk.js",
-    "main.js.map": "/static/js/main.ccb95e09.chunk.js.map",
+    "main.js": "/static/js/main.d776e8b2.chunk.js",
+    "main.js.map": "/static/js/main.d776e8b2.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.23336b3d.js",
     "runtime-main.js.map": "/static/js/runtime-main.23336b3d.js.map",
     "static/css/2.fea3aa44.chunk.css": "/static/css/2.fea3aa44.chunk.css",
-    "static/js/2.b8dc076d.chunk.js": "/static/js/2.b8dc076d.chunk.js",
-    "static/js/2.b8dc076d.chunk.js.map": "/static/js/2.b8dc076d.chunk.js.map",
+    "static/js/2.729e4e88.chunk.js": "/static/js/2.729e4e88.chunk.js",
+    "static/js/2.729e4e88.chunk.js.map": "/static/js/2.729e4e88.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.a40f6e7129d26b5f4a483755846bda06.js": "/precache-manifest.a40f6e7129d26b5f4a483755846bda06.js",
+    "precache-manifest.3b4973377085ab612f435742643f9b35.js": "/precache-manifest.3b4973377085ab612f435742643f9b35.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.fea3aa44.chunk.css.map": "/static/css/2.fea3aa44.chunk.css.map",
     "static/css/main.82244e1c.chunk.css.map": "/static/css/main.82244e1c.chunk.css.map",
-    "static/js/2.b8dc076d.chunk.js.LICENSE.txt": "/static/js/2.b8dc076d.chunk.js.LICENSE.txt",
+    "static/js/2.729e4e88.chunk.js.LICENSE.txt": "/static/js/2.729e4e88.chunk.js.LICENSE.txt",
+    "static/media/Bothivehosting.png": "/static/media/Bothivehosting.d3250a4e.png",
+    "static/media/Bothiveweb.png": "/static/media/Bothiveweb.449c4824.png",
     "static/media/beauty.jpg": "/static/media/beauty.e460e96d.jpg",
     "static/media/bothive-logo.svg": "/static/media/bothive-logo.cb573827.svg",
     "static/media/canada.svg": "/static/media/canada.ed3cd4b5.svg",
@@ -26,6 +28,7 @@
     "static/media/italy.svg": "/static/media/italy.612e617f.svg",
     "static/media/japan.svg": "/static/media/japan.1f905d23.svg",
     "static/media/maintainance.png": "/static/media/maintainance.6f82fba7.png",
+    "static/media/mcp.png": "/static/media/mcp.6c1e5511.png",
     "static/media/pharmacy.jpg": "/static/media/pharmacy.a9ec14e7.jpg",
     "static/media/profile-cover.jpg": "/static/media/profile-cover.9992e0ee.jpg",
     "static/media/profile-picture-1.jpg": "/static/media/profile-picture-1.4d26e151.jpg",
@@ -41,8 +44,8 @@
   "entrypoints": [
     "static/js/runtime-main.23336b3d.js",
     "static/css/2.fea3aa44.chunk.css",
-    "static/js/2.b8dc076d.chunk.js",
+    "static/js/2.729e4e88.chunk.js",
     "static/css/main.82244e1c.chunk.css",
-    "static/js/main.ccb95e09.chunk.js"
+    "static/js/main.d776e8b2.chunk.js"
   ]
 }
